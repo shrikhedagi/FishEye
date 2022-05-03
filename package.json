@@ -1,0 +1,22 @@
+{
+    "name": "FilizHakan_6_FishEye_02052022",
+    "version": "1.0.0",
+    "description": "Case Study 6 - OpenClassrooms",
+    "main": "index.js",
+    "scripts": {
+      "lint": "eslint --max-warnings=0 ."
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/FilizHakan/FilizHakan_6_FishEye_02052022.git"
+    },
+    "author": "Filiz Hakan",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/FilizHakan/FilizHakan_6_FishEye_02052022/issues"
+    },
+    "homepage": "https://github.com/FilizHakan/FilizHakan_6_Fisheye_02052022#readme",
+    "devDependencies": {
+      "eslint": "^8.13.0"
+    }
+  }
