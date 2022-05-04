@@ -11,16 +11,23 @@
     <meta name="description" content="Plateforme de photographes freelance unique qui mets a disposition leurs oeuvres, permets de les contacter." />
     <title>Fisheye</title>
   </head>
-  <body>
-    <header>
-        <img src="./assets/logo/logo.png" class="logo" />
-        <h1>Nos photographes</h1>
+
+  <body class="main-wrapper">
+    <header class="home-header">
+      <nav class="home-header__nav">
+        <a href="./index.html">
+          <img src="./assets/logo/logo.png" class="logo" />
+        </a>
+      </nav>
+    
+        <h1 class="home-header__title">Nos photographes</h1>
     </header>
+    
     <main id="main">
         <div class="photographer_section"></div>
     </main>
-    <script src="./scripts/factories/photographer.js"></script>
+
+    <script src="./scripts/factories/photographerFactory.js"></script>
     <script src="./scripts/pages/index.js"></script>
-    <script src="./scripts/pages/photographer.js"></script>
-  </body>
+  </body> 
 </html>
