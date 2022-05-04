@@ -1,38 +1,40 @@
-async function getPhotographers() {
-    fetch()
-    const photographers = [
-        {
-            "name": "Ma data test",
-            "id": 1,
-            "city": "Paris",
-            "country": "France",
-            "tagline": "Ceci est ma data test",
-            "price": 400,
-            "portrait": "account.png"
-        },
-        {
-            "name": "Autre data test",
-            "id": 2,
-            "city": "Londres",
-            "country": "UK",
-            "tagline": "Ceci est ma data test 2",
-            "price": 500,
-            "portrait": "account.png"
-        },
-    ]
+import photographer from "../dataManagement/photographers.js"
 
-    return ({
-        photographers: [...photographers, ...photographers, ...photographers]
-    })
+/* Using fetch() to get data for homepage */
+async function getPhotographers() {
+    
+    const photographers = fetch('data/profilData.json')
+        
+        .then(function(result) {
+            if(result.ok) {
+                return result.json();
+            }
+        })
+
+        .then(function(profilDataRetrieve) {
+            return profilDataRetrieve.photographers;
+        })
+
+        .catch(function(errorMessage) {
+            console.log("Retrieving information regarding photophers' datas have failed ${errorMessage}.")
+        });  
+    
+
+return photographers;
+    
 }
 
+/* Display the photographers' cards in homepage */
 async function displayData(photographers) {
+
     const photographersSection = document.querySelector(".photographer_section");
 
     photographers.forEach((photographer) => {
-        const photographerModel = photographerFactory(photographer);
+        
+        const photographerModel = new Photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
+        
         const userCardDOM = photographerModel.getUserCardDOM();
-        photographersSection.appendChild(userCardDOM);
+        photographersSection.innerHTML += userCardDOM;
     });
 };
 
@@ -42,4 +44,4 @@ async function init() {
     displayData(photographers);
 };
 
-init();
+document.addEventListener("DomContentLoaded",init);
