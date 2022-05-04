@@ -1,17 +1,14 @@
-function photographerFactory(data) {
-    const { name, portrait } = data;
+import Picture from "../media/picture.js";
+import Video from "../media/video.js";
 
-    const picture = `assets/photographers/${portrait}`;
+export default class Factory {
 
-    function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
+    static mediaCreation(media) {
+        if (media.hasOwnProperty("video")) { //If the object media has the specified property
+            return new Video(media.id, media.photographerID, media.title, media.video, media.likes, media.date, media.price, media.description);
+        
+        }else{
+            return new Picture(media.id, media.photographerId, media.title, media.image, media.likes, media.date, media.price, media.description);
+        }
     }
-    return { name, picture, getUserCardDOM }
 }
