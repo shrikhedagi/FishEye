@@ -6,7 +6,7 @@
     "scripts": {
       "lint": "eslint --max-warnings=0 .",
       "sass": "sass --watch ./sass/main.scss:./public/css/main.css",
-      "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+      "prefix": "postcss ./public/css/main.css --use autoprefixer -d ./css/prefixed/"
     },
     "repository": {
       "type": "git",

@@ -1,14 +1,67 @@
+/* Breakpoints variables */
+
+$breakpoints: (
+    xsmall-mobile: 280px,
+    small-mobile: 320px,
+    medium-mobile: 400px,
+    large-mobile: 480px, 
+    small-mobile-landscape: 529px, 
+    medium-mobile-landscape: 599px,
+    large-mobile-landscape: 699px,
+    xlarge-mobile-landscape: 872px,
+    default-tablette: 992px,
+    medium-desktop: 1160px,
+    large-dektop: 1369px,
+    xlarge-desktop: 1440px
+);
+
+$breakpoints-heights: (
+    smaller-height: 699px,
+    larger-height: 939px
+);
+
+/* Font sizes */
+
+$default-font-size: 2.25rem;
+
+$contact-button-fs: 1.25rem;
+$contact-button-fs-mobile: 1.0625rem;
+
+$drop-menu-font-size: 1.125rem;
+$drop-menu-font-size-mobile: 0.9375rem;
+
+$drop-menu-font-size: 1.125rem;
+$drop-menu-font-size-tablette: 0.9375rem;
+
+$header-font-size: 1.7rem;
+$header-font-size-tablette: 1.3rem;
+
+$name-font-size: 4rem;
+$name-font-size-mobile: 2.3rem;
+
+$location-font-size: 1.5rem;
+$location-font-size: 1.3125rem;
+
+$tagline-font-size: 1.125rem;
+$tagline-font-size-mobile: 0.9375rem;
+
+$lightbox-button-font-size: 3.8rem;
+
+/* Line height variables */
+
+$line-height: 1.5;
+
 /* Define color variables */
 $white: #FFF;
 $black: #000;
 $grey: #525252;
 $lightGrey: #FAFAFA;
 
-$red: #901C1C;
-$lightRed: #DB8876;
+$primary-color: #901C1C;
+$orange-light: #DB8876;
 $orange: #D3573C;
 
-/* Define size variables */
+/* Responsive variables */
 
 // Margins on Mobile
 $mobileMargins: 20px; 
@@ -18,3 +71,11 @@ $desktopMargins: 100px;
 
 // Border radius of elements
 $borderRadius: 5px;
+
+/* Logo variables */
+$logo-height: 3.125rem;
+$logo-height-tablette: 2.188rem;
+$logo-height-mobile: 1.8rem;
+$logo-height-mobile-landscape: 2rem;
+
+

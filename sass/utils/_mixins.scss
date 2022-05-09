@@ -1,0 +1,109 @@
+// Breakpoints mixins
+
+/***** MOBILE *****/
+/* From 280px */
+@mixin xSmallMobile {
+	@media screen and (max-width: map-get($breakpoints, xsmall-mobile)) {
+		@content;
+	}
+}
+
+/* From 320px */
+@mixin smallMobile {
+	@media screen and (max-width: map-get($breakpoints, small-mobile)) {
+		@content;
+	}
+}
+
+/* From 400px */
+@mixin mediumMobile {
+	@media screen and (max-width: map-get($breakpoints, medium-mobile)) {
+		@content;
+	}
+}
+
+/* From 480px */
+@mixin largeMobile {
+	@media screen and (max-width: map-get($breakpoints, large-mobile)) {
+		@content;
+	}
+}
+
+/* From 529px */
+@mixin smallMobileLandscape {
+	@media screen and (max-width: map-get($breakpoints, small-mobile-landscape)) {
+		@content;
+	}
+}
+
+/* From 599px */
+@mixin mediumMobileLandscape {
+	@media screen and (max-width: map-get($breakpoints, medium-mobile-landscape)) {
+		@content;
+	}
+}
+
+/* From 699px */
+@mixin LargeMobileLandscape {
+	@media screen and (max-width: map-get($breakpoints, large-mobile-landscape)) {
+		@content;
+	}
+}
+
+/* From 872px */
+@mixin xlargeMobileLandscape {
+	@media screen and (max-width: map-get($breakpoints, xlarge-mobile-landscape)) {
+		@content;
+	}
+}
+
+/***** TABLETTE *****/
+/* Height from 599px */
+@mixin smallHeightDevice {
+	@media screen and (max-height: map-get($breakpoints-heights, smaller-height)) {
+		@content;
+	}
+}
+
+/* Height from 939px */
+@mixin largeHeightDevice {
+	@media screen and (max-height: map-get($breakpoints-heights, larger-height)) {
+		@content;
+	}
+}
+
+/* From 992px */
+@mixin tablette {
+	@media screen and (max-width: map-get($breakpoints, default-tablette)) {
+		@content;
+	}
+}
+
+/***** DESKTOP *****/
+
+/* From 1160px */
+@mixin mediumDesktop {
+	@media screen and (max-width: map-get($breakpoints, medium-desktop)) {
+		@content;
+	}
+}
+
+/* From 1369px */
+@mixin LargeDesktop {
+	@media screen and (max-width: map-get($breakpoints, large-desktop)) {
+		@content;
+	}
+}
+
+/* From 1440px */
+@mixin xlargeDesktop {
+	@media screen and (max-width: map-get($breakpoints, xlarge-dektop)) {
+		@content;
+	}
+}
+
+
+
+
+
+

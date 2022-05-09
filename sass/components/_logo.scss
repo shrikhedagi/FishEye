@@ -1,0 +1,15 @@
+.logo {
+    height: $logo-height;
+
+    @include tablette {
+        height: $logo-height-tablette;
+    }
+
+    @include smallMobileLandscape {
+        height: $logo-height-landscape;
+    }
+
+    @include largeMobile {
+        height: $logo-height-mobile;
+    }
+}

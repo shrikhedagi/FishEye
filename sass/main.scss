@@ -1,6 +1,8 @@
 @import './utils/variables';
 @import './base/site-base';
+
 @import './components/navBar';
+@import './components/logo';
 @import './components/tags';
 @import './components/photographersThumbnail';
 @import './components/photographersProfil';
@@ -10,6 +12,8 @@
 @import './components/cardInfo';
 @import './components/lightBox';
 @import './components/modal';
+
 @import './layouts/layouts';
+
 @import './pages/homePage';
 @import './pages/photographerPage';
