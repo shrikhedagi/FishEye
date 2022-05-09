@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* HOMEPAGE BODY */
 
 .main-wrapper {
@@ -11,11 +11,9 @@
     }
 }
 
-=======
->>>>>>> main
 /* HEADER */
 
-.home-header {
+.site-header {
     height: 8rem;
     display: flex;
     flex-flow: row wrap;
@@ -28,22 +26,15 @@
         gap: 1rem 3rem;
     }
     
-<<<<<<< HEAD
-    &--photographPage {
-=======
-    &--photograph-page {
->>>>>>> main
+    &--photographerPage {
+
         @include mediumMobileLandscape {
             height: 6rem;
             justify-content: center;
         }
     }
 
-<<<<<<< HEAD
     &__title {
-=======
-    &__heading {
->>>>>>> main
         margin-right: 4.5rem;
         @include tablette {
             margin-right: 4.375rem;
@@ -68,21 +59,37 @@
             margin: initial;
         }
     }
-}
 
-<<<<<<< HEAD
+/* NAVIGATION */
 
-=======
-/* HOMEPAGE BODY */
+    &__nav {
+        margin-left: 4.5rem;
 
-.main-wrapper {
-    max-width: 1920px;
-    margin: 0 auto;
-    
-    overflow: visible;
-    
-    &--modal-open {
-        overflow: hidden;
+        @include tablette {
+            margin-left: 4.375rem;
+        }
+
+        @include mediumMobileLandscape {
+            margin-left: 3rem;
+        }
+
+        @include largeMobile {
+            margin-left: 1.8rem;
+        }
+
+        @include mediumMobile {
+            margin-left: 1.5rem;
+        }
+
+        @include smallMobile {
+            margin: initial;
+        }
+        
+            &--photographerPage {
+                @include mediumMobileLandscape {
+                margin: initial;
+            }
+        }
     }
 }
->>>>>>> main
+
