@@ -6,7 +6,7 @@
     }
 
     @include smallMobileLandscape {
-        height: $logo-height-landscape;
+        height: $logo-height-mobile-landscape;
     }
 
     @include largeMobile {

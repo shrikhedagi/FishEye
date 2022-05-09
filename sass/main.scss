@@ -1,4 +1,8 @@
 @import './utils/variables';
+@import './utils/mixins';
+
+@import "./vendors/normalize";
+
 @import './base/site-base';
 
 @import './components/navBar';
