@@ -1,7 +1,7 @@
 import Picture from "../media/picture.js";
 import Video from "../media/video.js";
 
-export default class Factory {
+export default class Factories {
 
     static mediaCreation(media) {
         if (media.hasOwnProperty("video")) { //If the object media has the specified property
