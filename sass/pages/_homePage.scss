@@ -1,0 +1,36 @@
+.photographer-section {
+    margin: 6.25rem 4.5rem;
+    display: grid;
+    grid-template-columns: $three-column;
+    gap: 5rem 10rem;
+
+    @include mediumDesktop {
+        margin: 6.25rem 4.5rem;
+        gap: 7rem;
+    }
+
+    @include tablette {
+        margin: 3rem 4.375rem;
+        grid-template-columns: $two-column;
+        gap: 5rem 4rem;
+    }
+
+    @include mediumMobileLandscape {
+        margin: 3rem 3rem;
+        gap: 4.375rem 3rem;
+    }
+
+    @include smallMobileLandscape {
+        margin: 3rem 1.8rem;
+        grid-template-columns: $one-column;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 0.3125rem;
+    }
+}

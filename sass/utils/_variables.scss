@@ -78,4 +78,15 @@ $logo-height-tablette: 2.188rem;
 $logo-height-mobile: 1.8rem;
 $logo-height-mobile-landscape: 2rem;
 
+/* Grid variables */
+$grid-columns-width: 0.8fr 8.814rem;
+$grid-rows-height: 2.5rem 1fr;
+$grid-template-mobile: $grid-rows-height / $grid-columns-width;
 
+$one-column: 1fr;
+$two-column: repeat(2, 1fr);
+$three-column: repeat(3, 1fr);
+
+$form-second-column-width: 8.814rem;
+
+$modal-grid-columns: 0.8fr;
