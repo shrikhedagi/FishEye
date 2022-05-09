@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* HOMEPAGE BODY */
 
 .main-wrapper {
@@ -10,6 +11,8 @@
     }
 }
 
+=======
+>>>>>>> main
 /* HEADER */
 
 .home-header {
@@ -25,14 +28,22 @@
         gap: 1rem 3rem;
     }
     
+<<<<<<< HEAD
     &--photographPage {
+=======
+    &--photograph-page {
+>>>>>>> main
         @include mediumMobileLandscape {
             height: 6rem;
             justify-content: center;
         }
     }
 
+<<<<<<< HEAD
     &__title {
+=======
+    &__heading {
+>>>>>>> main
         margin-right: 4.5rem;
         @include tablette {
             margin-right: 4.375rem;
@@ -59,4 +70,19 @@
     }
 }
 
+<<<<<<< HEAD
 
+=======
+/* HOMEPAGE BODY */
+
+.main-wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    
+    overflow: visible;
+    
+    &--modal-open {
+        overflow: hidden;
+    }
+}
+>>>>>>> main
