@@ -420,7 +420,6 @@ a:hover, a:focus,
 button:hover,
 button:focus {
   color: #000;
-  background-color: #DB8876;
 }
 a:focus-visible,
 button:focus-visible {
@@ -434,6 +433,11 @@ select {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+button:hover, button:focus,
+select:hover,
+select:focus {
+  background-color: #DB8876;
 }
 
 li {
@@ -456,6 +460,69 @@ li {
 @media screen and (max-width: 480px) {
   .logo {
     height: 1.8rem;
+  }
+}
+
+/* HOMEPAGE BODY */
+.main-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: visible;
+}
+.main-wrapper--modal-open {
+  overflow: hidden;
+}
+
+/* HEADER */
+.home-header {
+  height: 8rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 320px) {
+  .home-header {
+    justify-content: center;
+    align-content: center;
+    gap: 1rem 3rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .home-header--photographPage {
+    height: 6rem;
+    justify-content: center;
+  }
+}
+.home-header__title {
+  margin-right: 4.5rem;
+}
+@media screen and (max-width: 992px) {
+  .home-header__title {
+    margin-right: 4.375rem;
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .home-header__title {
+    margin-right: 3rem;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .home-header__title {
+    margin-right: 1.8rem;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .home-header__title {
+    margin-right: 1.5rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .home-header__title {
+    margin: initial;
   }
 }
 

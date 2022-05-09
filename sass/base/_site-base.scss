@@ -58,7 +58,6 @@ button {
     &:hover,
     &:focus {
         color: $black;
-        background-color: $orange-light;
     }
     &:focus-visible {
         outline: thin dotted;
@@ -72,6 +71,10 @@ select {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    &:hover,
+    &:focus { 
+        background-color: $orange-light;
+    }
 }
 
 li {
