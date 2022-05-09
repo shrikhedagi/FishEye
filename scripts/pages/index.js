@@ -1,7 +1,7 @@
-import photographer from "../dataManagement/photographers.js"
+import Photographer from "./dataManagement/photographers.js"
 
 /* Using fetch() to get data for homepage */
-async function getPhotographers() {
+async function getPhotographersProfil() {
     
     const photographers = fetch('data/profilData.json')
         
@@ -11,12 +11,12 @@ async function getPhotographers() {
             }
         })
 
-        .then(function(profilDataRetrieve) {
-            return profilDataRetrieve.photographers;
+        .then(function(retrieveProfil) {
+            return retrieveProfil.photographers;
         })
 
         .catch(function(errorMessage) {
-            console.log("Retrieving information regarding photophers' datas have failed ${errorMessage}.")
+            console.log("Retrieving information regarding photographers have failed ${errorMessage}.")
         });  
     
 
@@ -31,9 +31,9 @@ async function displayData(photographers) {
 
     photographers.forEach((photographer) => {
         
-        const photographerModel = new Photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        photographersSection.innerHTML += userCardDOM;
+        const photographerModel = new photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
+        const profilCardDOM = photographerModel.getProfilCardDOM();
+        photographersSection.innerHTML += profilCardDOM;
     });
 };
 

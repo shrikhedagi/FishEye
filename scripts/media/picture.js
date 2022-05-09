@@ -1,7 +1,6 @@
 export default class Picture {
 
     constructor(id, photographerId, title, image, likes, date, price, description) {
-
         this.id = id;
         this.photographerId = photographerId;
         this.title = title;
