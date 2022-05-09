@@ -1,4 +1,4 @@
-import Photographer from "./dataManagement/photographers.js"
+import Photographer from "../dataManagement/photographers.js"
 
 /* Using fetch() to get data for homepage */
 async function getPhotographersProfil() {
