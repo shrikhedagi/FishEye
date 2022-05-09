@@ -560,38 +560,38 @@ li {
   }
 }
 
-.photographer-section {
+.photographer_section {
   margin: 6.25rem 4.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5rem 10rem;
 }
 @media screen and (max-width: 1160px) {
-  .photographer-section {
+  .photographer_section {
     margin: 6.25rem 4.5rem;
     gap: 7rem;
   }
 }
 @media screen and (max-width: 992px) {
-  .photographer-section {
+  .photographer_section {
     margin: 3rem 4.375rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem 4rem;
   }
 }
 @media screen and (max-width: 599px) {
-  .photographer-section {
+  .photographer_section {
     margin: 3rem 3rem;
     gap: 4.375rem 3rem;
   }
 }
 @media screen and (max-width: 529px) {
-  .photographer-section {
+  .photographer_section {
     margin: 3rem 1.8rem;
     grid-template-columns: 1fr;
   }
 }
-.photographer-section a {
+.photographer_section a {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,4 +1,4 @@
-import Video from "./media/video.js";
+import Video from "../media/video.js";
 
 export default class Photographer {
     // Add a constructor for the datas
@@ -12,8 +12,8 @@ export default class Photographer {
         this.media = [media];
     }
 
-    // Add article section in index.html with getCardDOM
-    getProfilCardDOM() {
+    // Add article section in index.html body
+    getUserCardDOM() {
         const profilCard = `
         <article class="profil-card">
             <a href="./pages/photographerPage.html?id=${this.id}" aria-label="${this.name} - Fisheye">

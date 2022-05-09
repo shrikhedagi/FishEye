@@ -1,7 +1,7 @@
 import Photographer from "../dataManagement/photographers.js"
 
 /* Using fetch() to get data for homepage */
-async function getPhotographersProfil() {
+async function getPhotographers() {
     
     const photographers = fetch('data/profilData.json')
         
@@ -32,8 +32,8 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         
         const photographerModel = new photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
-        const profilCardDOM = photographerModel.getProfilCardDOM();
-        photographersSection.innerHTML += profilCardDOM;
+        const userCardDOM = photographerModel.getUserCardDOM();
+        photographersSection.innerHTML += userCardDOM;
     });
 };
 
