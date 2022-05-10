@@ -1,5 +1,3 @@
-import Video from "../media/video.js";
-
 export default class Photographer {
     // Add a constructor for the datas
     constructor(name, id, city, country, tagline, price, portrait, media) {
@@ -13,11 +11,11 @@ export default class Photographer {
     }
 
     // Add article section in index.html body
-    getProfilCardDOM() {
-        const profilCard = `
-        <article class="profil-card">
-            <a href="./pages/photographerPage.html?id=${this.id}" aria-label="${this.name} - Fisheye">
-                <img class="profil-card__picture" src="./${this.picture}" alt="" />
+    getProfilDOM() {
+        const profilCard = 
+        `<article class="profil-card">
+            <a href="./photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
+                <img alt="" class="profil-card__picture" src="./${this.picture}" />
                 <h2 class="profil-card__name">
                     ${this.name}
                 </h2>

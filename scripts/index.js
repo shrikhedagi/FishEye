@@ -1,9 +1,9 @@
-import Photographer from "../dataManagement/photographers.js"
+import Photographer from "./scripts/photographers.js";
 
 /* Using fetch() to get data for homepage */
 async function getPhotographers() {
     
-    const photographers = fetch('data/profilData.json')
+    const photographers = fetch('./data/profilData.json')
         
         .then(function(response) {
             if(response.ok) {
@@ -11,8 +11,8 @@ async function getPhotographers() {
             }
         })
 
-        .then(function(retrieveProfil) {
-            return retrieveProfil.photographers;
+        .then(function(fetchData) {
+            return fetchData.photographers;
         })
 
         .catch(function(errorMessage) {
@@ -32,8 +32,8 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         
         const photographerModel = new Photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
-        const profilDOM = photographerModel.getProfilDOM();
-        photographersSection.innerHTML += profilDOM;
+        const userCardDOM = photographerModel.getProfilDOM();
+        photographersSection.innerHTML += userCardDOM;
     });
 };
 
@@ -43,4 +43,5 @@ async function init() {
     displayData(photographers);
 };
 
+// Fetching data when the page has loaded
 document.addEventListener("DomContentLoaded",init);
