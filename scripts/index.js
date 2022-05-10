@@ -1,4 +1,4 @@
-import Photographer from "./scripts/photographers.js";
+import Photographer from "./dataDisplay.js";
 
 /* Using fetch() to get data for homepage */
 async function getPhotographers() {

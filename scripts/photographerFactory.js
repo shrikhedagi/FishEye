@@ -1,5 +1,5 @@
-import Picture from "../media/picture.js";
-import Video from "../media/video.js";
+import Picture from "./picture.js";
+import Video from "./video.js";
 
 export default class Factories {
 
