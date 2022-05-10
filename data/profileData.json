@@ -125,7 +125,7 @@
 			"date": "2011-12-08",
 			"price": 100,
 			"description": "Vidéo d'un turn a round d'une sculpture de cheval en bois."
-		  },
+		},
 		{
 			"id": 7502053,
 			"photographerId": 82,
@@ -156,7 +156,6 @@
 			"price": 55,
 			"description": "Sur un mur, on a dessiné un graffiti simpliste de pigeons rouges et de pigeons bleus ayant un bec jaune."
 		},
-
 		{
 			"id": 73852953,
 			"photographerId": 925,
@@ -295,7 +294,7 @@
 			"likes": 23,
 			"date": "2017-03-18",
 			"price": 45,
-			"description": "Sur bateau en bois navigant dans un lac border à droite par des montagnes boisées et à gauche comme devant par des montagnes moins peuplées par les arbres."		
+			"description": "Sur bateau en bois navigant dans un lac border à droite par des montagnes boisées et à gauche comme devant par des montagnes moins peuplées par les arbres."
 		},
 		{
 			"id": 92352352,
@@ -318,7 +317,7 @@
 			"description": "Portrait d’un homme en plan poitrine, ayant la tête tournée vers la droite (votre droite) et les yeux légèrement plisser, dont le visage et le cou sont éclairé par la lumière."
 		},
 		{
-			"id": 23523533, 
+			"id": 23523533,
 			"photographerId": 527,
 			"title": "Alexandra",
 			"image": "Portrait_Alexandra.jpg",
@@ -336,9 +335,7 @@
 			"date": "2019-01-02",
 			"price": 45,
 			"description": "Un vieux monsieur dont les rides du front et du coin des yeux sont apparentes parce qu'il sourit brièvement pour l'objectif. Il porte un polo sans avoir attaché les boutons et tient une cigarette dans sa droite."
-
 		},
-
 		{
 			"id": 623534343,
 			"photographerId": 243,
@@ -368,7 +365,6 @@
 			"date": "2019-04-07",
 			"price": 45,
 			"description": "Portrait en gros plan sur le visage d'une petite fille faisant la grimace en tenant son visage avec ses deux mains."
-
 		},
 		{
 			"id": 2523434634,
@@ -429,7 +425,7 @@
 			"date": "2019-08-23",
 			"price": 60,
 			"description": "Des chevaux sauvages galopant dans les montagnes."
-		  },
+		},
 		{
 			"id": 95234343,
 			"photographerId": 243,
@@ -440,7 +436,6 @@
 			"price": 60,
 			"description": "Un oiseau au pelage multicolore perché sur une branche faisant face à l'objectif, la tête de profil."
 		},
-
 		{
 			"id": 52343416,
 			"photographerId": 195,
@@ -489,7 +484,7 @@
 			"likes": 63,
 			"date": "2019-06-26",
 			"price": 60,
-			"description":"Fenêtre vouté avec vue sur une colline parsemé d'arbres et de maisons."
+			"description": "Fenêtre vouté avec vue sur une colline parsemé d'arbres et de maisons."
 		},
 		{
 			"id": 6234234343,
@@ -530,7 +525,7 @@
 			"date": "2020-01-20",
 			"price": 65,
 			"description": "Vue aérienne d'une autoraute de Buenos Aires filmé par un drone."
-		  },
+		},
 		{
 			"id": 3523523534,
 			"photographerId": 195,
@@ -550,7 +545,7 @@
 			"date": "2018-02-30",
 			"price": 70,
 			"description": "Une acrobate faisant des figures en tenant un élastique suspendu en l'air."
-		  },
+		},
 		{
 			"id": 235234343,
 			"photographerId": 930,
