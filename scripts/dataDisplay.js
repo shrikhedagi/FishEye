@@ -6,7 +6,7 @@ export default class Photographer {
         this.location = `${city}, ${country}`;
         this.tagline = tagline;
         this.price = price;
-        this.picture = `assets/profil_Pictures/${portrait}`;
+        this.portrait = `assets/photos/profil_Pictures/${portrait}`;
         this.media = [media];
     }
 
@@ -15,7 +15,7 @@ export default class Photographer {
         const profilCard = 
         `<article class="profil-card">
             <a href="./photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
-                <img alt="" class="profil-card__picture" src="./${this.picture}" />
+                <img alt="" class="profil-card__picture" src="./${this.portrait}" />
                 <h2 class="profil-card__name">
                     ${this.name}
                 </h2>

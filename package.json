@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Case Study 6 - OpenClassrooms",
     "main": "index.js",
+    "type": "module",
     "scripts": {
       "lint": "eslint --max-warnings=0 .",
       "sass": "sass --watch ./sass/main.scss:./public/css/main.css",
