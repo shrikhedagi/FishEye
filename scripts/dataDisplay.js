@@ -1,16 +1,29 @@
-export default class photographerCard {
-    // Add a constructor for the datas
+/**
+ * @param {string} - Photographer's data.
+ */
+
+export default class Photographer {
+    // Add a constructor for the data
     constructor(photographer) {
         this._photographer = photographer
     }
 
+    /**
+     * 
+     * @returns {HTMLElement} - Return the value.
+     */
+
     // Add article section in index.html body
-    getProfilDOM() {
+    getCardDOM() {
         const profilCard = document.createElement('article');
-        card.classList.add('profil-card');
-        card.innerHTML = `
-            <a href="./photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
-                <img alt="" class="profil-card__picture" src="assets/photos/profil_Pictures/${this._photographer.portrait}" />
+        profilCard.classList.add('profil-card');
+        
+        profilCard.innerHTML = `
+            <a href="photographer.html?id=${this._photographer.id}" aria-label="${this._photographer.name} - Fisheye">
+                <img 
+                alt="${this._photographer.name}" 
+                class="profil-card__picture" 
+                src="${this._photographer.picture}" />
                 <h2 class="profil-card__name">
                     ${this._photographer.name}
                 </h2>
@@ -29,6 +42,6 @@ export default class photographerCard {
         </article>`;
 
         // Launch
-        return profilCard;
+        return profilCard
     }
 }

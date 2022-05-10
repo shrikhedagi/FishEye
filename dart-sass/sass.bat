@@ -7,4 +7,3 @@ set arguments=%*
 "%SCRIPTPATH%\src\dart.exe" "%SCRIPTPATH%\src\sass.snapshot" %arguments%
 
 ./dart-sass/sass.bat sass/main.scss public/css/main.css --watch 
-./dart-sass/sass.bat sass/main.scss public/css/main.min.css --style:compressed --no-source-map

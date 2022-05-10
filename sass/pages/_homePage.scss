@@ -63,7 +63,7 @@
             background-color: #C4C4C4;
             border-radius: 50%;
         
-            @include from-tablette-and-less {
+            @include tablette {
                 width: 11.75rem;
                 height: 11.75rem;
             }
