@@ -35,3 +35,51 @@
     }
 }
 
+.profil-card {
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    
+    &__name {
+        @include tablette {
+            font-size: 1.5rem;
+        }
+
+        @include mediumMobileLandscape {
+            font-size: 1.3rem;
+        }
+
+        @include smallMobileLandscape {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.thumbnail {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include smallMobile {
+        margin: initial;
+    }
+
+    &__location {
+        margin-bottom: 0.1875rem;
+        font-size: 0.8125rem;
+        color: $primary-color;
+    }
+
+    &__tagline {
+        font-size: 0.625rem;
+        margin-bottom: 0.3rem;
+    }
+
+    &__price {
+        font-size: 0.5625rem;
+        font-weight: normal;
+        color: $mediumGrey;
+    }
+}
+

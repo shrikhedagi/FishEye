@@ -29,7 +29,7 @@ export default class Photographer {
                 <p class="thumbnail__tagline">
                     ${this.tagline}
                 </p>
-                <p class="thumbnail__price-per-day">
+                <p class="thumbnail__price">
                     ${this.price}€/jour
                 </p>
             </div>

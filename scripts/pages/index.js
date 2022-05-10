@@ -5,9 +5,9 @@ async function getPhotographers() {
     
     const photographers = fetch('data/profilData.json')
         
-        .then(function(result) {
-            if(result.ok) {
-                return result.json();
+        .then(function(response) {
+            if(response.ok) {
+                return response.json();
             }
         })
 
@@ -16,7 +16,7 @@ async function getPhotographers() {
         })
 
         .catch(function(errorMessage) {
-            console.log("Retrieving information regarding photographers have failed ${errorMessage}.")
+            console.log("Request failed ${errorMessage}!")
         });  
     
 
@@ -31,7 +31,7 @@ async function displayData(photographers) {
 
     photographers.forEach((photographer) => {
         
-        const photographerModel = new photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
+        const photographerModel = new Photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.innerHTML += userCardDOM;
     });
