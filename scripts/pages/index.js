@@ -32,8 +32,8 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         
         const photographerModel = new Photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        photographersSection.innerHTML += userCardDOM;
+        const profilDOM = photographerModel.getProfilDOM();
+        photographersSection.innerHTML += profilDOM;
     });
 };
 

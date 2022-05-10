@@ -13,7 +13,7 @@ export default class Photographer {
     }
 
     // Add article section in index.html body
-    getUserCardDOM() {
+    getProfilCardDOM() {
         const profilCard = `
         <article class="profil-card">
             <a href="./pages/photographerPage.html?id=${this.id}" aria-label="${this.name} - Fisheye">

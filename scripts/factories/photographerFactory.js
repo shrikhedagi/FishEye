@@ -4,7 +4,7 @@ import Video from "../media/video.js";
 export default class Factories {
 
     static mediaCreation(media) {
-        if (media.hasOwnProperty("video")) { //If the object media has the specified property
+        if (media.hasOwnProperty("video")) { //If the object media has the specified property return the video
             return new Video(media.id, media.photographerID, media.title, media.video, media.likes, media.date, media.price, media.description);
         
         }else{
