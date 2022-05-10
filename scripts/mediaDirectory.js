@@ -1,4 +1,4 @@
-export default class madiaDirectory {
+export default class mediaDirectory {
 
     static getMediaDirectory(currentPhotographer) {
         var firstName = currentPhotographer.name.match(/^\w+-?\w+(?!\w)/i);

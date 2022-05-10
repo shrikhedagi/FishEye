@@ -1,38 +1,34 @@
-export default class Photographer {
+export default class photographerCard {
     // Add a constructor for the datas
-    constructor(name, id, city, country, tagline, price, portrait, media) {
-        this.name = name;
-        this.id = id;
-        this.location = `${city}, ${country}`;
-        this.tagline = tagline;
-        this.price = price;
-        this.portrait = `assets/photos/profil_Pictures/${portrait}`;
-        this.media = [media];
+    constructor(photographer) {
+        this._photographer = photographer
     }
 
     // Add article section in index.html body
     getProfilDOM() {
-        const profilCard = 
-        `<article class="profil-card">
+        const profilCard = document.createElement('article');
+        card.classList.add('profil-card');
+        card.innerHTML = `
             <a href="./photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
-                <img alt="" class="profil-card__picture" src="./${this.portrait}" />
+                <img alt="" class="profil-card__picture" src="assets/photos/profil_Pictures/${this._photographer.portrait}" />
                 <h2 class="profil-card__name">
-                    ${this.name}
+                    ${this._photographer.name}
                 </h2>
             </a>
             <div class="thumbnail">
                 <p class="thumbnail__location" lang="en">
-                    ${this.location}
+                    ${this._photographer.location}
                 </p>
                 <p class="thumbnail__tagline">
-                    ${this.tagline}
+                    ${this._photographer.tagline}
                 </p>
                 <p class="thumbnail__price">
-                    ${this.price}€/jour
+                    ${this._photographer.price}€/jour
                 </p>
             </div>
         </article>`;
 
+        // Launch
         return profilCard;
     }
 }
