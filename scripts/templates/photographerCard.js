@@ -6,7 +6,7 @@ export default class photographerCard {
         this.location = `${city}, ${country}`;
         this.tagline = tagline;
         this.price = price;
-        this.picture = `/assets/photographers/photographers-id-photos/${portrait}`;
+        this.picture = `assets/photographers/photographers-id-photos/${portrait}`;
     }
 
     // Add article section in index.html body
