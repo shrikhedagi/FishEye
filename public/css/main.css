@@ -496,7 +496,7 @@ li {
   }
 }
 .site-header__title {
-  margin-right: 4.5rem;
+  margin-right: 7rem;
 }
 @media screen and (max-width: 992px) {
   .site-header__title {
@@ -527,7 +527,7 @@ li {
   }
 }
 .site-header__nav {
-  margin-left: 4.5rem;
+  margin-left: 8.5rem;
 }
 @media screen and (max-width: 992px) {
   .site-header__nav {
@@ -564,7 +564,7 @@ li {
   margin: 6.25rem 4.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5rem 10rem;
+  gap: 5rem 20rem;
 }
 @media screen and (max-width: 1160px) {
   .photographer_section {
@@ -607,17 +607,17 @@ li {
 }
 @media screen and (max-width: 992px) {
   .profil-card__name {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 @media screen and (max-width: 599px) {
   .profil-card__name {
-    font-size: 1.3rem;
+    font-size: 1.27rem;
   }
 }
 @media screen and (max-width: 529px) {
   .profil-card__name {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -662,15 +662,15 @@ li {
 }
 .thumbnail__location {
   margin-bottom: 0.1875rem;
-  font-size: 0.8125rem;
+  font-size: 1.25rem;
   color: #901C1C;
 }
 .thumbnail__tagline {
-  font-size: 0.625rem;
+  font-size: 1rem;
   margin-bottom: 0.3rem;
 }
 .thumbnail__price {
-  font-size: 0.5625rem;
+  font-size: 1rem;
   font-weight: normal;
   color: #757575;
 }

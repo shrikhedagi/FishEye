@@ -2,7 +2,7 @@
     margin: 6.25rem 4.5rem;
     display: grid;
     grid-template-columns: $three-column;
-    gap: 5rem 10rem;
+    gap: 5rem 20rem;
 
     @include mediumDesktop {
         margin: 6.25rem 4.5rem;
@@ -44,15 +44,15 @@
     
     &__name {
         @include tablette {
-            font-size: 1.5rem;
-        }
-
-        @include mediumMobileLandscape {
             font-size: 1.3rem;
         }
 
+        @include mediumMobileLandscape {
+            font-size: 1.27rem;
+        }
+
         @include smallMobileLandscape {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
     }
 }
@@ -99,17 +99,17 @@
 
     &__location {
         margin-bottom: 0.1875rem;
-        font-size: 0.8125rem;
+        font-size: 1.25rem;
         color: $primary-color;
     }
 
     &__tagline {
-        font-size: 0.625rem;
+        font-size: 1rem;
         margin-bottom: 0.3rem;
     }
 
     &__price {
-        font-size: 0.5625rem;
+        font-size: 1rem;
         font-weight: normal;
         color: $mediumGrey;
     }

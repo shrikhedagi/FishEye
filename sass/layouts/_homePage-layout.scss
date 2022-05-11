@@ -35,7 +35,7 @@
     }
 
     &__title {
-        margin-right: 4.5rem;
+        margin-right: 7rem;
         @include tablette {
             margin-right: 4.375rem;
             font-size: 1.7rem;
@@ -63,7 +63,7 @@
 /* NAVIGATION */
 
     &__nav {
-        margin-left: 4.5rem;
+        margin-left: 8.5rem;
 
         @include tablette {
             margin-left: 4.375rem;
