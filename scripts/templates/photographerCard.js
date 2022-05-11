@@ -2,7 +2,7 @@
  * @param {string} - Photographer's data.
  */
 
-export default class Photographer {
+export default class photographerCard {
     // Add a constructor for the data
     constructor(name, id, city, country, tagline, price, portrait, media) {
         this.name = name;
