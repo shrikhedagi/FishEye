@@ -3,7 +3,7 @@ import Factories from "../factory/factories.js"; //Import factory function
 import mediaDirectory from "../utils/mediaDirectory.js"; // Import directoty for medias (video + pictures)
 
 async function getProfilData() {
-    const profilData = fetch("/data/profileData.json")
+    const profilData = fetch("../data/profilData.json")
     
     .then(function(response) {
         if(response.ok) {
