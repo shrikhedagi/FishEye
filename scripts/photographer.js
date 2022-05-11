@@ -1,5 +1,5 @@
 import Photographer from "./dataDisplay.js";
-import Factories from "./photographerFactory.js";
+import Factories from "./factories.js";
 
 async function getProfilData() {
     const fetchData = fetch("../data/profilData.json")

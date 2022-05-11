@@ -4,10 +4,15 @@
 
 export default class Photographer {
     // Add a constructor for the data
-    constructor(photographer) {
-        this._photographer = photographer
+    constructor(name, id, city, country, tagline, price, portrait, media) {
+        this.name = name;
+        this.id = id;
+        this.location = `${city}, ${country}`;
+        this.tagline = tagline;
+        this.price = price;
+        this.picture = `assets/photographers/photographers-id-photos/${portrait}`;
+        this.media = [media];
     }
-
     /**
      * 
      * @returns {HTMLElement} - Return the value.
@@ -19,24 +24,24 @@ export default class Photographer {
         profilCard.classList.add('profil-card');
         
         profilCard.innerHTML = `
-            <a href="photographer.html?id=${this._photographer.id}" aria-label="${this._photographer.name} - Fisheye">
+            <a href="photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
                 <img 
-                alt="${this._photographer.name}" 
+                alt="${this.name}" 
                 class="profil-card__picture" 
-                src="${this._photographer.picture}" />
+                src="${this.picture}" />
                 <h2 class="profil-card__name">
-                    ${this._photographer.name}
+                    ${this.name}
                 </h2>
             </a>
             <div class="thumbnail">
                 <p class="thumbnail__location" lang="en">
-                    ${this._photographer.location}
+                    ${this.location}
                 </p>
                 <p class="thumbnail__tagline">
-                    ${this._photographer.tagline}
+                    ${this.tagline}
                 </p>
                 <p class="thumbnail__price">
-                    ${this._photographer.price}€/jour
+                    ${this.price}€/jour
                 </p>
             </div>
         </article>`;
