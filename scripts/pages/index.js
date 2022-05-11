@@ -3,7 +3,7 @@ import photographerCard from "../templates/photographerCard.js";
 /* Using fetch() to get data for homepage */
 async function getPhotographers() {
     
-    const photographers = fetch('./data/profileData.json')
+    const photographers = fetch('data/profileData.json')
         
         .then(function(response) {
             if(response.ok) {
