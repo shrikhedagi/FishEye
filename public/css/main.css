@@ -561,7 +561,7 @@ li {
 }
 
 .photographer_section {
-  margin: 6.25rem 4.5rem;
+  margin: 3.25rem 4.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5rem 20rem;
