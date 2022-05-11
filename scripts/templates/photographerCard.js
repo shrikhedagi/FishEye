@@ -1,29 +1,19 @@
-/**
- * @param {string} - Photographer's data.
- */
-
 export default class photographerCard {
     // Add a constructor for the data
-    constructor(name, id, city, country, tagline, price, portrait, media) {
+    constructor(name, id, city, country, tagline, price, portrait) {
         this.name = name;
         this.id = id;
         this.location = `${city}, ${country}`;
         this.tagline = tagline;
         this.price = price;
-        this.picture = `assets/photographers/photographers-id-photos/${portrait}`;
-        this.media = [media];
+        this.picture = `/assets/photographers/photographers-id-photos/${portrait}`;
     }
-    /**
-     * 
-     * @returns {HTMLElement} - Return the value.
-     */
 
     // Add article section in index.html body
-    getCardDOM() {
-        const profilCard = document.createElement('article');
-        profilCard.classList.add('profil-card');
-        
-        profilCard.innerHTML = `
+    renderCard() {
+    const profilCard = `
+        <article class="thumb-photographer">
+
             <a href="photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
                 <img 
                 alt="${this.name}" 
