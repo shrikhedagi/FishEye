@@ -35,6 +35,8 @@
     }
 }
 
+// Homepage article section (see photographerCard.js)
+
 .profil-card {
     display: flex;
     align-items: center; 
@@ -53,34 +55,37 @@
             font-size: 1.5rem;
         }
     }
-
-    &__picture {
-            width: 12.5rem;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-            height: 12.5rem;
-            -o-object-fit: cover;
-               object-fit: cover;
-            background-color: #C4C4C4;
-            border-radius: 50%;
-        
-            @include tablette {
-                width: 11.75rem;
-                height: 11.75rem;
-            }
-        
-            @include mediumMobileLandscape {
-                width: 11.55rem;
-                height: 11.55rem;
-            }
-        
-            @include smallMobileLandscape {
-                width: 11.75rem;
-                height: 11.75rem;
-            }
-            
-    }
 }
 
+// User profil picture in homepage
+
+.user-picture {
+    width: 12.5rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    height: 12.5rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background-color: #C4C4C4;
+    border-radius: 50%;
+
+    @include tablette {
+        width: 11.75rem;
+        height: 11.75rem;
+    }
+
+    @include mediumMobileLandscape {
+        width: 11.55rem;
+        height: 11.55rem;
+    }
+
+    @include smallMobileLandscape {
+        width: 11.75rem;
+        height: 11.75rem;
+    }
+    
+}
+
+// BText block under profil picture in homepage
 
 .thumbnail {
     justify-content: space-evenly;

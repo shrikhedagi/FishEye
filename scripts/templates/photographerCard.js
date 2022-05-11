@@ -12,12 +12,12 @@ export default class photographerCard {
     // Add article section in index.html body
     renderCard() {
     const profilCard = `
-        <article class="thumb-photographer">
+        <article class="profil-card">
 
             <a href="photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
                 <img 
                 alt="${this.name}" 
-                class="profil-card__picture" 
+                class="user-picture" 
                 src="${this.picture}" />
                 <h2 class="profil-card__name">
                     ${this.name}
