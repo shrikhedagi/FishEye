@@ -14,7 +14,7 @@ export default class photographerCard {
     const profilCard = `
         <article class="profil-card">
 
-            <a href="photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
+            <a class="profil-link" href="photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
                 <img 
                 alt="${this.name}" 
                 class="user-picture" 

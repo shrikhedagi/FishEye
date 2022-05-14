@@ -388,7 +388,8 @@ h2 {
   font-size: 2.25rem;
   line-height: 1.5;
   text-align: center;
-  color: #525252;
+  color: #D3573C;
+  margin-bottom: 8px;
 }
 
 p {
@@ -402,13 +403,10 @@ a {
   text-decoration: none;
 }
 a:visited {
-  color: #901C1C;
-}
-a:visited h2 {
-  color: #D3573C;
+  color: #DB8876;
 }
 a:hover h2, a:focus h2 {
-  color: #000;
+  color: #DB8876;
 }
 
 a,
@@ -442,6 +440,13 @@ select:focus {
 
 li {
   list-style-type: none;
+}
+
+.user-picture {
+  transition: all 0.3s ease-in;
+}
+.user-picture:hover {
+  transform: scale(1.1);
 }
 
 .logo {
@@ -622,9 +627,9 @@ li {
 }
 
 .user-picture {
+  height: 12.5rem;
   width: 12.5rem;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-  height: 12.5rem;
   -o-object-fit: cover;
   object-fit: cover;
   background-color: #C4C4C4;

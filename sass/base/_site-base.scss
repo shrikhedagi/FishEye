@@ -23,7 +23,8 @@ h2 {
     font-size: $default-font-size;
     line-height: $line-height;
     text-align: center;
-    color: $grey;
+    color: $orange;
+    margin-bottom: 8px;
 }
 
 p {
@@ -35,17 +36,15 @@ p {
 a {
     display: block;
     text-decoration: none;
+
     &:visited {
-        color: $primary-color;
-        h2 {
-            color: $orange;
-        }
+        color: $orange-light;
     }
 
     &:hover,
     &:focus {
         h2 {
-            color: $black;
+           color: $orange-light;
         }
     }
 }
