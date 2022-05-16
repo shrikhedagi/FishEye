@@ -39,29 +39,4 @@ export default class photographerInfo {
         // Launch
         return profilCard
     }
-
-    // Add section banner HTML content in photographer.html   
-    renderBanner() {
-        const bannerHTML = `
-        <section class="photographer-banner">
-    
-            <div class="photographer-banner__headline">
-                <h1 class="photographer-banner__name">${this.name}</h1>
-                <p class="photographer-banner__location">${this.location}</p>
-                <p class="photographer-banner__tagline">${this.tagline}</p>
-            </div>
-                
-                <button type="button" class="button button-contact" id="contact-btn" aria-label="Contact Me">Contactez-moi</button>
-                
-                <img 
-                class="user-picture photographer-banner__picture" 
-                src="./public/photographers/photographers-id-photos/${this.picture}" 
-                alt="${this.name}" 
-                />
-                
-        </section>`;
-    
-        //LAUNCH
-        return bannerHTML;
-    }
 }
