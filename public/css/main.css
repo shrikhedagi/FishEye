@@ -380,7 +380,7 @@ h1 {
   margin: 0;
   font-weight: normal;
   font-size: 2.25rem;
-  color: #901C1C;
+  color: #901c1c;
 }
 
 h2 {
@@ -388,7 +388,7 @@ h2 {
   font-size: 2.25rem;
   line-height: 1.5;
   text-align: center;
-  color: #D3573C;
+  color: #d3573c;
   margin-bottom: 8px;
 }
 
@@ -403,10 +403,10 @@ a {
   text-decoration: none;
 }
 a:visited {
-  color: #DB8876;
+  color: #db8876;
 }
 a:hover h2, a:focus h2 {
-  color: #DB8876;
+  color: #db8876;
 }
 
 a,
@@ -435,7 +435,7 @@ select {
 button:hover, button:focus,
 select:hover,
 select:focus {
-  background-color: #DB8876;
+  background-color: #db8876;
 }
 
 li {
@@ -466,6 +466,23 @@ li {
   .logo {
     height: 1.8rem;
   }
+}
+
+.button {
+  width: 170px;
+  height: 70px;
+  padding: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  color: #FFF;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-button {
+  order: 2;
 }
 
 /* HOMEPAGE BODY */
@@ -565,17 +582,57 @@ li {
   }
 }
 
+.photographer-banner {
+  background-color: #FAFAFA;
+  height: 300px;
+  margin: 0 100px;
+  padding: 3.5rem 3.125rem 2.625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.3125rem;
+}
+.photographer-banner__headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  order: 1;
+}
+.photographer-banner__name {
+  font-size: 4rem;
+  line-height: 1.5;
+  color: #d3573c;
+}
+.photographer-banner__location {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #901c1c;
+}
+.photographer-banner__tagline {
+  font-size: 1.125rem;
+  color: #525252;
+}
+.photographer-banner__picture {
+  order: 3;
+}
+@media screen and (max-width: 1160px) {
+  .photographer-banner__picture {
+    order: 2;
+  }
+}
+@media screen and (max-width: 699px) {
+  .photographer-banner__picture {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+}
+
 #contact_modal {
   display: none;
 }
 
-.photograph-header {
-  background-color: #FAFAFA;
-  height: 300px;
-  margin: 0 100px;
-}
-
-.contact_button {
+.button-contact {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -590,7 +647,7 @@ li {
 
 .modal {
   border-radius: 5px;
-  background-color: #DB8876;
+  background-color: #FFF;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -739,7 +796,7 @@ forminput {
 .thumbnail__location {
   margin-bottom: 0.1875rem;
   font-size: 1.25rem;
-  color: #901C1C;
+  color: #901c1c;
 }
 .thumbnail__tagline {
   font-size: 1rem;

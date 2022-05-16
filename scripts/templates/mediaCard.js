@@ -1,21 +1,29 @@
 class mediaCard {
     constructor(media){
-        this._media = media;
+        this.media = [media];
     }
-renderMediaCard(){
-    const mediaCardHTML = `
-            ${this._media.source}
-            <footer class="picture-card__info">
-                <h2 class="picture-card__title">${this._media.title}</h2>
-                <div class="picture-card__counter-like">
-                    <p class="picture-card__counter-like-value">${this._media.likes}</p>
-                    <button type="button" class="picture-card__counter-like-action" aria-label="likes">
-                        <i class="fas fa-heart"></i>
-                    </button>
-                </div>
-            </footer>
-                <time datetime="${this._media.date}"></time>
-        `;
-        return mediaCardHTML;
+renderMediaCard(media){
+    const mediaDirectoryPath = mediaDirectory.renderMediaDirectoryPath(this);
+    let mediaOuterHTML = "";
+    let mediaSource = "";
+    
+    
+    const mediaCards = `
+        <article class="media-cards">
+        <a href="${mediaSource}" class="media-cards__lightbox-link" aria-label="${media.title}, lightbox closeup view">
+            ${mediaOuterHTML}
+        </a>
+        <div class="media-cards-details">
+            <h3 class="media-cards-details__title" title="${media.title}">
+                ${media.title}
+            </h3>
+            <button class="like-button sr-only-container" aria-label="${media.likes} likes">
+                <span class="media-like-button__number-of-likes">${media.likes}</span>
+                <span class="media-like-button__icon fas fa-heart" aria-hidden="true"></span>
+            </button>
+        </div>
+    </article>`;
+
+        return mediaCards;
     }
 }

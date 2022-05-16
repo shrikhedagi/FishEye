@@ -44,7 +44,7 @@
 }
 
 /* From 699px */
-@mixin LargeMobileLandscape {
+@mixin largeMobileLandscape {
 	@media screen and (max-width: map-get($breakpoints, large-mobile-landscape)) {
 		@content;
 	}

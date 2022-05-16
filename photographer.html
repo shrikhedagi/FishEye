@@ -19,30 +19,32 @@
     </header>
 
     <main id="main" aria-hidden="false">
-      <section class="photographer-banner" aria-label="Info bannière du photographe"></section>
-      
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      <section class="photographer-banner" aria-label="Info bannière du photographe">
+      </section>
+
+      <form class="select-menu-form" name="select-menu-form" method="get" action="#" novalidate>
+				<p id="select-menu-label" class="select-option-menu__label">Trier par</p>
+
+				<p class="select-option">
+					<button type="button" id="select-option-trigger" class="select-option__selected-item" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-option-label select-option-trigger">
+						Popularité
+						<span class="fas fa-chevron-down select-option__arrow"></span>
+					</button>
+				</p>
+			</form>
+
+      <article id="photographer-gallery" class="photographer-gallery sr-container" aria-labelledby="header for photographer's photos and videos gallery">
+				<h2 class="sr-container__gallery" id="photographer-gallery__header">Gallerie photos et videos des travaux du photographe</h2>
+			</article>
+
+      <aside class="likes-and-price-container">
+			</aside>
     </main>
 
-    <div id="contact_modal">
-			<div class="modal">
+    <div id="lightbox" class="modal modal--close" role="dialog" aria-label="lightbox closeup for images" aria-hidden="true">
+		</div>
 
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="./assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-
-			</div>
+		<div id="contact-form" class="modal modal--close contact-modal" aria-hidden="true">
 		</div>
 
     <script type="module" src="./scripts/pages/photographer.js"></script>

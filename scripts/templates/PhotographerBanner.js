@@ -26,7 +26,7 @@ export default class photographerInfo {
                 alt="${this.name}" 
                 />`;
 
-        //LAUNCH
+        // Launch
         return banner;
     }
 }

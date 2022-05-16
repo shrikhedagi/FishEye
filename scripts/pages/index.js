@@ -1,4 +1,4 @@
-import photographerInfo from "../templates/photographerCardAndBanner.js";
+import photographerCard from "../templates/photographerCard.js";
 
 /* Using fetch() to get data for homepage */
 async function getPhotographers() {
@@ -29,7 +29,7 @@ function displayData(photographers) {
 
     photographers.forEach((photographer) => {
 
-        const photographerModel = new photographerInfo(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
+        const photographerModel = new photographerCard(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
         const userCardDOM = photographerModel.renderCard();
         photographersSection.innerHTML += userCardDOM;
 
