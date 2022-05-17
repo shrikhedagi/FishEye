@@ -50,7 +50,8 @@ a {
 }
 
 a,
-button {
+button,
+select {
     transition: color 0.3s;
     transition: background-color 0.3s;
 
@@ -68,7 +69,8 @@ select {
     font-weight: bold;
     color: $white;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; 
+    background-color: $primary-color;
     cursor: pointer;
     &:hover,
     &:focus { 

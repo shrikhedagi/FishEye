@@ -10,16 +10,19 @@
     flex-direction: row; 
 
     &__label {
-        margin-bottom: 1rem;
         margin-right: 1rem;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        color: $black;
     }
+}
 
-    &__option {
-        width: 10.625rem;
-        line-height: 1.5;
-        position: relative;
-        height: 10.625rem;
-    }
+.selected-option {
+    width: 10.625rem;
+    height: 4.3125rem;
+    position: relative;
+    line-height: 1.5;
 
     &__items {
         display: inline-flex;
@@ -32,15 +35,22 @@
         align-items: center;
         justify-content: space-between;
         background-color: $primary-color;
-        font-size: 1.125rem;
+        font-size: 1.5rem;
         color: $white;
-        padding: 1.5rem 1.125rem 1.4375rem 1.25rem;
+        padding: 1.4375rem 1.125rem 1.4375rem 1.25rem;
 
+    }
+
+    &__trigger {
+        border-radius: 0.5tem;
+        
     }
 
     &__arrow {
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        font-weight: 900;
+        font-family: "FontAwesome 6 Free";
     }
 }
