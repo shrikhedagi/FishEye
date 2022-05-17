@@ -35,21 +35,13 @@
         align-items: center;
         justify-content: space-between;
         background-color: $primary-color;
-        font-size: 1.5rem;
+        font-size: 1.175rem;
         color: $white;
-        padding: 1.4375rem 1.125rem 1.4375rem 1.25rem;
+        padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 
-    }
-
-    &__trigger {
-        border-radius: 0.5tem;
-        
     }
 
     &__arrow {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
         font-weight: 900;
         font-family: "FontAwesome 6 Free";
     }

@@ -22,16 +22,15 @@
       <section class="photographer-banner" aria-label="Info bannière du photographe">
       </section>
 
-      <form action="photographer.html" class="select-menu" name="select-menu-form" method="get" action="#" novalidate>
-				<label id="select-menu-label" aria-label="select-menu" class="select-menu__label">Trier par</label>
+      <form class="select-menu" name="select-menu-form" method="get" action="#" novalidate>
+				<label id="select-menu-label" class="select-menu__label">Trier par</label>
 
-				<select class="selected-option">
-					<option value="Popularite" id="selected-option__trigger" class="selected-option__items" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="selected-option-label selected-option-trigger">
+				<p class="selected-option">
+					<button type="button" id="selected-option__trigger" class="selected-option__items" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-option-label select-option-trigger">
 						Popularité
-          </option>
-          <option value="Date" class="selected-option__date">Date</option> 
-          <option value="Titre" class="selected-option__title">Titre</option>
-				</select>
+						<span class="fas fa-chevron-down selected-option__arrow"></span>
+					</button>
+				</p>
 			</form>
 
       <article id="photographer-gallery" class="photographer-gallery sr-container" aria-labelledby="header for photographer's photos and videos gallery">
