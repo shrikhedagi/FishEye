@@ -1,6 +1,6 @@
 export default class mediaDirectory {
 
-    static getMediaDirectory(currentPhotographer) {
+    static renderMediaDirectory(currentPhotographer) {
         var firstName = currentPhotographer.name.match(/^\w+-?\w+(?!\w)/i);
         var mediaDirectoryName = firstName[0].toLowerCase();
     

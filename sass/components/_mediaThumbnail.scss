@@ -15,3 +15,29 @@
         background-color: $mouseGrey;
     }
 }
+
+.media-cards-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.60rem;
+
+    @include mediumDesktop  {
+        font-size: 1.4rem;
+    }
+
+    &__title {
+        max-width: 12rem;
+        color: $primary-color;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.sr-only-container {
+    position: relative;
+    overflow: hidden;
+}

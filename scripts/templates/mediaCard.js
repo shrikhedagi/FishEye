@@ -7,7 +7,7 @@ renderMediaCard(media){
     let mediaOuterHTML = "";
     let mediaSource = "";
 
-    // To sort out whether it's a video or a picture
+    // To sort out whether an object it's not an instance of a given constructor
     if (media instanceof Video) { // if the objet "media" instanceof the constructor "video" ==> return video
 
         mediaSource = `${mediaDirectoryPath}/videos/${media.video}`;
@@ -26,7 +26,7 @@ renderMediaCard(media){
     
     // Add the structure HTML in photographer.html
     const mediaCards = `
-        <article class="media-cards">
+    <section class="media-cards">
         <a href="${mediaSource}" class="media-cards__lightbox-link" aria-label="${media.title}, lightbox closeup view">
             ${mediaOuterHTML}
         </a>
@@ -39,7 +39,7 @@ renderMediaCard(media){
                 <span class="media-like-button__icon fas fa-heart" aria-hidden="true"></span>
             </button>
         </div>
-    </article>`;
+    </section>`;
 
         return mediaCards;
     }

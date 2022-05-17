@@ -16,3 +16,25 @@
 .contact-button {
     order: 2;
 }
+
+// Media card like button
+
+.like-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+    background-color: transparent;
+    transition: outline .3s,color .3s;
+
+    &__number-of-likes {
+        font-size: 1.5rem;
+        color: $primary-color;
+    }
+
+    &__icon {
+        font-weight: 900;
+        font-size: 1.5rem;
+        margin-left: 0.4rem;
+    }
+}
