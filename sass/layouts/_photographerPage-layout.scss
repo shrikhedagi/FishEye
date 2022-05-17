@@ -2,7 +2,7 @@
 .photographer-banner {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 50px 100px;
     padding: 3.5rem 3.125rem 2.625rem;
     display: flex;
     justify-content: space-between;
@@ -48,8 +48,6 @@
     }
 }
 
-// Contact button
-
 // Contact Form
 #contact_modal {
     display: none;
@@ -91,7 +89,6 @@
         }
     }  
 }
-
 
 form {
     display: flex;
