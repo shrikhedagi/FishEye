@@ -530,6 +530,13 @@ li {
   color: #FFF;
   padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 }
+.selected-option__items:focus {
+  outline: #db8876 thin dashed;
+}
+.selected-option__items:hover:focus {
+  color: #000;
+  background-color: #db8876;
+}
 .selected-option__arrow {
   font-weight: 900;
   font-family: "FontAwesome 6 Free";

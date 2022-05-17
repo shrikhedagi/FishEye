@@ -39,6 +39,16 @@
         color: $white;
         padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 
+        &:focus {
+            outline: $orange-light thin dashed;
+
+        }
+
+        &:hover:focus {
+            color: $black;
+            background-color: $orange-light;
+        }
+
     }
 
     &__arrow {
