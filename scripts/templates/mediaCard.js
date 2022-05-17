@@ -6,8 +6,25 @@ renderMediaCard(media){
     const mediaDirectoryPath = mediaDirectory.renderMediaDirectoryPath(this);
     let mediaOuterHTML = "";
     let mediaSource = "";
+
+    // To sort out whether it's a video or a picture
+    if (media instanceof Video) { // if the objet "media" instanceof the constructor "video" ==> return video
+
+        mediaSource = `${mediaDirectoryPath}/videos/${media.video}`;
+        mediaOuterHTML =` 
+        <video aria-label="${media.description}">
+            <source src="${mediaSource}" type="video/mp4"" />
+            Votre navigateur ne prend pas en charge le contenu video en HTML5.
+        </video>`;
+
+    } else {
+
+        mediaSource = `${mediaDirectoryPath}/pictures/${media.image}`;
+        mediaOuterHTML = `<img src="${mediaSource}" alt="${media.description}" />`;
+
+    }
     
-    
+    // Add the structure HTML in photographer.html
     const mediaCards = `
         <article class="media-cards">
         <a href="${mediaSource}" class="media-cards__lightbox-link" aria-label="${media.title}, lightbox closeup view">
@@ -26,4 +43,5 @@ renderMediaCard(media){
 
         return mediaCards;
     }
+
 }
