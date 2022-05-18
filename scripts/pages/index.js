@@ -29,8 +29,8 @@ function displayData(photographers) {
 
     photographers.forEach((photographer) => {
 
-        const photographerModel = new PhotographerCard(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
-        const userCardDOM = photographerModel.renderCard();
+        const photographerModel = new PhotographerCard(photographer);
+        const userCardDOM = photographerModel.createCard();
         photographersSection.innerHTML += userCardDOM;
 
     });

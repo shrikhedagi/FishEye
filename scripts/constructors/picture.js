@@ -1,4 +1,4 @@
-export default class Picture {
+class Picture {
 
     constructor(data) {
         this.likes = data.likes;

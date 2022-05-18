@@ -1,14 +1,14 @@
 class MediaCard {
     constructor(media){
-        this.media = [media];
+        this.media = media;
     }
 
-renderMediaCard(media){
-    const mediaDirectoryPath = mediaDirectory.renderMediaDirectoryPath(this);
+createMediaCard(media){
+    const mediaDirectoryPath = mediaDirectory.renderMediaDirectory(this);
     let mediaOuterHTML = "";
     let mediaSource = "";
 
-    // To sort out whether an object it's not an instance of a given constructor
+    // To sort out whether it's a video or a picture
     if (media instanceof Video) { // if the objet "media" instanceof the constructor "video" ==> return video
 
         mediaSource = `${mediaDirectoryPath}/videos/${media.video}`;

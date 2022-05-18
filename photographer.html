@@ -19,7 +19,7 @@
     </header>
 
     <main id="main" aria-hidden="false">
-      <section class="photographer-banner" aria-label="Info bannière du photographe">
+      <section class="photographer-banner" aria-label="Bannière d'information a propos du photographe">
       </section>
 
       <form class="select-menu" name="select-menu-form" method="get" action="#" novalidate>
@@ -50,7 +50,33 @@
     <!-- Icons import -->
     <script src="https://kit.fontawesome.com/1243262ebe.js" crossorigin="anonymous"></script>
 
-    <script type="module" src="./scripts/pages/photographer.js"></script>
+    <!-- JS FILES -->
+    <!-- Factory -->
+    <script src="./scripts/Factory/MediaFactories.js"></script>
+
+    <!-- Constructors -->
+    <script src="./scripts/Constructors/Photographer.js"></script>
+    <script src="./scripts/Constructors/Picture.js"></script>
+    <script src="./scripts/Constructors/Video.js"></script>
+
+    <!-- Pages -->
+    <script src="./scripts/Pages/Photographer.js"></script>
+
+    <!-- Templates -->
+    <script src="./scripts/Templates/ContactForm.js"></script>
+    <script src="./scripts/Templates/MediaCard.js"></script>
+    <script src="./scripts/Templates/PhotographerBanner.js"></script>
+
+
+    <!-- Api -->
+    <script src="./scripts/Api/Apis.js"></script>
+
+    <!-- Utils: Entry point -->
+    <script src="./scripts/Utils/LightBox.js"></script>
+    <script src="./scripts/Utils/LikeButton.js"></script>
+    <script src="./scripts/Utils/MediaDirectory.js"></script>
+    <script src="./scripts/Utils/SelectMenu.js"></script>
+    <script src="./scripts/Utils/VisibilityAccess.js"></script>
 
   </body>
 </html>

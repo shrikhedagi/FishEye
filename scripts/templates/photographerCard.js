@@ -1,37 +1,37 @@
 export default class PhotographerCard {
     // Add a constructor for the data
-    constructor(name, id, city, country, tagline, price, portrait) {
-        this.name = name;
-        this.id = id;
-        this.location = `${city}, ${country}`;
-        this.tagline = tagline;
-        this.price = price;
-        this.picture = `assets/photographers/photographers-id-photos/${portrait}`;
+    constructor(photographer) {
+        this._name = photographer.name;
+        this._id = photographer.id;
+        this._location = `${photographer.city}, ${photographer.country}`;
+        this._tagline = photographer.tagline;
+        this._price = photographer.price;
+        this._picture = `assets/photographers/photographers-id-photos/${photographer.portrait}`;
     }   
 
     // Add article section in index.html body
-    renderCard() {
+    createCard() {
     const profilCard = `
         <article class="profil-card">
 
-            <a class="profil-link" href="photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
+            <a class="profil-link" href="photographer.html?id=${this._id}" aria-label="${this._name} - Fisheye">
                 <img 
-                alt="${this.name}" 
+                alt="${this._name}" 
                 class="user-picture" 
-                src="${this.picture}" />
+                src="${this._picture}" />
                 <h2 class="profil-card__name">
-                    ${this.name}
+                    ${this._name}
                 </h2>
             </a>
             <div class="thumbnail">
                 <p class="thumbnail__location" lang="en">
-                    ${this.location}
+                    ${this._location}
                 </p>
                 <p class="thumbnail__tagline">
-                    ${this.tagline}
+                    ${this._tagline}
                 </p>
                 <p class="thumbnail__price">
-                    ${this.price}€/jour
+                    ${this._price}€/jour
                 </p>
             </div>
         </article>`;
