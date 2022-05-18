@@ -1,7 +1,7 @@
 import PhotographerCard from "../templates/photographerCard.js";
 
 /* Using fetch() to get data for homepage */
-async function getPhotographers() {
+async function getPhotographersData() {
 
     const photographers = fetch('data/profilData.json') // Correct path for local and git
 
@@ -38,7 +38,7 @@ function displayData(photographers) {
 }
 
 async function init() {
-    const photographers = await getPhotographers();
+    const photographers = await getPhotographersData();
     displayData(photographers);
 
 };
