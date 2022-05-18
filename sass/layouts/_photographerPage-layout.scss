@@ -1,51 +1,31 @@
-// Photographer Banner 
-.photographer-banner {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 50px 100px;
-    padding: 3.5rem 3.125rem 2.625rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 00.3125rem;
+.photographer-gallery {
+    display: grid;
+    margin: 3.6rem 4.5rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4.5rem 6rem;
+    overflow: hidden;
 
-    &__headline {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        order: 1;
+    @include xlargeMobileLandscape {
+        -moz-column-gap: 3rem;
+             column-gap: 3rem;
     }
 
-    &__name {
-        font-size: $name-font-size;
-        line-height: 1.5;
-        color: $orange;
+    @include mediumDesktop {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    &__location {
-        font-size: $location-font-size;
-        line-height: 1.5;
-        color: $primary-color;
+    @include tablette {
+        margin: 3.6rem 4.5rem 0;
     }
 
-    &__tagline {
-        font-size: $tagline-font-size;
-        color: $grey;
+    @include xlargeMobileLandscape {
+        -moz-column-gap: 3rem;
+             column-gap: 3rem;
     }
 
-    &__picture {
-        order: 3;
-
-        @include mediumDesktop {
-            order: 2;
-        }
-
-        @include largeMobileLandscape {
-            order: -1;
-            margin-bottom: 1rem;
-        }
+    @include largeMobileLandscape {
+        grid-template-columns: 1fr;
+        colum-gap: 0;
     }
 }
 
-// Contact Form
