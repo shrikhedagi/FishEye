@@ -9,6 +9,29 @@
     align-items: center;
     border-radius: 00.3125rem;
 
+    @include mediumDesktop {
+        gap: 3rem;
+    }
+
+    @include tablette {
+        gap: 4rem;
+    }
+
+    @include mediumMobileLandscape {
+        margin: initial;
+    }
+
+    @include largeMobileLandscape {
+        margin: 0;
+        gap: 3rem;
+    }
+
+    @include xlargeMobileLandscape {
+        gap: unset;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     &__headline {
         display: flex;
         flex-direction: column;
