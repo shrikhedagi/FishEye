@@ -38,23 +38,38 @@
         justify-content: flex-start;
         align-items: flex-start;
         order: 1;
+
+        @include largeMobileLandscape {
+            text-align: center;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
     }
 
     &__name {
         font-size: $name-font-size;
         line-height: 1.5;
         color: $orange;
+        @include tablette {
+            font-size: $name-font-size-mobile;  
+        }
     }
 
     &__location {
         font-size: $location-font-size;
         line-height: 1.5;
         color: $primary-color;
+        @include tablette {
+            font-size: $location-font-size-mobile;
+        }
     }
 
     &__tagline {
         font-size: $tagline-font-size;
         color: $grey;
+        @include tablette {
+            font-size: $tagline-font-size-mobile;
+        }
     }
 
     &__picture {

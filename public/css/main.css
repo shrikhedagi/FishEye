@@ -522,19 +522,41 @@ li {
   align-items: flex-start;
   order: 1;
 }
+@media screen and (max-width: 699px) {
+  .photographer-banner__headline {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+}
 .photographer-banner__name {
   font-size: 4rem;
   line-height: 1.5;
   color: #d3573c;
+}
+@media screen and (max-width: 992px) {
+  .photographer-banner__name {
+    font-size: 2.4rem;
+  }
 }
 .photographer-banner__location {
   font-size: 1.5rem;
   line-height: 1.5;
   color: #901c1c;
 }
+@media screen and (max-width: 992px) {
+  .photographer-banner__location {
+    font-size: 1.3125rem;
+  }
+}
 .photographer-banner__tagline {
   font-size: 1.125rem;
   color: #525252;
+}
+@media screen and (max-width: 992px) {
+  .photographer-banner__tagline {
+    font-size: 0.9375rem;
+  }
 }
 .photographer-banner__picture {
   order: 3;
