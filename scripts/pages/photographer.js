@@ -1,5 +1,5 @@
 async function getData() {
-    let photographersData = await fetch("data/profilData.json")
+    let photographersData = await fetch("../data/profilData.json")
     return await photographersData.json();
 }
 
