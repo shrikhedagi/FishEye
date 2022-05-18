@@ -2,6 +2,7 @@ class mediaCard {
     constructor(media){
         this.media = [media];
     }
+    
 renderMediaCard(media){
     const mediaDirectoryPath = mediaDirectory.renderMediaDirectoryPath(this);
     let mediaOuterHTML = "";
