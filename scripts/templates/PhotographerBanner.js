@@ -1,4 +1,4 @@
-class photographerBanner {
+class PhotographerBanner {
     // Add a constructor for the data
     constructor(photographer) {
         this.photographer = photographer

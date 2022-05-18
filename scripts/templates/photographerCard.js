@@ -1,4 +1,4 @@
-export default class photographerInfo {
+export default class PhotographerCard {
     // Add a constructor for the data
     constructor(name, id, city, country, tagline, price, portrait) {
         this.name = name;
