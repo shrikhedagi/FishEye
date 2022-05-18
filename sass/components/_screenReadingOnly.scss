@@ -1,3 +1,10 @@
-.sr-only-container {
+.sr-container {
     position: relative;
+    overflow: hidden;
+
+    &__gallery {
+        position: absolute;
+        left: -388%;
+        top:0;
+    }
 }

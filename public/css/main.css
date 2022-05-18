@@ -454,8 +454,14 @@ li {
   transform: scale(1.1);
 }
 
-.sr-only-container {
+.sr-container {
   position: relative;
+  overflow: hidden;
+}
+.sr-container__gallery {
+  position: absolute;
+  left: -388%;
+  top: 0;
 }
 
 .logo {
