@@ -2,9 +2,10 @@
     position: relative;
     overflow: hidden;
 
-    &__gallery {
+    &__gallery { // h2 title for screen-readers
         position: absolute;
-        left: -388%;
+        left: -300%;
         top:0;
+        color: transparent;
     }
 }

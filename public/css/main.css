@@ -460,8 +460,9 @@ li {
 }
 .sr-container__gallery {
   position: absolute;
-  left: -388%;
+  left: -300%;
   top: 0;
+  color: transparent;
 }
 
 .logo {
@@ -666,6 +667,20 @@ li {
   font-family: "FontAwesome 6 Free";
 }
 
+.card-insert {
+  display: flex;
+  width: 24rem;
+  height: 4rem;
+  align-items: center;
+  border-top-right-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+  z-index: 100;
+  background-color: #db8876;
+  position: fixed;
+  right: 36px;
+  bottom: 0;
+}
+
 .media-cards {
   width: 100%;
   display: flex;
@@ -702,11 +717,6 @@ li {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.sr-only-container {
-  position: relative;
-  overflow: hidden;
 }
 
 /* HOMEPAGE BODY */

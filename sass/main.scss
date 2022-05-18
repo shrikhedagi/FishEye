@@ -8,15 +8,15 @@
 @import "./animations/loader";
 @import "./animations/cardEffect";
 
-@import './components/screenReadingOnly';
+@import './components/screenReaderAccess';
 @import './components/logo';
 @import './components/photographerBanner';
 @import './components/button';
 @import './components/selectMenu';
-@import './components/mediaThumbnail';
-@import './components/cardInfo';
+@import './components/cardInsert';
+@import './components/mediaCards';
 @import './components/lightBox';
-@import './components/modal';
+@import './components/contactForm';
 
 @import './layouts/homePage-layout';
 @import './layouts/photographerPage-layout';
