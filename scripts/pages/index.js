@@ -3,7 +3,7 @@ import PhotographerCard from "../Templates/PhotographerCard.js";
 /* Using fetch() to get data for homepage */
 async function getPhotographersData() {
 
-    const photographers = fetch('data/profilData.json') // Correct path for local and git
+    const photographers = fetch('data/profilData.json') // Correct path for local and gitPages
 
         .then(function (response) {
             if (response.ok) {
@@ -30,8 +30,8 @@ function displayData(photographers) {
     photographers.forEach((photographer) => {
 
         const photographerModel = new PhotographerCard(photographer);
-        const userCardDOM = photographerModel.createCard();
-        photographersSection.innerHTML += userCardDOM;
+        const profilCardDOM = photographerModel.createCard();
+        photographersSection.innerHTML += profilCardDOM;
 
     });
 

@@ -80,7 +80,7 @@ function displayInsertInfos(currentPhotographer) {
 
     const infosInsertDOM = currentPhotographer.getComplementaryInfosDOM();
 
-    photographerInsert.innerHTML = infosInsertDOM;
+    photographerInsert.innerHTML += infosInsertDOM;
 
 }
 
