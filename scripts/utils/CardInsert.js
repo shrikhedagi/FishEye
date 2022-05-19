@@ -1,21 +1,18 @@
 class CardInsert {
     constructor(photographer, likes){
-        this._photographer = photographer
-        this._likes = likes
+        this.photographer = photographer
+        this.likes = likes
     }
  
     createCardInsert(){
 
-        const cardInsert = document.createElement('aside');
-        cardInsert.classList.add('card-insert');
-    
-        cardInsert.innerHTML = `
-            <div class="photographer-counter__likes">
-                <p>${this._likes}</p>
+        const cardInsert = `
+            <div class="card-insert__likes">
+                <p>${this.likes}</p>
                 <i class="fas fa-heart"></i>
             </div>
-            <div class="photographer-counter__price">
-                <p>${this._photographer.price}€ / jour</p>
+            <div class="card-insert__price">
+                <p>${this.photographer.price}€ / jour</p>
             </div>
         `;
     
