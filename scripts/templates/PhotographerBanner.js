@@ -25,6 +25,7 @@ class PhotographerBanner {
                 src="./public/photographers/photographers-id-photos/${this._portrait}" 
                 alt="${this._name}" 
                 />`;
+                
 
         // Launch
         return banner;

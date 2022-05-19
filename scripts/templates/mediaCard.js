@@ -1,6 +1,6 @@
 class MediaCard {
     constructor(media){
-        this.media = media;
+        this._media = media;
     }
 
 createMediaCard(media){
@@ -26,6 +26,7 @@ createMediaCard(media){
     }
     
     // Add the structure HTML in photographer.html
+    
     const mediaCards = `
     <section class="media-cards">
         <a href="${mediaSource}" class="media-cards__lightbox-link" aria-label="${media.title}, lightbox closeup view">

@@ -1,4 +1,4 @@
-async function getData() {
+async function getPhotographersData() {
     let photographersData = await fetch("../data/profilData.json")
     return await photographersData.json();
 }
@@ -11,7 +11,6 @@ function getCurrentPhotographer(photographersData) {
     const queryString = window.location.search;
     const urlParameters = new URLSearchParams(queryString);
     const idString = urlParameters.get("id");
-
     const photographerId = parseInt(idString);
 
     photographersData.photographers.forEach( (photographer) => {
@@ -58,6 +57,66 @@ function displayBanner(currentPhotographer) {
     photographerBannerSection.innerHTML = bannerDOM;
 
 }
+
+function displayMediaCards(currentPhotographer) {
+
+    const photographerGallery = document.querySelector(".photographer-gallery");
+
+    SelectMenu.sortByPopularity(currentPhotographer.media);
+
+    currentPhotographer.media.forEach( (media) => {
+
+        const mediaCardDOM = currentPhotographer.getMediaCardDOM(media);
+
+        photographerGallery.innerHTML += mediaCardDOM;
+
+    });
+
+}
+
+function displayTotalOfLikesAndPrice(currentPhotographer) {
+
+    const photographerFooter = document.querySelector(".photographer-likes-and-price");
+
+    const footerInfosDOM = currentPhotographer.getComplementaryInfosDOM();
+
+    photographerFooter.innerHTML = footerInfosDOM;
+
+}
+
+
+async function displayData(currentPhotographer) {
+
+    displayBanner(currentPhotographer);
+
+    displayMediaCards(currentPhotographer);
+
+    displayTotalOfLikesAndPrice(currentPhotographer);
+    
+    return "finished";
+
+}
+
+async function init() {
+    
+    const photographersData = await getPhotographersData();
+    
+    const currentPhotographer = getCurrentPhotographer(photographersData);
+
+    // Add the full name of the current photographer in photographer.html
+    document.title = `${currentPhotographer.name} - Fisheye`;
+
+    if (await displayData(currentPhotographer) === "finished") {
+
+        LikeButton.init(currentPhotographer);
+
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", init);
+
+
 
 
 
