@@ -27,7 +27,7 @@ class PhotographerBanner {
                 />`;
                 
 
-        // Launch
+        // Launch Photographer Banner
         return banner;
     }
 }

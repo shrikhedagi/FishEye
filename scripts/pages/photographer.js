@@ -74,13 +74,13 @@ function displayMediaCards(currentPhotographer) {
 
 }
 
-function displayTotalOfLikesAndPrice(currentPhotographer) {
+function displayInsertInfos(currentPhotographer) {
 
-    const photographerFooter = document.querySelector(".photographer-likes-and-price");
+    const photographerInsert = document.querySelector(".card-insert");
 
-    const footerInfosDOM = currentPhotographer.getComplementaryInfosDOM();
+    const infosInsertDOM = currentPhotographer.getComplementaryInfosDOM();
 
-    photographerFooter.innerHTML = footerInfosDOM;
+    photographerInsert.innerHTML = infosInsertDOM;
 
 }
 
@@ -91,7 +91,7 @@ async function displayData(currentPhotographer) {
 
     displayMediaCards(currentPhotographer);
 
-    displayTotalOfLikesAndPrice(currentPhotographer);
+    displayInsertInfos(currentPhotographer);
     
     return "finished";
 

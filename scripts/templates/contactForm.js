@@ -10,14 +10,14 @@ class ContactForm {
 
     createContactForm(){
 
-        const contactModal = document.createElement('aside');
-        contactModal.setAttribute('id', 'contact-modal');
-        contactModal.classList.add('contact-form');
-        contactModal.classList.add('sr-only');
-        contactModal.setAttribute('role','dialog');
-        contactModal.setAttribute('aria-hidden', 'false');
+        const contactForm = document.createElement('aside');
+        contactForm.setAttribute('id', 'contact-modal');
+        contactForm.classList.add('contact-form');
+        contactForm.classList.add('sr-only');
+        contactForm.setAttribute('role','dialog');
+        contactForm.setAttribute('aria-hidden', 'false');
         
-        contactModal.innerHTML  = `
+        contactForm.innerHTML  = `
             <div class="contact-form__container" role="group">
                 <header class="contact-form__header">
                     <div class="contact-form__info">
@@ -50,26 +50,26 @@ class ContactForm {
             </div>
         `;
 
-        // Closing Modal--contact form
-        contactModal.querySelector('#close-contact-modal-button').addEventListener('click', () => {
-            contactModal.classList.add('sr-only');
-            contactModal.setAttribute('aria-hidden', 'true');
-            contactModal.style.display='none';              
+        // Closing Modal
+        contactForm.querySelector('#close-contact-modal-button').addEventListener('click', () => {
+            contactForm.classList.add('sr-only');
+            contactForm.setAttribute('aria-hidden', 'true');
+            contactForm.style.display='none';              
             document.querySelector('header').setAttribute('aria-hidden','false');    
             document.querySelector('main').setAttribute('aria-hidden','false');
         })
 
         document.body.addEventListener('keydown', (element) => {
             if(element.key === 'Escape'){
-                contactModal.classList.add('sr-only');
-                contactModal.setAttribute('aria-hidden', 'true');
-                contactModal.style.display='none';
+                contactForm.classList.add('sr-only');
+                contactForm.setAttribute('aria-hidden', 'true');
+                contactForm.style.display='none';
                 document.querySelector('header').setAttribute('aria-hidden','false');    
                 document.querySelector('main').setAttribute('aria-hidden','false');
             }
         })
 
-        //LAUNCH
-        return contactModal;
+        // Launch contact form
+        return contactForm;
     }
 }
