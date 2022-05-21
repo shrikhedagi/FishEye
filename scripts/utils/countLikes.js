@@ -8,7 +8,7 @@ class TotalLikes{
             const countingValue = Number(countingElement.innerText); // using function number() to count the value
         
             // Total likes in a card insert for a photographer
-            const likesElement = document.querySelector('.card-insert__likes p');
+            const likesElement = document.querySelector('.card-insert__likes p'); // Insert in HTML
             const likesValue = Number(likesElement.textContent); // using function number() to count the value
         
             
@@ -17,8 +17,8 @@ class TotalLikes{
         }
         
         function increment(element, value){
-            //Increment
-            element.textContent = `${++value}`;
+            // Adding on numbers as users click on like button
+            element.textContent = `${++value}`; 
         }
         
         

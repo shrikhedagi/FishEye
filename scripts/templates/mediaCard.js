@@ -8,8 +8,9 @@ class MediaCards {
     }
 
     renderMediaCards() {
+        
         const mediacard = `
-        <section class="media-cards">
+    <section class="media-cards">
         <a href="${this._media.Source}" class="media-cards__lightbox-link" aria-label="${this._media.title}, lightbox closeup view">
         </a>
         <div class="media-cards-details">
@@ -29,4 +30,4 @@ class MediaCards {
     }
 }
 
-export default MediaCard;
+export default MediaCards;

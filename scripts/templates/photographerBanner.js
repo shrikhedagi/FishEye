@@ -8,7 +8,10 @@ class PhotographerBanner {
     }
 
     renderBanner() {
-        const banner = `
+        const banner = document.createElement('section');
+        banner.classList.add('class="photographer-banner" aria-label="Bannière info sur le photographe');
+        
+        banner.innerHTML = `
         <div class="photographer-banner__headline">
             <h1 class="photographer-banner__name">${this._photographer.name}</h1>
             <p class="photographer-banner__location">${this._photographer.location}</p>

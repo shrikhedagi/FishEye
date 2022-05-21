@@ -2,11 +2,9 @@ class PhotographerLikes {
     constructor (photographer, likes, media){
         this._photographer = photographer
         this._likes = likes
-        this._media = [media]
     }
-    
+
     renderInsertInfosCard() {
-        this._totalLikes = this.renderTotalLikes();
 
         const cardInsertInfos = `
         <div class="sr-only-container">

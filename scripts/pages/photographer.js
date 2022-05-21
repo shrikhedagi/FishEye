@@ -2,9 +2,13 @@ import Api from '../Api/Api.js';
 import PhotographerApi from '../Api/PhotographerApi.js';
 import MediaApi from '../Api/MediaApi.js';
 import MediaFactory from '../factory/mediaFactory.js';
+import Photographer from '../models/Photographer.js';
 import Video from "../models/Video.js";
 import Picture from "../models/Picture.js";
 import PhotographerBanner from '../templates/photographerBanner.js';
+import MediaCard from '../templates/mediaCard.js'
+import PhotographerLikes from '../templates/PhotographerLikes.js';
+
 
 // Fetch photographer ID from URL
 const id = getId();
@@ -35,7 +39,7 @@ export default class Banner {
                 if(id === photographer.id){ 
 
                     // Create Banner Section
-                    const bannerSection = new PhotographerContents(photographer)
+                    const bannerSection = new PhotographerBanner(photographer)
                     this.mainContent.prepend(
                     bannerSection.renderBanner()    
                     )
