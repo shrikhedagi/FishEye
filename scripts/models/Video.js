@@ -36,6 +36,17 @@ class Video {
     get likes(){
         return this._likes
     }
+    get source(){
+        return `
+        <div class="media-cards__video">
+            <a href="public/img/${this._photographerId}/${this._video}" aria-label="Lilac breasted roller, closeup view">
+                <video>
+                    <source src="public/img/${this._photographerId}/${this._video}" type="video/mp4">
+                </video>
+            </a>
+        </div>
+        `
+    }
 
 }
 

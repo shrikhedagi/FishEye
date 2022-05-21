@@ -36,6 +36,14 @@ class Picture {
     get likes(){
         return this._likes
     }
+    get source(){
+        return `<div class="media-card__image">
+                    <a href="assets/photographers/${this._photographerId}/${this._image}" aria-label="Lilac breasted roller, closeup view">
+                        <img src="assets/photographers/${this._photographerId}/${this._image}" alt="Photographie - ${this._title}">
+                    </a>
+                </div>
+                `
+    }
 
 }
 
