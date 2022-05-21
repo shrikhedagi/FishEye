@@ -1,6 +1,6 @@
 class TotalLikes{
     static init(){
-        function countLikes(){
+        function renderCountLikes(){
 
             // Likes under image
             // const counterElement = this.querySelector('.picture-card__counter-like-value');
@@ -23,6 +23,6 @@ class TotalLikes{
         
         
         const likes = document.querySelectorAll('.picture-card__counter-like-action');
-        likes.forEach(like => like.addEventListener('click', countLikes));
+        likes.forEach(like => like.addEventListener('click', renderCountLikes));
     }
 }
