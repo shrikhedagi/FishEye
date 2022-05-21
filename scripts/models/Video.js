@@ -39,9 +39,9 @@ class Video {
     get source(){
         return `
         <div class="media-cards__video">
-            <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this._media.title}, lightbox closeup view">
+            <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, lightbox closeup view">
                 <video>
-                    <source src="public/img/${this._photographerId}/video/${this._video}" type="video/mp4">
+                    <source src="assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
                 </video>
             </a>
         </div>

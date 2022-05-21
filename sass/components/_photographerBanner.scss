@@ -67,6 +67,7 @@
     &__tagline {
         font-size: $tagline-font-size;
         color: $grey;
+        line-height: 1.5;
         @include tablette {
             font-size: $tagline-font-size-mobile;
         }

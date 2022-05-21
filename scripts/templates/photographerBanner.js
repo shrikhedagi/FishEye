@@ -9,7 +9,7 @@ class PhotographerBanner {
 
     renderBanner() {
         const banner = document.createElement('section');
-        banner.classList.add('class="photographer-banner" aria-label="Bannière info sur le photographe');
+        banner.classList.add('photographer-banner');
         
         banner.innerHTML = `
         <div class="photographer-banner__headline">
@@ -18,11 +18,11 @@ class PhotographerBanner {
             <p class="photographer-banner__tagline">${this._photographer.tagline}</p>
         </div>
             
-            <button type="button" class="button button-contact" id="contact-btn" aria-label="Contact Me">Contactez-moi</button>
+            <button type="button" class="button contact-button" id="contact-btn" aria-label="Contact Me">Contactez-moi</button>
             
             <img 
             class="user-picture photographer-banner__picture" 
-            src="./public/photographers/photographers-id-photos/${this._photographer.portrait}" 
+            src="./assets/photographers/photographers-id-photos/${this._photographer.portrait}" 
             alt="${this._photographer.name}" 
             />`;
 

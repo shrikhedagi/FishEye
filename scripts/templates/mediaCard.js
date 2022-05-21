@@ -1,7 +1,3 @@
-import Video from "../models/Video.js";
-import Picture from "../models/Picture.js";
-import Photographer from "../models/Photographer.js";
-
 class MediaCards {
     constructor(media) {
         this._media = media
@@ -9,12 +5,13 @@ class MediaCards {
 
     renderMediaCards() {
 
-        const mediaCard = document.createElement('article');
+        let mediaCard = document.createElement('article');
         mediaCard.classList.add('photographer-gallery');
-        mediaCard.innerHTML =`
-            <section class="photographer-gallery sr-container" aria-labelledby="header for photographer's photos and videos gallery">
+        
+        mediaCard.innerHTML = `
+            <section class="sr-container" aria-labelledby="header for photographer's photos and videos gallery">
             <h2 class="sr-container__gallery" id="photographer-gallery__header">Gallerie photos et videos des travaux du photographe</h2>
-                ${this._media.Source}
+                ${this._media.source}
                 
                 <div class="media-cards-details">
                     <h3 class="media-cards-details__title" title="${this._media.title}">
@@ -34,3 +31,4 @@ class MediaCards {
 }
 
 export default MediaCards;
+

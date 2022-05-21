@@ -38,7 +38,7 @@ class Picture {
     }
     get source(){
         return `<div class="media-cards__image">
-                    <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/photo/${this._image}" aria-label="${this._media.title}, lightbox closeup view">
+                    <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/photo/${this._image}" aria-label="${this.title}, lightbox closeup view">
                         <img src="assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}">
                     </a>
                 </div>
