@@ -6,7 +6,10 @@ class PhotographerLikes {
 
     renderInsertInfosCard() {
 
-        const cardInsertInfos = `
+        const cardInsertInfos = document.createElement('aside');
+        cardInsertInfos.classList.add('card-insert')
+        
+        cardInsertInfos.HTML =`
         <div class="sr-only-container">
             <p id="card-insert__likes">${this.totalLikes}</p>
             <span class="card-insert__icon fas fa-heart"></span>

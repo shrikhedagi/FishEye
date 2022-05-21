@@ -20,12 +20,12 @@ function getId() {
     
 }
 
-/* Get the banner with APIs in photographer page */
+/* create the banner with APIs in photographer page */
 export default class Banner {
     constructor(){
-        this.mainContent = document.querySelector('main');
-        this.photographersApi = new PhotographerApi('data/ProfilData.json');
-        this.mediasApi = new MediaApi('data/ProfilData.json');
+        this.mainContent = document.querySelector('main'); // Add in <main>
+        this.photographersApi = new PhotographerApi('data/ProfilData.json'); // Fetch data with API
+        this.mediasApi = new MediaApi('data/ProfilData.json'); // Fetch data with API
     }
 
     async getBannerInfos() {
@@ -33,9 +33,8 @@ export default class Banner {
         const mediasData = await this.mediasApi.getMedias()
         
         let totalLikes = 0;
-        photographersData
-            .map(photographer => new Photographer(photographer))
-            .forEach(photographer => {
+        photographersData.map(photographer => new Photographer(photographer)).forEach(photographer => {
+
                 if(id === photographer.id){ 
 
                     // Create Banner Section
@@ -44,7 +43,7 @@ export default class Banner {
                     bannerSection.renderBanner()    
                     )
                     
-                    // Create Counting the number of Likes - Loop
+                    // Create number of Likes - boucle
                     mediasData.forEach(media => {
 
                         if(id === media.photographerId){
@@ -52,8 +51,8 @@ export default class Banner {
                         }
                     })
 
-                    // Create Number rising
-                    const numberLikes = new PhotographerContents(photographer, totalLikes);
+                    // Create Number of likes rising
+                    const numberLikes = new PhotographerLikes(photographer, totalLikes);
                     this.mainContent.prepend(
                         numberLikes.renderInsertInfosCard()
                     )
