@@ -4,24 +4,7 @@ class PhotographerLikes {
         this._likes = likes
         this._media = [media]
     }
-
-    renderTotalLikes() {
-        let totalLikes = 0;
-        let numberLikesMedia = [];
-
-        const decreases = (previousValue, actualValue) => previousValue + actualValue;
-
-        this.media.forEach( (media) => {
-
-            numberLikesMedia.push(media.likes);
-
-        });
-        
-        totalLikes = numberLikesMedia.reduce(decreases);
-
-        return totalLikes;
-    }
-
+    
     renderInsertInfosCard() {
         this._totalLikes = this.renderTotalLikes();
 
