@@ -1,6 +1,7 @@
 class Picture {
 
     constructor(data) {
+        this._name = data.name;
         this._likes = data.likes;
         this._date = data.date;
         this._price = data.price;
