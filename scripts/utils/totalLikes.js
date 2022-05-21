@@ -15,7 +15,7 @@ class TotalLikes{
             increment(countingElement, countingValue);
             increment(likesElement, likesValue);
         }
-        
+        // To addition
         function increment(element, value){
             // Adding on numbers as users click on like button
             element.textContent = `${++value}`; 

@@ -12,7 +12,7 @@ class PhotographerLikes {
         
         cardInsertInfos.innerHTML =`
         <div class="sr-only-container">
-            <p id="card-insert__likes">${this.totalLikes}</p>
+            <p id="card-insert__likes">${this._likes.totalLikes}</p>
             <span class="card-insert__icon fas fa-heart"></span>
         </div>
         <div class="card-insert__price">
