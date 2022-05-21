@@ -1,176 +1,65 @@
-import Photographer from '../templates/photographerContents.js';
-import Media from '../factory/mediaFactory.js';
+import Api from '../Api/Api.js';
+import PhotographerApi from '../Api/PhotographerApi.js';
+import MediaApi from '../Api/MediaApi.js';
+import MediaFactory from '../factory/mediaFactory.js';
 import Video from "../models/Video.js";
 import Picture from "../models/Picture.js";
-import Portfolio from '../models/Portfolio.js';
+import PhotographerBanner from '../templates/photographerBanner.js';
 
 // Fetch photographer ID from URL
 const id = getId();
-
-async function init() {
-
-    // Fetch data of this photographer ID
-    const infos = await getPhotographerInfo(id);
-    const medias = await getPhotographerMedia(id);
-    const photographer = new Photographer(infos, medias);
-
-    // Display data
-    photographer.display()
-}
-init(); 
-
-// ***************************** SWE *****************************
-async function getPhotographerInfo(id) {
-    let photographersData = await fetch("../data/profilData.json");
-    let data = await photographersData.json();
-
-    return data.photographers.find(infos => infos.photographer_id = id);
-}
-
-async function getPhotographerMedia(id) {
-    let photographersData = await fetch("../data/profilData.json")
-    let data = await photographersData.json();
-
-    return data.media.filter(infos => infos.photographerId == id);
-}
-
 // Create URL object and get URL Parameters
 function getId() {
     const queryString = window.location.search;
     const urlParameters = new URLSearchParams(queryString);
     const idString = urlParameters.get("id");
-    const photographerId = parseInt(idString);
-}
-
-
-
-
-
-
-
-
-
-
-/* async function getPhotographersData() {
-    let photographersData = await fetch("../data/profilData.json")
-    return await photographersData.json();
-}
-
-// Create a function to get the actual photographer (on click from ID)
-function getActualPhotographer(photographersData) {
-    let actualPhotographer = new Photographer();
     
-    // Get the ID
-    const queryString = window.location.search;
-    const urlParameters = new URLSearchParams(queryString);
-    const idString = urlParameters.get("id");
-    const photographerId = parseInt(idString);
-
-    photographersData.photographers.forEach( (photographer) => {
-
-        if (photographer.id === photographerId) {
-
-            actualPhotographer.name = photographer.name;
-            actualPhotographer.id = photographer.id;
-            actualPhotographer.location = `${photographer.city}, ${photographer.country}`;
-            actualPhotographer.tagline = photographer.tagline;
-            actualPhotographer.price = photographer.price;
-            actualPhotographer.picture = `assets/photographers/photographers-id-photos/${photographer.portrait}`;
-
-        }
-
-    });
-
-    photographersData.media.forEach( (media) => {
-
-        if (media.photographerId === photographerId) {
-
-            if(actualPhotographer.media[0] === undefined) {
-
-                actualPhotographer.media[0] = MediaFactory.createMediaCard(media);
-
-            } else {
-
-                actualPhotographer.media.push(MediaFactory.createMediaCard(media));
-
-            }
-
-        }
-
-    });
-
-    return actualPhotographer;
 }
 
-function displayBanner(actualPhotographer) {
-
-    const photographerBannerSection = document.querySelector(".photographer-banner");
-    const bannerDOM = actualPhotographer.createBanner();
-
-    photographerBannerSection.innerHTML = bannerDOM;
-
-}
-
-function displayMediaCards(actualPhotographer) {
-
-    const photographerGallery = document.querySelector(".photographer-gallery");
-
-    selectMenu.sortByPopularity(actualPhotographer.media);
-
-    actualPhotographer.media.forEach( (media) => {
-
-        const mediaCardDOM = actualPhotographer.getMediaCardDOM(media);
-
-        photographerGallery.innerHTML += mediaCardDOM;
-
-    });
-
-}
-
-function displayInsertInfos(actualPhotographer) {
-
-    const photographerInsert = document.querySelector(".card-insert");
-
-    const infosInsertDOM = actualPhotographer.getComplementaryInfosDOM();
-
-    photographerInsert.innerHTML += infosInsertDOM;
-
-}
-
-
-async function displayData(actualPhotographer) {
-
-    displayBanner(actualPhotographer);
-
-    displayMediaCards(actualPhotographer);
-
-    displayInsertInfos(actualPhotographer);
-    
-    return "finished";
-
-}
-
-async function init() {
-    
-    const photographersData = await getPhotographersData();
-    
-    const actualPhotographer = getActualPhotographer(photographersData);
-
-    // Add the full name of the actual photographer in photographer.html
-    document.title = `${actualPhotographer.name} - Fisheye`;
-
-    if (await displayData(actualPhotographer) === "finished") {
-
-        LikeButton.init(actualPhotographer);
-
+/* Get the banner with APIs in photographer page */
+export default class Banner {
+    constructor(){
+        this.mainContent = document.querySelector('main');
+        this.photographersApi = new PhotographerApi('data/ProfilData.json');
+        this.mediasApi = new MediaApi('data/ProfilData.json');
     }
 
+    async getBannerInfos() {
+        const photographersData = await this.photographersApi.getPhotographersItems()
+        const mediasData = await this.mediasApi.getMedias()
+        
+        let totalLikes = 0;
+        photographersData
+            .map(photographer => new Photographer(photographer))
+            .forEach(photographer => {
+                if(id === photographer.id){ 
+
+                    // Create Banner Section
+                    const bannerSection = new PhotographerContents(photographer)
+                    this.mainContent.prepend(
+                    bannerSection.renderBanner()    
+                    )
+                    
+                    // Create Counting the number of Likes - Loop
+                    mediasData.forEach(media => {
+
+                        if(id === media.photographerId){
+                            totalLikes += media.likes
+                        }
+                    })
+
+                    // Create Number rising
+                    const numberLikes = new PhotographerContents(photographer, totalLikes);
+                    this.mainContent.prepend(
+                        numberLikes.renderInsertInfosCard()
+                    )
+                }
+            });
+    }
 }
 
-document.addEventListener("DOMContentLoaded", init); */
-
-
-
+const launchBanner = new Banner()
+launchBanner.getBannerInfos()
 
 
 

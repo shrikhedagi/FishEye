@@ -28,3 +28,5 @@ class Photographer{
         return this._portrait
     }
 }
+
+export default Photographer;

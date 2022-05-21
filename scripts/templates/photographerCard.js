@@ -1,4 +1,4 @@
-export default class PhotographerCard {
+class PhotographerCard {
     // Add a constructor for the data
     constructor(photographer) {
         this._name = photographer.name;
@@ -39,3 +39,5 @@ export default class PhotographerCard {
         return profilCard
     }
 }
+
+export default PhotographerCard;
