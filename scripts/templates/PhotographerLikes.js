@@ -1,3 +1,4 @@
+import TotalLikes from "../utils/totalLikes.js";
 class PhotographerLikes {
     constructor (photographer, likes, media){
         this._photographer = photographer

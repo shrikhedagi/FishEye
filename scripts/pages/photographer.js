@@ -8,6 +8,7 @@ import PhotographerBanner from '../templates/photographerBanner.js';
 import MediaCards from '../templates/mediaCard.js'
 import PhotographerLikes from '../templates/PhotographerLikes.js';
 
+import TotalLikes from "../utils/totalLikes.js";
 
 // Fetch photographer ID from URL
 // Create URL object and get URL Parameters
@@ -81,6 +82,8 @@ class AllMedias {
                     createMedias.renderMediaCards()
                 )  
             }
+                TotalLikes.init();
+                
         }); 
 
     }

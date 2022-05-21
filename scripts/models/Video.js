@@ -11,7 +11,6 @@ class Video {
         this._description = data.description;
 
     }
-
   
     get id(){
         return this._id

@@ -26,3 +26,4 @@ class TotalLikes{
         countlikes.forEach(countlike => countlike.addEventListener('click', renderCountLikes));
     }
 }
+export default TotalLikes;
