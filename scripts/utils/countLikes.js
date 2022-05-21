@@ -3,16 +3,16 @@ class TotalLikes{
         function renderCountLikes(){
 
             // Likes under image
-            // const counterElement = this.querySelector('.picture-card__counter-like-value');
-            const countElement = this.previousElementSibling;
-            const countValue = Number(countingElement.innerText);
+            // const countingElement = this.querySelector(".media-like-button__number-of-likes");
+            const countingElement = this.previousElementSibling;
+            const countingValue = Number(countingElement.innerText); // using function number() to count the value
         
             // Total likes in a card insert for a photographer
-            const likesElement = document.querySelector('.photographer-counter__likes p');
-            const likesValue = Number(LikesElement.textContent);
+            const likesElement = document.querySelector('.card-insert__likes p');
+            const likesValue = Number(likesElement.textContent); // using function number() to count the value
         
             
-            increment(countElement, countValue);
+            increment(countingElement, countingValue);
             increment(likesElement, likesValue);
         }
         
@@ -22,7 +22,7 @@ class TotalLikes{
         }
         
         
-        const likes = document.querySelectorAll('.picture-card__counter-like-action');
-        likes.forEach(like => like.addEventListener('click', renderCountLikes));
+        const countlikes = document.querySelectorAll('.card-insert__like-clicking');
+        countlikes.forEach(countlike => countlike.addEventListener('click', renderCountLikes));
     }
 }
