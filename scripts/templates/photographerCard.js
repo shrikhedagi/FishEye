@@ -6,19 +6,18 @@ export default class PhotographerCard {
         this._location = `${photographer.city}, ${photographer.country}`;
         this._tagline = photographer.tagline;
         this._price = photographer.price;
-        this._picture = `assets/photographers/photographers-id-photos/${photographer.portrait}`;
+        this._portrait = `assets/photographers/photographers-id-photos/${photographer.portrait}`;
     }   
 
     // Add article section in index.html body
-    createCard() {
+    renderCard() {
     const profilCard = `
         <article class="profil-card">
-
             <a class="profil-link" href="photographer.html?id=${this._id}" aria-label="${this._name} - Fisheye">
                 <img 
                 alt="${this._name}" 
                 class="user-picture" 
-                src="${this._picture}" />
+                src="${this._portrait}" />
                 <h2 class="profil-card__name">
                     ${this._name}
                 </h2>

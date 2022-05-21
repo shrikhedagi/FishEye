@@ -1,4 +1,4 @@
-import PhotographerCard from "../Templates/PhotographerCard.js";
+import PhotographerCard from "../templates/photographerCard.js";
 
 /* Using fetch() to get data for homepage */
 async function getPhotographersData() {
@@ -30,7 +30,7 @@ function displayData(photographers) {
     photographers.forEach((photographer) => {
 
         const photographerModel = new PhotographerCard(photographer);
-        const profilCardDOM = photographerModel.createCard();
+        const profilCardDOM = photographerModel.renderCard();
         photographersSection.innerHTML += profilCardDOM;
 
     });

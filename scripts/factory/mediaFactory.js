@@ -1,4 +1,7 @@
-class MediaFactories {
+import Video from "../models/Video.js";
+import Picture from "../models/Picture.js";
+
+class MediaFactory {
 
     constructor(data) {
         if (data.video) { //If the object media has the specified property return the video
@@ -13,3 +16,4 @@ class MediaFactories {
     }
 }
 
+export default MediaFactory;

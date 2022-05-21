@@ -1,11 +1,64 @@
-async function getPhotographersData() {
+import Photographer from '../templates/photographerContents.js';
+import Media from '../factory/mediaFactory.js';
+import Video from "../models/Video.js";
+import Picture from "../models/Picture.js";
+import Portfolio from '../models/Portfolio.js';
+
+// Fetch photographer ID from URL
+const id = getId();
+
+async function init() {
+
+    // Fetch data of this photographer ID
+    const infos = await getPhotographerInfo(id);
+    const medias = await getPhotographerMedia(id);
+    const photographer = new Photographer(infos, medias);
+
+    // Display data
+    photographer.display()
+}
+init(); 
+
+// ***************************** SWE *****************************
+async function getPhotographerInfo(id) {
+    let photographersData = await fetch("../data/profilData.json");
+    let data = await photographersData.json();
+
+    return data.photographers.find(infos => infos.photographer_id = id);
+}
+
+async function getPhotographerMedia(id) {
+    let photographersData = await fetch("../data/profilData.json")
+    let data = await photographersData.json();
+
+    return data.media.filter(infos => infos.photographerId == id);
+}
+
+// Create URL object and get URL Parameters
+function getId() {
+    const queryString = window.location.search;
+    const urlParameters = new URLSearchParams(queryString);
+    const idString = urlParameters.get("id");
+    const photographerId = parseInt(idString);
+}
+
+
+
+
+
+
+
+
+
+
+/* async function getPhotographersData() {
     let photographersData = await fetch("../data/profilData.json")
     return await photographersData.json();
 }
 
-// Create a function to get the current photographer (on click from ID)
-function getCurrentPhotographer(photographersData) {
-    let currentPhotographer = new Photographer();
+// Create a function to get the actual photographer (on click from ID)
+function getActualPhotographer(photographersData) {
+    let actualPhotographer = new Photographer();
     
     // Get the ID
     const queryString = window.location.search;
@@ -17,12 +70,12 @@ function getCurrentPhotographer(photographersData) {
 
         if (photographer.id === photographerId) {
 
-            currentPhotographer.name = photographer.name;
-            currentPhotographer.id = photographer.id;
-            currentPhotographer.location = `${photographer.city}, ${photographer.country}`;
-            currentPhotographer.tagline = photographer.tagline;
-            currentPhotographer.price = photographer.price;
-            currentPhotographer.picture = `assets/photographers/photographers-id-photos/${photographer.portrait}`;
+            actualPhotographer.name = photographer.name;
+            actualPhotographer.id = photographer.id;
+            actualPhotographer.location = `${photographer.city}, ${photographer.country}`;
+            actualPhotographer.tagline = photographer.tagline;
+            actualPhotographer.price = photographer.price;
+            actualPhotographer.picture = `assets/photographers/photographers-id-photos/${photographer.portrait}`;
 
         }
 
@@ -32,13 +85,13 @@ function getCurrentPhotographer(photographersData) {
 
         if (media.photographerId === photographerId) {
 
-            if(currentPhotographer.media[0] === undefined) {
+            if(actualPhotographer.media[0] === undefined) {
 
-                currentPhotographer.media[0] = MediaFactories.createMediaCard(media);
+                actualPhotographer.media[0] = MediaFactory.createMediaCard(media);
 
             } else {
 
-                currentPhotographer.media.push(MediaFactories.createMediaCard(media));
+                actualPhotographer.media.push(MediaFactory.createMediaCard(media));
 
             }
 
@@ -46,27 +99,27 @@ function getCurrentPhotographer(photographersData) {
 
     });
 
-    return currentPhotographer;
+    return actualPhotographer;
 }
 
-function displayBanner(currentPhotographer) {
+function displayBanner(actualPhotographer) {
 
     const photographerBannerSection = document.querySelector(".photographer-banner");
-    const bannerDOM = currentPhotographer.createBanner();
+    const bannerDOM = actualPhotographer.createBanner();
 
     photographerBannerSection.innerHTML = bannerDOM;
 
 }
 
-function displayMediaCards(currentPhotographer) {
+function displayMediaCards(actualPhotographer) {
 
     const photographerGallery = document.querySelector(".photographer-gallery");
 
-    SelectMenu.sortByPopularity(currentPhotographer.media);
+    selectMenu.sortByPopularity(actualPhotographer.media);
 
-    currentPhotographer.media.forEach( (media) => {
+    actualPhotographer.media.forEach( (media) => {
 
-        const mediaCardDOM = currentPhotographer.getMediaCardDOM(media);
+        const mediaCardDOM = actualPhotographer.getMediaCardDOM(media);
 
         photographerGallery.innerHTML += mediaCardDOM;
 
@@ -74,24 +127,24 @@ function displayMediaCards(currentPhotographer) {
 
 }
 
-function displayInsertInfos(currentPhotographer) {
+function displayInsertInfos(actualPhotographer) {
 
     const photographerInsert = document.querySelector(".card-insert");
 
-    const infosInsertDOM = currentPhotographer.getComplementaryInfosDOM();
+    const infosInsertDOM = actualPhotographer.getComplementaryInfosDOM();
 
     photographerInsert.innerHTML += infosInsertDOM;
 
 }
 
 
-async function displayData(currentPhotographer) {
+async function displayData(actualPhotographer) {
 
-    displayBanner(currentPhotographer);
+    displayBanner(actualPhotographer);
 
-    displayMediaCards(currentPhotographer);
+    displayMediaCards(actualPhotographer);
 
-    displayInsertInfos(currentPhotographer);
+    displayInsertInfos(actualPhotographer);
     
     return "finished";
 
@@ -101,20 +154,20 @@ async function init() {
     
     const photographersData = await getPhotographersData();
     
-    const currentPhotographer = getCurrentPhotographer(photographersData);
+    const actualPhotographer = getActualPhotographer(photographersData);
 
-    // Add the full name of the current photographer in photographer.html
-    document.title = `${currentPhotographer.name} - Fisheye`;
+    // Add the full name of the actual photographer in photographer.html
+    document.title = `${actualPhotographer.name} - Fisheye`;
 
-    if (await displayData(currentPhotographer) === "finished") {
+    if (await displayData(actualPhotographer) === "finished") {
 
-        LikeButton.init(currentPhotographer);
+        LikeButton.init(actualPhotographer);
 
     }
 
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", init); */
 
 
 
