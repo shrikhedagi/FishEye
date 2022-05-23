@@ -1,0 +1,59 @@
+// Media cards: images and videos
+
+.media-cards {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    img {
+        width: 100%;
+        height: 18.75rem;
+        -o-object-fit: cover;
+           object-fit: cover;
+        border-radius: 0.32rem;
+        background-color: #c4c4c4;
+    }
+
+    video {
+        width: 100%;
+        height: 18.75rem;
+        -o-object-fit: cover;
+           object-fit: cover;
+        border-radius: 0.32rem;
+        background-color: #c4c4c4;
+    }
+
+    &__Lightbox-link {
+        width: 100%;
+        height: 18.75rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.32rem;
+        background-color: #c4c4c4;
+    }
+
+    &__footer {
+        width: 100%;
+        margin-top: 0.625rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    &__title {
+        max-width: 16rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+}
+
+
+
+
+
+

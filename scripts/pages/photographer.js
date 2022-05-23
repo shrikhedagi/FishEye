@@ -3,6 +3,9 @@ import MediaApi from '../Api/MediaApi.js';
 import MediaFactory from '../factory/mediaFactory.js';
 
 import Photographer from '../models/Photographer.js';
+import Picture from '../models/Picture.js';
+import Video from '../models/Video.js';
+
 
 import PhotographerBanner from '../templates/photographerBanner.js';
 import MediaCards from '../templates/mediaCard.js'

@@ -27,10 +27,16 @@ h2 {
     margin-bottom: 8px;
 }
 
+h3 {
+    color: $primary-color;
+    font-weight: normal;
+}
+
 p {
     font-weight: normal;
     text-align: center;
     color: $black;
+    margin-top: 1.5rem;
 }
 
 a {
@@ -74,10 +80,14 @@ select {
     cursor: pointer;
     &:hover,
     &:focus { 
-        background-color: $orange-light;
+        background-color: transparent;
     }
 }
 
 li {
     list-style-type: none;
+}
+
+span {
+    font-weight: normal;
 }

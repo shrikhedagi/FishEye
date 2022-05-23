@@ -1,7 +1,7 @@
 .card-insert {
     display: flex;
     width: 24rem;
-    height: 4rem;
+    padding: 1.8rem;
     align-items: center;
     border-top-right-radius: 0.3rem;
     border-top-left-radius: 0.3rem;
@@ -10,5 +10,39 @@
     position: fixed;
     right: 36px;
     bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    justify-content: space-around;
+
+    &__counter {
+        display: flex;
+        align-items: center;
+    }
+
+    & p {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: $black;
+
+        @include mediumDesktop {
+            font-size: 1.3125rem;
+        }
+    }
+
+    &__total-likes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-left: 0.5rem;
+    }
+
+    @include mediumDesktop {
+        font-size: 1.315rem;
+    }
 
 }

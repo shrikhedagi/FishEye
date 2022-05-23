@@ -1,0 +1,90 @@
+// Photographer Banner 
+.photographer-banner {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 50px 100px;
+    padding: 3.5rem 3.125rem 2.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 00.3125rem;
+
+    @include mediumDesktop {
+        gap: 3rem;
+    }
+
+    @include tablette {
+        gap: 4rem;
+    }
+
+    @include mediumMobileLandscape {
+        margin: initial;
+    }
+
+    @include largeMobileLandscape {
+        margin: 0;
+        gap: 3rem;
+    }
+
+    @include xlargeMobileLandscape {
+        gap: unset;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__headline {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        order: 1;
+
+        @include largeMobileLandscape {
+            text-align: center;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__name {
+        font-size: $name-font-size;
+        line-height: 1.5;
+        color: $orange;
+        @include tablette {
+            font-size: $name-font-size-mobile;  
+        }
+    }
+
+    &__location {
+        font-size: $location-font-size;
+        line-height: 1.5;
+        color: $primary-color;
+        @include tablette {
+            font-size: $location-font-size-mobile;
+        }
+    }
+
+    &__tagline {
+        font-size: $tagline-font-size;
+        color: $grey;
+        line-height: 1.5;
+        @include tablette {
+            font-size: $tagline-font-size-mobile;
+        }
+    }
+
+    &__picture {
+        order: 3;
+
+        @include mediumDesktop {
+            order: 2;
+        }
+
+        @include largeMobileLandscape {
+            order: -1;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// Media Cards

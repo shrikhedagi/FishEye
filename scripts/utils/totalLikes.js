@@ -22,8 +22,9 @@ class TotalLikes{
         }
         
         
-        const countlikes = document.querySelectorAll('.card-insert__like-clicking');
-        countlikes.forEach(countlike => countlike.addEventListener('click', renderCountLikes));
+        const countLikes = document.querySelectorAll('.card-insert__like-clicking');
+        countLikes.forEach(countLike => countLike.addEventListener('click', renderCountLikes));
+      
     }
 }
 export default TotalLikes;

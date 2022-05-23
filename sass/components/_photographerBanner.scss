@@ -48,7 +48,6 @@
 
     &__name {
         font-size: $name-font-size;
-        line-height: 1.5;
         color: $orange;
         @include tablette {
             font-size: $name-font-size-mobile;  
@@ -57,7 +56,6 @@
 
     &__location {
         font-size: $location-font-size;
-        line-height: 1.5;
         color: $primary-color;
         @include tablette {
             font-size: $location-font-size-mobile;
@@ -67,7 +65,6 @@
     &__tagline {
         font-size: $tagline-font-size;
         color: $grey;
-        line-height: 1.5;
         @include tablette {
             font-size: $tagline-font-size-mobile;
         }

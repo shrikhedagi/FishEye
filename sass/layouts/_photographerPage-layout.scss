@@ -1,8 +1,12 @@
+#photographer-gallery {
+    margin: 70px 100px;
+}
+
 .photographer-gallery {
     display: grid;
     margin: 3.6rem 4.5rem 0;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4.5rem 6rem;
+    gap: 4.44rem 5.94rem;
     overflow: hidden;
 
     @include xlargeMobileLandscape {
