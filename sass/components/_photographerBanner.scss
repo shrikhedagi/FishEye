@@ -57,6 +57,7 @@
     &__location {
         font-size: $location-font-size;
         color: $primary-color;
+        margin-top: 1.5rem;
         @include tablette {
             font-size: $location-font-size-mobile;
         }
@@ -65,6 +66,7 @@
     &__tagline {
         font-size: $tagline-font-size;
         color: $grey;
+        margin-top: 1.5rem;
         @include tablette {
             font-size: $tagline-font-size-mobile;
         }

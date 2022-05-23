@@ -14,10 +14,12 @@ class MediaCards {
                     <h3 class="media-cards__title" title="${this._media.title}">
                         ${this._media.title}
                     </h3>
-                    <button class="like-button sr-container" aria-label="${this._media.likes} likes">
-                        <span class="like-button__number-of-likes">${this._media.likes}</span>
-                        <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
-                    </button>
+                    <div class="like-button">
+                        <p class="like-button__number-of-likes">${this._media.likes}</p>
+                        <button class="like-button like-button__clicking sr-container" aria-label="${this._media.likes} likes">
+                            <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </footer>
             <time datetime="${this._media.date}"></time>
             `;

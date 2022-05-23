@@ -12,11 +12,11 @@ class PhotographerLikes {
         
         cardInsertInfos.innerHTML =`
         <div class="card-insert__counter sr-container">
-            <span id="card-insert__total-likes">${this._likes.totalLikes}</span>
+            <span class="card-insert__total-likes">${this._likes}</span>
             <span aria-hidden="true" class="card-insert__icon fas fa-heart"></span>
         </div>
         <div class="card-insert__price">
-            <span>${this._photographer.price}€ / jour</span>
+            <p>${this._photographer.price}€ / jour</p>
         </div>
             `;
         return cardInsertInfos; 
