@@ -415,38 +415,15 @@ a:hover h2, a:focus h2 {
   color: #db8876;
 }
 
-a,
-button,
-select {
+a {
   transition: color 0.3s;
   transition: background-color 0.3s;
 }
-a:hover, a:focus,
-button:hover,
-button:focus,
-select:hover,
-select:focus {
+a:hover, a:focus {
   color: #000;
 }
-a:focus-visible,
-button:focus-visible,
-select:focus-visible {
+a:focus-visible {
   outline: thin dotted;
-}
-
-button,
-select {
-  font-weight: bold;
-  color: #FFF;
-  border: none;
-  border-radius: 5px;
-  background-color: #901c1c;
-  cursor: pointer;
-}
-button:hover, button:focus,
-select:hover,
-select:focus {
-  background-color: transparent;
 }
 
 li {
@@ -589,6 +566,8 @@ span {
 }
 
 .button {
+  transition: color 0.6s;
+  transition: background-color 0.6s;
   width: 170px;
   height: 70px;
   padding: 11px;
@@ -600,18 +579,32 @@ span {
   border-radius: 5px;
   cursor: pointer;
 }
+.button:focus-visible {
+  outline: thin dotted;
+}
+.button:hover, .button:focus {
+  color: #000;
+  background-color: #db8876;
+}
 
 .contact-button {
   order: 2;
 }
 
 .like-button {
+  transition: color 0.3s;
+  transition: background-color 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #901c1c;
   background-color: transparent;
   transition: outline 0.3s, color 0.3s;
+  font-weight: bold;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .like-button__number-of-likes {
   font-size: 1.5rem;
@@ -629,6 +622,7 @@ span {
 }
 .like-button__icon:hover {
   transform: scale(1.5);
+  color: #901c1c;
   cursor: pointer;
 }
 
@@ -658,8 +652,15 @@ span {
   line-height: 1.5;
 }
 .selected-option__items {
+  transition: color 0.6s;
+  transition: background-color 0.6s;
   display: inline-flex;
   width: 100%;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #901c1c;
+  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -675,7 +676,10 @@ span {
 .selected-option__items:focus {
   outline: #db8876 thin dashed;
 }
-.selected-option__items:hover:focus {
+.selected-option__items:focus-visible {
+  outline: thin dotted;
+}
+.selected-option__items:hover, .selected-option__items :focus {
   color: #000;
   background-color: #db8876;
 }
@@ -752,7 +756,7 @@ span {
   border-radius: 0.32rem;
   background-color: #c4c4c4;
 }
-.media-cards__Lightbox-link {
+.media-cards__lightbox-link {
   width: 100%;
   height: 18.75rem;
   justify-content: center;

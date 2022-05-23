@@ -55,9 +55,7 @@ a {
     }
 }
 
-a,
-button,
-select {
+a {
     transition: color 0.3s;
     transition: background-color 0.3s;
 
@@ -67,20 +65,6 @@ select {
     }
     &:focus-visible {
         outline: thin dotted;
-    }
-}
-
-button,
-select {
-    font-weight: bold;
-    color: $white;
-    border: none;
-    border-radius: 5px; 
-    background-color: $primary-color;
-    cursor: pointer;
-    &:hover,
-    &:focus { 
-        background-color: transparent;
     }
 }
 
