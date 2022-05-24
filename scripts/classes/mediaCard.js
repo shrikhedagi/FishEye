@@ -1,9 +1,12 @@
-class MediaCards {
-    constructor(media) {
+class MediaCards 
+{
+    constructor(media) 
+    {
         this._media = media
     }
 
-    renderMediaCards() {
+    renderMediaCards() 
+    {
 
         let mediaCard = document.createElement('article');
         mediaCard.classList.add('media-cards');

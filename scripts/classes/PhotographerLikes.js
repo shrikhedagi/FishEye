@@ -1,11 +1,14 @@
 import TotalLikes from "../utils/totalLikes.js";
-class PhotographerLikes {
-    constructor (photographer, likes, media){
+class PhotographerLikes 
+{
+    constructor (photographer, likes, media)
+    {
         this._photographer = photographer
         this._likes = likes
     }
 
-    renderInsertInfosCard() {
+    renderInsertInfosCard() 
+    {
 
         const cardInsertInfos = document.createElement('aside');
         cardInsertInfos.classList.add('card-insert')

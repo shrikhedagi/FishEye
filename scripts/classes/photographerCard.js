@@ -1,6 +1,8 @@
-class PhotographerCard {
+class PhotographerCard 
+{
     // Add a constructor for the data
-    constructor(photographer) {
+    constructor(photographer) 
+    {
         this._name = photographer.name;
         this._id = photographer.id;
         this._location = `${photographer.city}, ${photographer.country}`;
@@ -10,7 +12,8 @@ class PhotographerCard {
     }   
 
     // Add article section in index.html body
-    renderCard() {
+    renderCard() 
+    {
     const profilCard = `
         <article class="profil-card">
             <a class="profil-link" href="photographer.html?id=${this._id}" aria-label="${this._name} - Fisheye">

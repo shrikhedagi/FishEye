@@ -1,21 +1,26 @@
-import PhotographerCard from "../templates/photographerCard.js";
+import PhotographerCard from "../classes/photographerCard.js";
 
 /* Using fetch() to get data for homepage */
-async function getPhotographersData() {
+async function getPhotographersData() 
+{
 
     const photographers = fetch('data/profilData.json') // Correct path for local and gitPages
 
-        .then(function (response) {
-            if (response.ok) {
+        .then(function (response) 
+        {
+            if (response.ok) 
+            {
                 return response.json();
             }
         })
 
-        .then(function (data) {
+        .then(function (data) 
+        {
             return data.photographers;
         })
 
-        .catch(function (errorMessage) {
+        .catch(function (errorMessage) 
+        {
             console.log("Request failed ${errorMessage}!")
         });
 
@@ -24,10 +29,12 @@ async function getPhotographersData() {
 }
 
 /* Display the photographers' cards in homepage */
-function displayData(photographers) {
+function displayData(photographers) 
+{
     const photographersSection = document.querySelector(".photographer_section");
 
-    photographers.forEach((photographer) => {
+    photographers.forEach((photographer) => 
+    {
 
         const photographerModel = new PhotographerCard(photographer);
         const profilCardDOM = photographerModel.renderCard();
@@ -37,7 +44,8 @@ function displayData(photographers) {
 
 }
 
-async function init() {
+async function init() 
+{
     const photographers = await getPhotographersData();
     displayData(photographers);
 

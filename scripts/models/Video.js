@@ -1,6 +1,8 @@
-class Video {
+class Video 
+{
 
-    constructor(data) {
+    constructor(data) 
+    {
         this._id = data.id;
         this._photographerId = data.photographerId;
         this._title = data.title;
@@ -12,28 +14,36 @@ class Video {
 
     }
   
-    get id(){
+    get id()
+    {
         return this._id
     }
-    get title(){
+    get title()
+    {
         return this._title
     }
-    get image(){
+    get image()
+    {
         return this._image
     }
-    get description(){
+    get description()
+    {
         return this._description
     }
-    get photographerId(){
+    get photographerId()
+    {
         return this._photographerId
     }
-    get date(){
+    get date()
+    {
         return this._date
     }
-    get likes(){
+    get likes()
+    {
         return this._likes
     }
-    get source(){
+    get source()
+    {
         return `
             <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, lightbox closeup view">
                 <video>

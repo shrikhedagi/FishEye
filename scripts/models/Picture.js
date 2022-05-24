@@ -1,6 +1,8 @@
-class Picture {
+class Picture 
+{
 
-    constructor(data) {
+    constructor(data) 
+    {
         this._likes = data.likes;
         this._date = data.date;
         this._price = data.price;
@@ -12,28 +14,36 @@ class Picture {
 
     }
 
-    get id(){
+    get id()
+    {
         return this._id
     }
-    get title(){
+    get title()
+    {
         return this._title
     }
-    get image(){
+    get image()
+    {
         return this._image
     }
-    get description(){
+    get description()
+    {
         return this._description
     }
-    get photographerId(){
+    get photographerId()
+    {
         return this._photographerId
     }
-    get date(){
+    get date()
+    {
         return this._date
     }
-    get likes(){
+    get likes()
+    {
         return this._likes
     }
-    get source(){
+    get source()
+    {
         return `<a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/photo/${this._image}" aria-label="${this.title}, lightbox closeup view">
                     <img src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}">
                 </a>

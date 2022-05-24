@@ -102,6 +102,22 @@
 	}
 }
 
+/* Sizes */
+
+@mixin size($size, $option: 0) {
+	@if ($option == width) or ($option == height) {
+		@if ($option == width) {
+			width: $size;
+		} @else if ($option == height) {
+			height: $size;
+		} @else {
+			$size: 0;
+		}
+	} @else {
+		width: map-get($size, width);
+		height: map-get($size, height);
+	}
+}
 
 
 

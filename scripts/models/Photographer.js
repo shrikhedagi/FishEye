@@ -1,5 +1,7 @@
-class Photographer {
-    constructor(data) {
+class Photographer 
+{
+    constructor(data) 
+    {
         this._name = data.name
         this._id = data.id
         this._city = data.city
@@ -9,22 +11,27 @@ class Photographer {
         this._portrait = data.portrait
     }
 
-    get name(){
+    get name()
+    {
         return this._name
     }
-    get id(){
+    get id()
+    {
         return this._id
     }
-    get location(){
+    get location()
+    {
         return `${this._city}, ${this._country}`
     }
-    get tagline(){
+    get tagline()
+    {
         return this._tagline
     }
     get price(){
         return this._price
     }
-    get portrait(){
+    get portrait()
+    {
         return this._portrait
     }
 }
