@@ -1,19 +1,5 @@
 class ContactForm 
 {
-    static init() {
-        
-        const contactButton = document.getElementById("contact-btn");
-        
-        contactButton.addEventListener("click", e => { 
-            
-            e.preventDefault();
-            e.stopPropagation();
-
-            new ContactForm();
-        
-        });
-    }
-
     constructor(photographer) 
     {
         this._photographer = photographer
@@ -35,10 +21,10 @@ class ContactForm
                     <br />
                     ${this._photographer.name}
                 </h2>
-                <img class="contact-button" src="./assets/icons/clos.svg" alt="Fermeture de la modale">"/>
+                <img id="close" class="contact-button" src="./assets/icons/clos.svg" alt="Fermeture de la modale">"/>
             </header>
             <form class="contact-form" novalidate>
-                 <div class="contact-form__label-input">
+                 <div id="firstName" class="contact-form__label-input">
                     <label class="contact-form__label placeholder="David">Prénom</label>
                     <input type"text" class="contact-form__input" aria-label="First name" id="firstName" required/>
                 </div>
@@ -54,7 +40,7 @@ class ContactForm
                     <label class="contact-form__label">Votre message</label>
                     <textarea cols="30" rows="10" class="text-area" aria-label="Your message" placeholder="Veuillez écrire votre message dans ce champs." id="message" required/>
                 </div>
-                <button type="submit" class="button contact-button" id="submit-button" aria-label="Send" formnovalidate>Envoyer</button>
+                <button type="submit" class="button contact-button" id="submit" aria-label="Send" formnovalidate>Envoyer</button>
             </form>
         </div>`;
 
