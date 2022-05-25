@@ -844,6 +844,8 @@ form {
 form label {
   font-size: 1.75rem;
   color: #312E2E;
+  margin-bottom: 0.5rem;
+  margin-top: 0.3rem;
 }
 @media screen and (max-width: ) {
   form label {
@@ -878,7 +880,7 @@ form label {
   font-size: 1.3rem;
   padding: 1rem;
   border: none;
-  border-radius: 0.32rem;
+  border-radius: 0.3125rem;
 }
 .contactData__email {
   margin-bottom: 12px;
@@ -906,10 +908,12 @@ form label {
   height: 11rem;
   max-width: 100%;
   min-width: 100%;
+  border-radius: 0.3125rem;
   padding: 1rem;
   border: none;
   font-size: 1.3rem;
   line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 @media screen and (max-width: ) {
   .text-area {

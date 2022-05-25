@@ -55,6 +55,9 @@ form {
     label {
         font-size: 1.75rem;
         color: $formColor;
+        margin-bottom: 0.5rem;
+        margin-top: 0.3rem;
+        
         @include LargeDesktop {
             font-size: 1.65rem;
         }
@@ -82,11 +85,12 @@ form {
         font-size: 1.3rem;
         padding: 1rem;
         border: none;
-        border-radius: 0.32rem;
+        border-radius: 0.3125rem;
     }
 
     &__email {
         margin-bottom: 12px;
+        
         @include mediumDesktop {
             margin-bottom: 22px;
         }
@@ -99,6 +103,7 @@ form {
         color: $black;
         background-color: transparent;
         text-align: left;
+        
         @include mediumDesktop {
             font-size: 1rem;
         }
@@ -109,10 +114,13 @@ form {
     height: 11rem;
     max-width: 100%;
     min-width: 100%;
+    border-radius: 0.3125rem;
     padding: 1rem;
     border: none;
     font-size: 1.3rem;
     line-height: 1.5;
+    margin-bottom: 1.5rem;
+    
     @include LargeDesktop {
         max-height: 7rem;
     }
