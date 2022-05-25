@@ -1,6 +1,7 @@
 import Video from "../models/Video.js";
 import Picture from "../models/Picture.js";
 import Photographer from "../models/Photographer.js";
+import ContactForm from "./contactForm.js";
 
 class PhotographerBanner {
     constructor(photographer) {
@@ -18,7 +19,7 @@ class PhotographerBanner {
             <p class="photographer-banner__tagline">${this._photographer.tagline}</p>
         </div>
             
-            <button type="button" class="button contact-button" id="contact-btn" aria-label="Contact Me">Contactez-moi</button>
+            <button type="button" class="button contact-button" id="contact-button" aria-label="Contact Me">Contactez-moi</button>
             
             <img 
             class="user-picture photographer-banner__picture" 
@@ -26,7 +27,12 @@ class PhotographerBanner {
             alt="${this._photographer.name}" 
             />`;
 
+        // Add Contact Form
+        const createForm = new ContactForm(this._photographer)
+        banner.append(createForm.renderContactForm())
+
         return banner;
     }
 }
+
 export default PhotographerBanner;

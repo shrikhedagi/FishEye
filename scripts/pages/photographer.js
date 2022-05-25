@@ -64,7 +64,18 @@ export default class Banner
                     )
                 }
             });
+
+            // Launch Contact Form
+            const formBtn = document.querySelectorAll(".contact-button");
+            formBtn.forEach((btn) => btn.addEventListener("click", launchForm));
     }
+}
+
+// Launch Contact Form
+function launchForm() 
+{
+    const modal = document.getElementById("contact-form-container");
+    modal.style.display = "block";
 }
 
 const launchBanner = new Banner()
@@ -106,26 +117,6 @@ class AllMedias
 const launchMedias = new AllMedias();
 launchMedias.createAllMedias();
 
-// Create contact form
-const formOverlay = document.querySelector('.formOverlay');
-const focusableElementsModal = document.querySelectorAll(
-    "#close, #firstname, #lastname, #email, #message, #submit"
-  );
-const firstElement = focusableElementsModal[0];
-
-/***** Open Contact Form *****/
-function openForm() 
-{
-    formOverlay.style.display = "flex";
-    firstElement.focus();
-}
-
-/***** Close Contact Form *****/
-function closeForm() 
-{
-    formOverlay.style.display = "none";
-    document.querySelector('main').focus();
-}
 
 
 
