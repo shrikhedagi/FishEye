@@ -1,3 +1,51 @@
+#contact-form {
+    background-color: rgba(196,196,196,.4);
+    align-items: flex-start;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem 2.2rem;
+    margin: 13% auto;
+    width: 50%;
+    max-width: 720px;
+    border-radius: 0.3125rem;
+    height: 58rem;
+    position: relative;
+    background-color: $orange-light;
+    -webkit-animation: slide-up 0.3s ease-in;
+            animation: slide-up 0.3s ease-in;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+
+    &__heading {
+        margin-bottom: 1.2rem;
+        text-align: left;
+        font-size: 2.8rem;
+        color: $black;
+    }
+
+    &__close {
+        color: $white;
+        font-size: 5rem;
+        border: none;
+        cursor: pointer;
+        
+        &:hover:focus {
+            transform: scale(0.7);
+        }
+    }
+}
+
 form {
     display: flex;
     align-items: flex-start;
@@ -5,10 +53,10 @@ form {
     width: 100%;
 
     label {
-        font-size: 2rem;
+        font-size: 1.75rem;
         color: $formColor;
         @include LargeDesktop {
-            font-szie: 2rem;
+            font-size: 1.65rem;
         }
         @include mediumDesktop {
            font-size: 1.5rem;
@@ -28,6 +76,15 @@ form {
     width: 100%;
     margin-bottom: 10px;
 
+    &__input {
+        height: 4.3rem;
+        width: 100%;
+        font-size: 1.3rem;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.32rem;
+    }
+
     &__email {
         margin-bottom: 12px;
         @include mediumDesktop {
@@ -46,4 +103,23 @@ form {
             font-size: 1rem;
         }
     }  
+}
+
+.text-area {
+    height: 11rem;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 1rem;
+    border: none;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    @include LargeDesktop {
+        max-height: 7rem;
+    }
+    @include mediumDesktop {
+        max-height: 6rem;
+    }
+    @include mediumMobileLandscape {
+        max-height: 5rem;
+    }
 }

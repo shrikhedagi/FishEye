@@ -440,6 +440,14 @@ span {
   transform: scale(1.1);
 }
 
+@-webkit-keyframes slide-up {
+  from {
+    transform: translateY(25%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
 .sr-container {
   position: relative;
   overflow: hidden;
@@ -782,6 +790,51 @@ span {
   text-overflow: ellipsis;
 }
 
+#contact-form {
+  background-color: rgba(196, 196, 196, 0.4);
+  align-items: flex-start;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 2.2rem;
+  margin: 13% auto;
+  width: 50%;
+  max-width: 720px;
+  border-radius: 0.3125rem;
+  height: 58rem;
+  position: relative;
+  background-color: #db8876;
+  -webkit-animation: slide-up 0.3s ease-in;
+  animation: slide-up 0.3s ease-in;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+.form-header__heading {
+  margin-bottom: 1.2rem;
+  text-align: left;
+  font-size: 2.8rem;
+  color: #000;
+}
+.form-header__close {
+  color: #FFF;
+  font-size: 5rem;
+  border: none;
+  cursor: pointer;
+}
+.form-header__close:hover:focus {
+  transform: scale(0.7);
+}
+
 form {
   display: flex;
   align-items: flex-start;
@@ -789,12 +842,12 @@ form {
   width: 100%;
 }
 form label {
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: #312E2E;
 }
 @media screen and (max-width: ) {
   form label {
-    font-szie: 2rem;
+    font-size: 1.65rem;
   }
 }
 @media screen and (max-width: 1160px) {
@@ -819,6 +872,14 @@ form label {
   width: 100%;
   margin-bottom: 10px;
 }
+.contactData__input {
+  height: 4.3rem;
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.32rem;
+}
 .contactData__email {
   margin-bottom: 12px;
 }
@@ -838,6 +899,31 @@ form label {
 @media screen and (max-width: 1160px) {
   .contactData__message {
     font-size: 1rem;
+  }
+}
+
+.text-area {
+  height: 11rem;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 1rem;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: ) {
+  .text-area {
+    max-height: 7rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .text-area {
+    max-height: 6rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .text-area {
+    max-height: 5rem;
   }
 }
 
