@@ -1,11 +1,8 @@
-import Video from "../models/Video.js";
-import Picture from "../models/Picture.js";
-import Photographer from "../models/Photographer.js";
 import ContactForm from "./contactForm.js";
 
 class PhotographerBanner {
-    constructor(photographer) {
-        this._photographer = photographer
+    constructor(all) {
+        this._all = all
     }
 
     renderBanner() {
@@ -14,21 +11,21 @@ class PhotographerBanner {
         
         banner.innerHTML = `
         <div class="photographer-banner__headline">
-            <h1 class="photographer-banner__name">${this._photographer.name}</h1>
-            <p class="photographer-banner__location">${this._photographer.location}</p>
-            <p class="photographer-banner__tagline">${this._photographer.tagline}</p>
+            <h1 class="photographer-banner__name">${this._all.name}</h1>
+            <p class="photographer-banner__location">${this._all.location}</p>
+            <p class="photographer-banner__tagline">${this._all.tagline}</p>
         </div>
             
             <button type="button" class="button contact-button" id="contact-button" aria-label="Contact Me">Contactez-moi</button>
             
             <img 
             class="user-picture photographer-banner__picture" 
-            src="./assets/photographers/photographers-id-photos/${this._photographer.portrait}" 
-            alt="${this._photographer.name}" 
+            src="./assets/photographers/photographers-id-photos/${this._all.portrait}" 
+            alt="${this._all.name}" 
             />`;
 
         // Add Contact Form
-        const createForm = new ContactForm(this._photographer)
+        const createForm = new ContactForm(this._all)
         banner.append(createForm.renderContactForm())
 
         return banner;

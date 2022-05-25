@@ -1,9 +1,9 @@
 import TotalLikes from "../utils/totalLikes.js";
 class PhotographerLikes 
 {
-    constructor (photographer, likes, media)
+    constructor (all, likes)
     {
-        this._photographer = photographer
+        this._all = all
         this._likes = likes
     }
 
@@ -19,7 +19,7 @@ class PhotographerLikes
             <span aria-hidden="true" class="card-insert__icon fas fa-heart"></span>
         </div>
         <div class="card-insert__price">
-            <p>${this._photographer.price}€ / jour</p>
+            <p>${this._all.price}€ / jour</p>
         </div>
             `;
         return cardInsertInfos; 

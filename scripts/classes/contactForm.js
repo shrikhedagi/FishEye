@@ -1,8 +1,8 @@
 class ContactForm 
 {    
-    constructor(photographer) 
+    constructor(all) 
     {
-        this._photographer = photographer
+        this._all = all
     } 
 
     renderContactForm() 
@@ -19,43 +19,43 @@ class ContactForm
                 <h2 id="modal-title" class="form-header__heading">
                     Contactez-moi
                     <br />
-                    ${this._photographer.name} 
+                    ${this._all.name} 
                 </h2>
                 <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
                     <img aria-hidden="true" class="contact-button" src="./assets/icons/close.svg" alt="Fermeture de la modale"/>
                 </button>
             </header>
-            <form aria-hidden="true" class="contact-form sr-container" novalidate>
-                 <div class="contact-form__label-input">
-                    <label class="contact-form__label">Prénom</label>
-                    <input type"text" class="contact-form__input" placeholder="David" aria-label="First name" id="firstName" required/>
+            <form action="#" method="post" id="contactForm" aria-hidden="true" class="contact-form sr-container" novalidate>
+                 <div id="contactDataFirstName" class="contactData">
+                    <label class="contactData__label">Prénom</label>
+                    <input type"text" class="contactData__input" placeholder="David" aria-label="First name" id="firstName" required/>
                 </div>
-                <div class="contact-form__label-input">
-                    <label class="contact-form__label">Nom</label>
-                    <input type"text" class="contact-form__input" placeholder="Green" aria-label="Last name" id="lastName" required/>
+                <div id="contactDataLastName" class="contactData">
+                    <label for="last-name" class="contactData__label">Nom</label>
+                    <input type"text" class="contactData__input" placeholder="Green" aria-label="Last name" id="lastName" required/>
                 </div>
-                <div class="contact-form__label-input">
-                    <label class="contact-form__label">Email</label>
-                    <input type="email" class="contact-form__input" aria-label="Email" id="email" placeholder="david-green@gmail.com" required/>
+                <div id="contactDataEmail" class="contactData contactData__email">
+                    <label class="contactData__label">Email</label>
+                    <input type="email" class="contactData__input" aria-label="Email" id="email" placeholder="david-green@gmail.com" required/>
                 </div>
-                <div class="contact-form__label-input">
-                    <label class="contact-form__label">Votre message</label>
+                <div id="contactDataMessage" class="contactData contactData__message">
+                    <label class="contactData__label">Votre message</label>
                     <textarea cols="30" rows="10" class="text-area" aria-label="Your message" placeholder="Veuillez écrire votre message dans ce champs." id="message" required></textarea>
                 </div>
                 <button type="submit" class="button contact-button" id="submit" aria-label="Send" formnovalidate>Envoyer</button>
             </form>
         </div>`;
 
-        // Close Contact Form - Event
+        // Close Contact Form - Event - Cross button in form
         form.querySelector('.form-header__close').addEventListener('click', event => 
         {
             form.style.display = 'none';
         })
 
-        // Close Contact From - Keydown
+        // Close Contact From with "Escape" - Keydown (Accessibility)
         document.body.addEventListener('keydown', (event) => 
         {
-            if(event.key === 'Escape') 
+            if(event.key === 'Escape')
             {
                 event.preventDefault();
                 form.style.display = 'none';
