@@ -791,8 +791,13 @@ span {
 }
 
 #contact-form {
-  background-color: rgba(196, 196, 196, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   align-items: flex-start;
+  width: 100vw;
+  height: 100vw;
+  position: fixed;
+  display: none;
+  top: 0;
 }
 
 .form-content {

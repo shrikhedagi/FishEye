@@ -10,7 +10,7 @@ import Video from '../models/Video.js';
 import PhotographerBanner from '../classes/photographerBanner.js';
 import MediaCards from '../classes/mediaCard.js'
 import PhotographerLikes from '../classes/PhotographerLikes.js';
-import ContactForm from '../classes/contactForm.js';
+import ContactForm from '../utils/contactForm.js';
 
 import TotalLikes from "../utils/totalLikes.js";
 
@@ -24,9 +24,9 @@ const id = Number(urlParameters.searchParams.get("id"));
 export default class Banner 
 {
     constructor(){
-        this.mainContent = document.querySelector('main'); // Add in <main>
-        this.photographersApi = new PhotographerApi('data/ProfilData.json'); // Fetch data with API
-        this.mediasApi = new MediaApi('data/ProfilData.json'); // Fetch data with API
+        this.mainContent = document.querySelector('main');
+        this.photographersApi = new PhotographerApi('data/profilData.json'); // Fetch data with API
+        this.mediasApi = new MediaApi('data/profilData.json'); // Fetch data with API
     }
 
     async getBannerInfos() 
@@ -64,20 +64,10 @@ export default class Banner
                     )
                 }
             });
-
-            // Launch Contact Form
-            const formBtn = document.querySelectorAll(".contact-button");
-            formBtn.forEach((btn) => btn.addEventListener("click", launchForm));
     }
 }
 
-// Launch Contact Form
-function launchForm() 
-{
-    const modal = document.getElementById("contact-form-container");
-    modal.style.display = "block";
-}
-
+// Launch the entire banner with all its components (likes, single photographer info, contact form, etc.)
 const launchBanner = new Banner()
 launchBanner.getBannerInfos()
 

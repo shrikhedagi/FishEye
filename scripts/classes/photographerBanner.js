@@ -1,5 +1,3 @@
-import ContactForm from "./contactForm.js";
-
 class PhotographerBanner {
     constructor(all) {
         this._all = all
@@ -23,10 +21,6 @@ class PhotographerBanner {
             src="./assets/photographers/photographers-id-photos/${this._all.portrait}" 
             alt="${this._all.name}" 
             />`;
-
-        // Add Contact Form
-        const createForm = new ContactForm(this._all)
-        banner.append(createForm.renderContactForm())
 
         return banner;
     }

@@ -1,5 +1,6 @@
 class ContactForm 
 {    
+
     constructor(all) 
     {
         this._all = all
@@ -19,7 +20,7 @@ class ContactForm
                 <h2 id="modal-title" class="form-header__heading">
                     Contactez-moi
                     <br />
-                    ${this._all.name} 
+                    ${this._all.name}
                 </h2>
                 <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
                     <img aria-hidden="true" class="contact-button" src="./assets/icons/close.svg" alt="Fermeture de la modale"/>
@@ -46,28 +47,47 @@ class ContactForm
             </form>
         </div>`;
 
-        // Close Contact Form - Event - Cross button in form
-        form.querySelector('.form-header__close').addEventListener('click', event => 
+        // Launch Contact Form - Event 
+        const formBtn = document.querySelectorAll(".contact-button");
+        formBtn.forEach((btn) => btn.addEventListener("click", launchForm));
+        
+        launchForm() 
         {
-            form.style.display = 'none';
-        })
+            const modal = document.getElementById("contact-form");
+            modal.style.display = "flex";
+            modal.classList.remove('sr-container');
+        }
 
-        // Close Contact From with "Escape" - Keydown (Accessibility)
-        document.body.addEventListener('keydown', (event) => 
-        {
-            if(event.key === 'Escape')
-            {
-                event.preventDefault();
-                form.style.display = 'none';
-            }
-        })
+        const modalContent = document.getElementById("contact-form").querySelector(".form-content");
+        document.getElementById("contact-form").classList.remove("modal--close");
+        document.body.classList.toggle("main-wrapper--modal-open");
 
-        // Launch Contact Form
         return form;
-    }
-      
+
+    }  
+    
+// Close Contact Form - Event - Cross button in form
+close() {
+    form.querySelector('.form-header__close').addEventListener('click', event => 
+    {
+        form.style.display = 'none';
+    })
 }
 
-/**** Open Contact Form ****/
+// Close Contact From with "Escape" - Keydown (Accessibility)
+keyDown() {
+    document.body.addEventListener('keydown', (event) => 
+    {
+        if(event.key === 'Escape')
+        {
+            event.preventDefault();
+            form.style.display = 'none';
+        }
+    })
+}
+}
 
 export default ContactForm;
+
+
+
