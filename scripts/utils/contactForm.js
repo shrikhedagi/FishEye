@@ -39,6 +39,7 @@ class ContactForm
             this.hide();
         }
         })
+        
     }
     
 }

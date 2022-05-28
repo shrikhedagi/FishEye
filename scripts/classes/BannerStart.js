@@ -47,5 +47,5 @@ export default class BannerStart
         // Get the number of likes rising
         const numberLikes = new PhotographerLikes(photographer, totalLikes);
         this.mainContent.prepend(numberLikes.renderInsertInfosCard())
-                }
-        };
+    }
+};

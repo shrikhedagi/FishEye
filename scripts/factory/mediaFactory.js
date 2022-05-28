@@ -11,7 +11,7 @@ class MediaFactory {
             return new Picture(data);
 
         } else {
-            throw 'An error occured'
+            throw 'An error has occured'
         }
     }
 }

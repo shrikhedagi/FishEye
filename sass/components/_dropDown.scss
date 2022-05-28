@@ -18,13 +18,13 @@
     }
 }
 
-.selected-option {
+.dropDown {
     width: 10.625rem;
     height: 4.3125rem;
     position: relative;
     line-height: 1.5;
 
-    &__items {
+    &__button {
         transition: color 0.6s;
         transition: background-color 0.6s;
         display: inline-flex;
@@ -38,7 +38,6 @@
            -moz-user-select: none;
             -ms-user-select: none;
                 user-select: none;
-        cursor: pointer;
         align-items: center;
         justify-content: space-between;
         background-color: $primary-color;
@@ -55,7 +54,8 @@
             outline: thin dotted;
         }
 
-        &:hover, :focus {
+        &:hover, 
+        :focus {
             color: $black;
             background-color: $orange-light;
         }
@@ -67,3 +67,45 @@
         font-family: "FontAwesome 6 Free";
     }
 }
+
+.dropDownMenu {
+    display: none;
+    position: absolute;
+    background-color: $primary-color;
+    z-index: 1;
+    
+    &a {
+        display: block;
+        text-decoration: none;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $primary-color;
+        font-size: 1.175rem;
+        color: $white;
+        padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+        transition: color 0.6s;
+        transition: background-color 0.6s;
+        display: inline-flex;
+        width: 100%;
+        border: none;
+        font-weight: bold;
+        border-radius: 5px; 
+        background-color: $primary-color;
+        cursor: pointer;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        &:hover, 
+        :focus {
+        color: $black;
+        background-color: $orange-light;
+        }
+        
+    }
+}
+
+.show {
+    display: block;
+}
+

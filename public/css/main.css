@@ -655,13 +655,13 @@ span {
   color: #000;
 }
 
-.selected-option {
+.dropDown {
   width: 10.625rem;
   height: 4.3125rem;
   position: relative;
   line-height: 1.5;
 }
-.selected-option__items {
+.dropDown__button {
   transition: color 0.6s;
   transition: background-color 0.6s;
   display: inline-flex;
@@ -675,7 +675,6 @@ span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: pointer;
   align-items: center;
   justify-content: space-between;
   background-color: #901c1c;
@@ -683,19 +682,59 @@ span {
   color: #FFF;
   padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 }
-.selected-option__items:focus {
+.dropDown__button:focus {
   outline: #db8876 thin dashed;
 }
-.selected-option__items:focus-visible {
+.dropDown__button:focus-visible {
   outline: thin dotted;
 }
-.selected-option__items:hover, .selected-option__items :focus {
+.dropDown__button:hover,
+.dropDown__button :focus {
   color: #000;
   background-color: #db8876;
 }
-.selected-option__arrow {
+.dropDown__arrow {
   font-weight: 900;
   font-family: "FontAwesome 6 Free";
+}
+
+.dropDownMenu {
+  display: none;
+  position: absolute;
+  background-color: #901c1c;
+  z-index: 1;
+}
+.dropDownMenua {
+  display: block;
+  text-decoration: none;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #901c1c;
+  font-size: 1.175rem;
+  color: #FFF;
+  padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+  transition: color 0.6s;
+  transition: background-color 0.6s;
+  display: inline-flex;
+  width: 100%;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #901c1c;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.dropDownMenua:hover,
+.dropDownMenua :focus {
+  color: #000;
+  background-color: #db8876;
+}
+
+.show {
+  display: block;
 }
 
 .card-insert {
