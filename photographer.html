@@ -24,11 +24,16 @@
       <form class="select-menu" name="select-menu-form" method="get" action="#" novalidate>
 				<label id="select-menu-label" class="select-menu__label">Trier par</label>
 
-				<div class="selected-option">
-					<button type="button" id="selected-option__trigger" class="selected-option__items" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-option-label select-option-trigger">
+				<div class="dropDown">
+					<button onclick="DropDown()" type="button" id="button-trigger" class="dropDown__button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-option-label select-option-trigger">
 						Popularité
-						<span class="fas fa-chevron-down selected-option__arrow"></span>
+						<span class="fas fa-chevron-down dropDown__arrow-icon"></span>
 					</button>
+          <div id="DropDown-menu" class="dropDown__content">
+            <a href="#">Popularité</a>
+            <a href="#">Date</a>
+            <a href="#">Titre</a>
+          </div>
 				</div>
 			</form>
       
