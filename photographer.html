@@ -53,7 +53,7 @@
         <header aria-hidden="false" class="form-header">
           <h2 id="modal-title" class="form-header__heading">
             Contactez-moi
-          <div class="photographer-title-name">Undefined</div>  
+          <div id="photographer-name-title"></div>  
           </h2>
           <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
             <img aria-hidden="true" class="contact-button" src="./assets/icons/close.svg" alt="Fermeture de la modale"/>
@@ -62,15 +62,15 @@
         <form action="#" method="post" id="contactForm" aria-hidden="true" class="contact-form sr-container" novalidate>
           <div id="contactDataFirstName" class="contactData">
             <label class="contactData__label">Prénom</label>
-            <input type"text" class="contactData__input" placeholder="David" aria-label="First name" id="firstName" required/>
+            <input type="text" class="contactData__input" placeholder="Jane" aria-label="First name" id="firstName" required/>
           </div>
           <div id="contactDataLastName" class="contactData">
             <label for="last-name" class="contactData__label">Nom</label>
-            <input type"text" class="contactData__input" placeholder="Green" aria-label="Last name" id="lastName" required/>
+            <input type="text" class="contactData__input" placeholder="Doe" aria-label="Last name" id="lastName" required/>
           </div>
           <div id="contactDataEmail" class="contactData contactData__email">
             <label class="contactData__label">Email</label>
-            <input type="email" class="contactData__input" aria-label="Email" id="email" placeholder="david-green@gmail.com" required/>
+            <input type="email" class="contactData__input" aria-label="Email" id="email" placeholder="ex. jane.doe@example.com" required/>
           </div>
           <div id="contactDataMessage" class="contactData contactData__message">
             <label class="contactData__label">Votre message</label>

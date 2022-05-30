@@ -10,7 +10,7 @@ class AllMedias
     {
         this.id = id
         this.mainContent = document.getElementById('photographer-gallery');
-        this.mediasApi = new MediaApi('data/profilData.json');
+        this.mediasApi = new MediaApi('../data/profilData.json');
     }
 
     async createAllMedias() 
@@ -21,7 +21,6 @@ class AllMedias
 
             if(this.id === media.photographerId) 
             {
-                
                 // Create Media Cards
                 const createMedias = new MediaCards(media)
                 this.mainContent.append(createMedias.renderMediaCards())  

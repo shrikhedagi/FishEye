@@ -14,8 +14,8 @@ export default class BannerStart
     {
         this.id = id
         this.mainContent = document.querySelector('main');
-        this.photographersApi = new PhotographerApi('data/profilData.json'); // Fetch data with API
-        this.mediasApi = new MediaApi('data/profilData.json'); // Fetch data with API
+        this.photographersApi = new PhotographerApi('../data/profilData.json'); // Fetch data with API
+        this.mediasApi = new MediaApi('../data/profilData.json'); // Fetch data with API
     }
 
     async getBannerInfos() 

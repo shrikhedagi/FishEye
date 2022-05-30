@@ -1,13 +1,11 @@
 class ContactForm 
 {    
-
     constructor() 
     {
         this.dom = document.getElementById('contact-form');
         this.body = document.body;
         this.openFormBtn = document.getElementById('contact-button');
         this.mainWrapper = document.getElementById('main');
-        this.form = document.getElementById('contact-form');
         this.formTitle = document.getElementById('modal-title');
         this.formCloseBtn = document.querySelector('.form-header__close');
     } 
@@ -15,7 +13,7 @@ class ContactForm
     hide() 
     {
         this.mainWrapper.setAttribute('aria-hidden', 'false')
-        this.form.setAttribute('aria-hidden', 'true')
+        this.dom.setAttribute('aria-hidden', 'true')
         this.body.classList.remove('no-scroll')
         this.dom.style.display = 'none';
         this.openFormBtn.focus()
@@ -24,7 +22,7 @@ class ContactForm
     show()
     {
         this.mainWrapper.setAttribute('aria-hidden', 'true')
-        this.form.setAttribute('aria-hidden', 'false')
+        this.dom.setAttribute('aria-hidden', 'false')
         this.body.classList.add('no-scroll')
         this.dom.style.display = 'block';
         this.formCloseBtn.focus()
@@ -42,6 +40,7 @@ class ContactForm
         // Close Contact Form - Event - Cross button in form
         this.formCloseBtn.addEventListener('click', event => 
         {
+            event.preventDefault();
             this.hide();
         })
 
@@ -55,11 +54,12 @@ class ContactForm
         }
         })
 
+
+
     }
     
 }
 
 export default ContactForm;
-
 
 
