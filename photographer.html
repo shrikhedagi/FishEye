@@ -8,7 +8,7 @@
     <title>Fisheye - photographe </title>
   </head>
 
-  <body class="main-wrapper">
+  <body id="body" class="main-wrapper">
 
     <header class="site-header site-header--photographerPage" aria-label="En-tête du site web" aria-hidden="false">
       <nav class="site-header__nav website-header-nav--photographerPage">
@@ -25,14 +25,13 @@
 				<label id="select-menu-label" class="select-menu__label">Trier par</label>
 
 				<div class="dropDown">
-					<button onclick="dropDown()" type="button" id="button-trigger" class="dropDown__button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-option-label select-option-trigger">
+					<button onclick="myDropDown()" type="button" id="dropDownBtn" class="dropDown__button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-option-label select-option-trigger">
 						Popularité
 						<span class="fas fa-chevron-down dropDown__arrow-icon"></span>
 					</button>
-          <div id="myDropDown" class="dropDownMenu">
-            <a href="#">Popularité</a>
-            <a href="#">Date</a>
-            <a href="#">Titre</a>
+          <div id="myDropDown" class="dropdown-content">
+            <a id="date" href="#">Date</a>
+            <a id="titre" href="#">Titre</a>
           </div>
 				</div>
 			</form>
@@ -49,13 +48,13 @@
 		</div>
 
     <!-- Contact Form -->
-		<div id="contact-form" class="modal modal--close contact-modal" aria-hidden="true">
+		<section id="contact-form" class="modal modal--close contact-modal" aria-hidden="true">
       <div class="form-content" aria-labelledby="dialog-headline" tabindex="-1">
         <header aria-hidden="false" class="form-header">
           <h2 id="modal-title" class="form-header__heading">
             Contactez-moi
             <br />
-            ${this.id}
+          <div class="photographer-title-name">Undefined</div>  
           </h2>
           <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
             <img aria-hidden="true" class="contact-button" src="./assets/icons/close.svg" alt="Fermeture de la modale"/>
@@ -81,13 +80,13 @@
           <button type="submit" class="button contact-button" id="submit" aria-label="Send" formnovalidate>Envoyer</button>
         </form>
       </div>
-    </div>
+    </section>
 
     <!-- Icons import -->
     <script src="https://kit.fontawesome.com/1243262ebe.js" crossorigin="anonymous"></script>
 
     <!-- JS FILES -->
     <script type="module" src="./scripts/pages/photographer.js"></script>
-
+    <script type="text/javascript" src="./scripts/utils/dropDown.js"></script>
   </body>
 </html>

@@ -19,7 +19,7 @@ class MediaCards
                     </h3>
                     <div class="like-button">
                         <p class="like-button__number-of-likes">${this._media.likes}</p>
-                        <button class="like-button like-button__clicking sr-container" aria-label="${this._media.likes} likes">
+                        <button id="myLikeButton" class="like-button like-button__clicking sr-container" aria-label="${this._media.likes} likes">
                             <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
                         </button>
                     </div>

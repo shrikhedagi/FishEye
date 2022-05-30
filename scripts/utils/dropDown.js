@@ -1,4 +1,6 @@
-function dropDown()
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myDropDown()
 {
     document.getElementById("myDropDown").classList.toggle("show");
     
@@ -9,7 +11,7 @@ window.onclick = function(event)
 {
     if (!event.target.matches('.dropDown__button')) 
     {
-      var dropdowns = document.getElementsByClassName("dropDownMenu");
+      var dropdowns = document.getElementsByClassName("dropdown-content");
       var i;
       for (i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
@@ -20,3 +22,6 @@ window.onclick = function(event)
       }
     }
   }
+
+// Filter images by popularity, date and title
+

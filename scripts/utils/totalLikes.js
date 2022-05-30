@@ -25,11 +25,33 @@ class TotalLikes
             // Adding on numbers as users click on like button
             element.textContent = `${++value}`; 
         }
-        
+ 
         const countLikes = document.querySelectorAll('.like-button__clicking');
         
         countLikes.forEach(countLike => countLike.addEventListener('click', renderCountLikes));
-
     }
 }
 export default TotalLikes;
+
+        // Attach click listener on page load
+        window.addEventListener("load", () =>
+        {
+        document.getElementById("myLikeButton").addEventListener("click", doSomething);
+        });
+
+        // The usual function
+        function doSomething () 
+        {
+            // Detach click listener
+            var span = document.getElementById("myLikeButton");
+            span.removeEventListener("click", doSomething);
+
+            // Extra
+            span.innerHTML = "You clicked!";
+
+            // Do your processing here
+            alert("It's done!");
+
+            // Re-enable after processing if you want 
+            span.addEventListener("click", doSomething);
+        }

@@ -1,6 +1,5 @@
 import BannerStart from '../classes/BannerStart.js';
 import AllMedias from '../classes/AllMedias.js';
-import PhotographerBanner from '../classes/PhotographerBanner.js'
 
 // Fetch photographer ID from URL
 // Create URL object and get URL Parameters
