@@ -48,12 +48,11 @@
 		</div>
 
     <!-- Contact Form -->
-		<section id="contact-form" class="modal modal--close contact-modal" aria-hidden="true">
-      <div class="form-content" aria-labelledby="dialog-headline" tabindex="-1">
+		<section id="contact-form" role="dialog" class="modal modal--close contact-modal" aria-hidden="true">
+      <div role="group" class="form-content" aria-labelledby="dialog-headline" tabindex="-1">
         <header aria-hidden="false" class="form-header">
           <h2 id="modal-title" class="form-header__heading">
             Contactez-moi
-            <br />
           <div class="photographer-title-name">Undefined</div>  
           </h2>
           <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
@@ -75,7 +74,7 @@
           </div>
           <div id="contactDataMessage" class="contactData contactData__message">
             <label class="contactData__label">Votre message</label>
-            <textarea cols="30" rows="10" class="text-area" aria-label="Your message" placeholder="Veuillez écrire votre message dans ce champs." id="message" required></textarea>
+            <textarea class="text-area" aria-label="Your message" placeholder="Veuillez écrire votre message dans ce champs." id="message" required></textarea>
           </div>
           <button type="submit" class="button contact-button" id="submit" aria-label="Send" formnovalidate>Envoyer</button>
         </form>

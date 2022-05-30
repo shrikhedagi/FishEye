@@ -1,11 +1,18 @@
-@-webkit-keyframes slide-up {
-
+@-webkit-keyframes modalopen {
     from {
-        transform: translateY(25%);
+      opacity: 0;
+      transform: translateY(-150px);
     }
-
     to {
-        transform: translateY(0%);
+      opacity: 1;
     }
-
-}
+  }
+@keyframes modalopen {
+    from {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
