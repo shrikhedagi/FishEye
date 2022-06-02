@@ -13,7 +13,7 @@ class TotalLikes
             // Card insert's total likes for a photographer
             const likesElement = document.querySelector('.card-insert__counter span'); // Insert in HTML
             
-            const likesValue = Number(likesElement.innerText); // using function number() to count the value
+            const likesValue = Number(likesElement.textContent); // using function number() to count the value
         
             increment(countingElement, countingValue);
             
@@ -33,7 +33,9 @@ class TotalLikes
 
 }
 export default TotalLikes;
-/*
+
+// Allow clicking only once
+
 window.addEventListener("load", () =>
 {
 document.getElementById("myLikeButton").addEventListener("click", doSomething);
@@ -55,6 +57,6 @@ document.getElementById("myLikeButton").addEventListener("click", doSomething);
 
         // Re-enable after processing if you want 
         span.addEventListener("click", doSomething);
-    } */
+    }
 
         

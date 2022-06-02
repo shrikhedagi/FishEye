@@ -2,26 +2,14 @@ class ContactForm
 {    
     constructor() 
     {
-        this.dom = document.getElementById('contact-form');
+        this.form = document.querySelector("form");
+        this.dom = document.getElementById('contactForm');
         this.body = document.body;
         this.openFormBtn = document.getElementById('contact-button');
         this.mainWrapper = document.getElementById('main');
         this.formTitle = document.getElementById('modal-title');
         this.formCloseBtn = document.querySelector('.form-header__close');
-    } 
 
-    appendName()
-    {    
-    this.name = document.getElementById('photographer-name');
-    const div = document.createElement('div');
-    div.innerHTML = `
-                ${this.name}`   
-    this.name.appendChild(div);
-    return div;
-    }
-
-    formDom() 
-    {
         this.firstName = document.getElementById("firstName-input");
         this.lastName = document.getElementById("lastName-input");
         this.email = document.getElementById("email-input");
@@ -33,7 +21,7 @@ class ContactForm
         this.errorMessage = document.getElementById("message_error");
         
         this.submitForm = document.getElementById('submit');
-    }
+    } 
 
     hide() 
     {
@@ -60,7 +48,7 @@ class ContactForm
         this.openFormBtn.addEventListener('click', event =>
         {
             this.show();
-        })    
+        }) 
         
         // Close Contact Form - Event - Cross button in form
         this.formCloseBtn.addEventListener('click', event => 
@@ -175,14 +163,14 @@ class ContactForm
     }
 
     // Launch
-    submitForm()
+    submit()
     {
-        this.submitForm.addEventListener('submit', (e) => 
+        this.submitForm.addEventListener('click', (e) => 
         {   e.stopPropagation();
             e.preventDefault();
             if(!this.validate()) {
                 return false;
-            }else{
+            } else {
                 this.hide();
             }
         })
