@@ -647,12 +647,25 @@ span {
 }
 
 .select-menu {
+  display: flex;
   width: auto;
   margin: 50px 100px;
   font-size: 1.125rem;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
+}
+@media screen and (max-width: 992px) {
+  .select-menu {
+    margin: 1.2rem 4.375rem 0;
+    font-size: 0.895rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .select-menu {
+    margin: 1.25rem 1rem 0;
+    justify-content: center;
+  }
 }
 .select-menu__label {
   margin-right: 1rem;
@@ -663,13 +676,13 @@ span {
 }
 
 .dropDown {
-  width: 10.625rem;
-  height: 4.3125rem;
+  width: 10.5rem;
+  height: 4.3rem;
   position: relative;
-  display: inline-block;
   line-height: 1.5;
 }
 .dropDown__button {
+  display: flex;
   transition: color 0.6s;
   transition: background-color 0.6s;
   width: 100%;
@@ -687,7 +700,7 @@ span {
   background-color: #901c1c;
   font-size: 1.175rem;
   color: #FFF;
-  padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+  padding: 1.4375rem 1.125rem 1.4375rem 1.25rem;
 }
 .dropDown__button:focus {
   outline: #db8876 thin dashed;
@@ -704,11 +717,6 @@ span {
   color: #000;
   background-color: #db8876;
 }
-.dropDown__button__arrow-icon {
-  padding-top: 0.5rem;
-  padding-left: 0.1rem;
-  align-items: center;
-}
 
 .dropdown-content {
   display: none;
@@ -716,8 +724,8 @@ span {
   transition: background-color 0.6s;
   position: absolute;
   background-color: #901c1c;
-  min-width: 10.625rem;
-  min-height: 4.3125rem;
+  min-width: 10.5rem;
+  min-height: 4.3rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   z-index: 1;
@@ -725,6 +733,8 @@ span {
   justify-content: space-between;
 }
 .dropdown-content a {
+  border-top: 2px solid;
+  border-color: #FFF;
   display: block;
   text-decoration: none;
   background-color: #901c1c;
@@ -732,7 +742,6 @@ span {
   color: #FFF;
   padding: 1.5rem 1.25rem 1.5rem 1.25rem;
   width: 100%;
-  border: none;
   font-weight: bold;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -868,8 +877,8 @@ span {
 
 .form-content {
   align-items: center;
-  padding: 1.5rem 2rem 2.2rem;
-  margin: 13% auto;
+  padding: 0.5rem 2rem 2rem;
+  margin: 0.5rem auto;
   width: 750px;
   max-width: 67rem;
   max-height: 90rem;
