@@ -13,6 +13,7 @@ export default class BannerStart
     constructor(id)
     {
         this.id = id
+        this.totalLikes = 0;
         this.mainContent = document.querySelector('main');
         this.photographersApi = new PhotographerApi('../data/profilData.json'); // Fetch data with API
         this.mediasApi = new MediaApi('../data/profilData.json'); // Fetch data with API
@@ -22,7 +23,6 @@ export default class BannerStart
     {
         const photographersData = await this.photographersApi.getPhotographersItems()
         const mediasData = await this.mediasApi.getMedias()       
-        let totalLikes = 0;
         const item = photographersData.find(photographer => photographer.id == this.id);
         console.log(item)
         const photographer = new Photographer(item)
@@ -39,13 +39,20 @@ export default class BannerStart
 
             if(this.id === media.photographerId)
             {
-                totalLikes += media.likes
+                this.totalLikes += media.likes
             }
 
         });
 
         // Get the number of likes rising
-        const numberLikes = new PhotographerLikes(photographer, totalLikes);
+        const numberLikes = new PhotographerLikes(photographer, this.totalLikes);
         this.mainContent.prepend(numberLikes.renderInsertInfosCard())
+    }
+
+    getModalName()
+    {
+        const displayName = new ContactForm(item);
+        this.mainContent.prepend(displayName.displayModalName())
+
     }
 };

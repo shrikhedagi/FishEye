@@ -8,7 +8,7 @@ class AllMedias
 {
     constructor (id) 
     {
-        this.id = id
+        this.id = id;
         this.mainContent = document.getElementById('photographer-gallery');
         this.mediasApi = new MediaApi('../data/profilData.json');
     }

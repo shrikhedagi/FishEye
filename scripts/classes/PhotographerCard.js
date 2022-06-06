@@ -39,7 +39,7 @@ class PhotographerCard
         </article>`;
 
         // Launch
-        return profilCard
+        return profilCard;
     }
 }
 

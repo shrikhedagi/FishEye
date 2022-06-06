@@ -1,9 +1,10 @@
 class ContactForm 
 {    
-    constructor() 
+    constructor(all) 
     {
+        this.all = all;
         this.form = document.querySelector("form");
-        this.dom = document.getElementById('contactForm');
+        this.dom = document.getElementById('contact-form');
         this.body = document.body;
         this.openFormBtn = document.getElementById('contact-button');
         this.mainWrapper = document.getElementById('main');
@@ -22,7 +23,6 @@ class ContactForm
         
         this.submitForm = document.getElementById('submit');
     } 
-
     hide() 
     {
         this.mainWrapper.setAttribute('aria-hidden', 'false')
@@ -31,7 +31,6 @@ class ContactForm
         this.dom.style.display = 'none';
         this.openFormBtn.focus()
     }
-
     show()
     {
         this.mainWrapper.setAttribute('aria-hidden', 'true')
@@ -40,20 +39,39 @@ class ContactForm
         this.dom.style.display = 'block';
         this.formCloseBtn.focus()
     }
-
+    listenForSubmission()
+    {
+        this.submitForm.addEventListener('click', (event) => 
+        {   
+            event.stopPropagation();
+            event.preventDefault();
+            if(!this.validate()) 
+            {
+                return false;
+            } else {
+                this.hide();
+            }
+        })
+    }
     // Events
     start()
     {   
+
         // Launch Contact Form - Event (by button click)
         this.openFormBtn.addEventListener('click', event =>
         {
+    
             this.show();
+            this.listenForSubmission();
         }) 
+
+        
         
         // Close Contact Form - Event - Cross button in form
         this.formCloseBtn.addEventListener('click', event => 
         {
             event.stopPropagation();
+            event.preventDefault();
             this.hide();
         })
 
@@ -62,10 +80,22 @@ class ContactForm
         {
         if(event.key === 'Escape')
         {
+            event.stopPropagation();
             event.preventDefault();
             this.hide();
         }
         })
+
+        // When the user clicks anywhere outside of the form
+        this.body.addEventListener('click', event => 
+        {
+        if (event.target == this.dom) 
+        {
+            event.stopPropagation();
+            event.preventDefault();
+            this.hide();
+        }
+        }) 
     }
 
     // Fields Validations
@@ -87,7 +117,7 @@ class ContactForm
             this.firstName.style.border = '2px solid #fe142f';
 
             errorCheck = true;
-        } else if ((firstName.value.length < 2) || (lastName.value.length > 20)) {
+        } else if ((this.firstName.value.length < 2) || (this.firstName.value.length > 20)) {
             this.errorFirst.innerHTML = "Veuillez entrer au moins 2 caractères valides.";
             this.firstName.focus();
             this.firstName.style.border = '2px solid #fe142f';
@@ -130,7 +160,7 @@ class ContactForm
             this.email.style.border = '2px solid #fe142f';
 
             errorCheck = true;
-        } else if ((!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value))) {
+        } else if ((!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(this.email.value))) {
             this.errorEmail.innerHTML = 'Veuillez respecter le format email: exemple@domaine.com.';
             this.email.focus();
             this.email.style.border = '2px solid #fe142f';
@@ -162,21 +192,9 @@ class ContactForm
         }
     }
 
-    // Launch
-    submit()
-    {
-        this.submitForm.addEventListener('click', (e) => 
-        {   e.stopPropagation();
-            e.preventDefault();
-            if(!this.validate()) {
-                return false;
-            } else {
-                this.hide();
-            }
-        })
-    }
 }
 
 export default ContactForm;
+
 
 
