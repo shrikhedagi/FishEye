@@ -34,29 +34,4 @@ class TotalLikes
 }
 export default TotalLikes;
 
-// Allow clicking only once
-
-window.addEventListener("load", () =>
-{
-document.getElementById("myLikeButton").addEventListener("click", doSomething);
-});
-
-    // The usual function
-    function doSomething () 
-    {
-        // Attach click listener on page load
-        // Detach click listener
-        var span = document.getElementById("myLikeButton");
-        span.removeEventListener("click", doSomething);
-
-        // Extra
-        span.innerHTML = "You clicked!";
-
-        // Do your processing here
-        alert("It's done!");
-
-        // Re-enable after processing if you want 
-        span.addEventListener("click", doSomething);
-    }
-
         
