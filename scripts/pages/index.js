@@ -1,4 +1,4 @@
-import PhotographerCard from "../classes/photographerCard.js";
+import PhotographerCard from "../classes/PhotographerCard.js";
 
 /* Using fetch() to get data for homepage */
 async function getPhotographersData() 
