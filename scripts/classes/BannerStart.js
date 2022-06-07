@@ -49,10 +49,4 @@ export default class BannerStart
         this.mainContent.prepend(numberLikes.renderInsertInfosCard())
     }
 
-    getModalName()
-    {
-        const displayName = new ContactForm(item);
-        this.mainContent.prepend(displayName.displayModalName())
-
-    }
 };

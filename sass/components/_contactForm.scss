@@ -63,7 +63,7 @@ form {
         font-size: 1.75rem;
         color: $formColor;
         margin-bottom: 0.5rem;
-        margin-top: 0.3rem;
+        margin-top: 0.5rem;
         
         @include LargeDesktop {
             font-size: 1.65rem;
@@ -84,7 +84,7 @@ form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 
     &__input {
         height: 4.3rem;
@@ -98,7 +98,7 @@ form {
     &__email {
         
         @include mediumDesktop {
-            margin-bottom: 22px;
+            margin-bottom: .5rem;
         }
     }
 
@@ -116,7 +116,6 @@ form {
 }
 
 .text-area {
-    height: 11rem;
     max-width: 100%;
     min-width: 100%;
     border-radius: 0.3125rem;
@@ -124,13 +123,13 @@ form {
     border: none;
     font-size: 1.3rem;
     line-height: 1.5;
-    margin-bottom: 1.5rem;
+    margin-bottom: .8rem;
     
     @include LargeDesktop {
-        max-height: 7rem;
+        max-height: 8.5rem;
     }
     @include mediumDesktop {
-        max-height: 6rem;
+        max-height: 8rem;
     }
     @include mediumMobileLandscape {
         max-height: 5rem;
@@ -139,4 +138,12 @@ form {
 
 .no-scroll {
     overflow: hidden;
+ }
+
+ .error {
+     font-size: 15px;
+ }
+
+ #submit {
+     margin-top: 13px;
  }

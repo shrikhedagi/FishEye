@@ -1,4 +1,4 @@
-class TotalLikes
+/* class TotalLikes
 {
     static init()
     {
@@ -32,6 +32,8 @@ class TotalLikes
     }
 
 }
-export default TotalLikes;
+export default TotalLikes; */
+
+
 
         

@@ -32,7 +32,7 @@ async function getPhotographersData()
 function displayData(photographers) 
 {
     const photographersSection = document.querySelector(".photographer_section");
-
+    
     photographers.forEach((photographer) => 
     {
 

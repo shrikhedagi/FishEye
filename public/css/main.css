@@ -603,6 +603,7 @@ span {
 .button:hover, .button:focus {
   color: #000;
   background-color: #db8876;
+  border: 2px outset #db8876;
 }
 
 .contact-button {
@@ -921,7 +922,7 @@ form label {
   font-size: 1.75rem;
   color: #312E2E;
   margin-bottom: 0.5rem;
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
 }
 @media screen and (max-width: ) {
   form label {
@@ -948,7 +949,7 @@ form label {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 .contactData__input {
   height: 4.3rem;
@@ -960,7 +961,7 @@ form label {
 }
 @media screen and (max-width: 1160px) {
   .contactData__email {
-    margin-bottom: 22px;
+    margin-bottom: 0.5rem;
   }
 }
 .contactData__message {
@@ -977,7 +978,6 @@ form label {
 }
 
 .text-area {
-  height: 11rem;
   max-width: 100%;
   min-width: 100%;
   border-radius: 0.3125rem;
@@ -985,16 +985,16 @@ form label {
   border: none;
   font-size: 1.3rem;
   line-height: 1.5;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 @media screen and (max-width: ) {
   .text-area {
-    max-height: 7rem;
+    max-height: 8.5rem;
   }
 }
 @media screen and (max-width: 1160px) {
   .text-area {
-    max-height: 6rem;
+    max-height: 8rem;
   }
 }
 @media screen and (max-width: 599px) {
@@ -1005,6 +1005,14 @@ form label {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.error {
+  font-size: 15px;
+}
+
+#submit {
+  margin-top: 13px;
 }
 
 /* HOMEPAGE BODY */
@@ -1251,6 +1259,8 @@ form label {
 }
 .thumbnail__tagline {
   font-size: 1rem;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 0.3rem;
 }
 .thumbnail__price {

@@ -1,4 +1,4 @@
-class ContactForm 
+export default class ContactForm 
 {    
     constructor(all) 
     {
@@ -31,6 +31,15 @@ class ContactForm
         this.dom.style.display = 'none';
         this.openFormBtn.focus()
     }
+    displayFormName()
+    {
+        const displayName = document.getElementById('form-photographer-name');
+        displayName.innerHTML = `
+        ${this.all.name}
+        `;
+    
+        return displayName;
+    }
     show()
     {
         this.mainWrapper.setAttribute('aria-hidden', 'true')
@@ -53,6 +62,7 @@ class ContactForm
             }
         })
     }
+
     // Events
     start()
     {   
@@ -60,9 +70,9 @@ class ContactForm
         // Launch Contact Form - Event (by button click)
         this.openFormBtn.addEventListener('click', event =>
         {
-    
             this.show();
-            this.listenForSubmission();
+            this.displayFormName();
+            this.listenForSubmission(); // Close by submitting the contact form by clickinh to "envoyer"
         }) 
 
         
@@ -167,7 +177,7 @@ class ContactForm
 
             errorCheck = true;
         } else {
-            this.errorEmail.innerHTML = '<i class="fas fa-check-circle"></i>';
+            this.email.innerHTML = '<i class="fas fa-check-circle"></i>';
             this.email.style.border = '2px solid rgb(4, 198, 4)';
         }
 
@@ -194,7 +204,7 @@ class ContactForm
 
 }
 
-export default ContactForm;
+ 
 
 
 

@@ -1,4 +1,3 @@
-import TotalLikes from "../utils/totalLikes.js";
 class PhotographerLikes 
 {
     constructor (all, likes)
@@ -23,6 +22,11 @@ class PhotographerLikes
         </div>
             `;
         return cardInsertInfos; 
+    }
+
+    displayModalName()
+    {
+
     }
 }
 

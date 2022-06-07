@@ -1,7 +1,8 @@
 class MediaCards 
 {
-    constructor(media) 
+    constructor(media, photographers) 
     {
+        this._photographers = photographers;
         this._media = media
     }
 
@@ -28,6 +29,16 @@ class MediaCards
             `;
 
     return mediaCard;
+    }
+
+    renderFormName()
+    {
+        const displayName = document.getElementById('form-photographer-name');
+        displayName.innerHTML = `
+        ${this._photographers.name}
+        `;
+    
+        return displayName;
     }
 }
 

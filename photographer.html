@@ -53,7 +53,7 @@
         <header id="form-title" aria-hidden="false" class="form-header">
           <h2 id="modal-title" class="form-header__heading">
           Contactez-moi
-          <div id="photographer-name"></div>
+          <div id="form-photographer-name"></div>
           </h2>
           <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
               <img aria-hidden="true" class="contact-button" src="./assets/icons/close.svg" alt="Fermeture de la modale"/>
@@ -68,27 +68,26 @@
         novalidate>
           <!-- First, Last name, email, message labels and inputs -->
           <div id="contactDataFirstName" class="contactData">
-            <label class="contactData__label" for="firstName-input">Prénom</label>
-            <input name="firstName" type="text" class="contactData__input" placeholder="Jane" aria-label="First name" id="firstName-input" required/>
+            <label class="contactData__label" for="firstName-input">*Prénom</label>
+            <input name="firstName" type="text" class="contactData__input" placeholder="ex. Jane" aria-label="First name" id="firstName-input" required/>
             <br>
             <span id="first_error" class="error"></span>
           </div>
           <div id="contactDataLastName" class="contactData">
-            <label class="contactData__label" for="lastName-input">Nom</label>
-            <input name="lastName" type="text" class="contactData__input" placeholder="Doe" aria-label="Last name" id="lastName-input" required/>
+            <label class="contactData__label" for="lastName-input">*Nom</label>
+            <input name="lastName" type="text" class="contactData__input" placeholder="ex. Doe" aria-label="Last name" id="lastName-input" required/>
             <br>
             <span id="last_error" class="error"></span>
           </div>
           <div id="contactDataEmail" class="contactData contactData__email">
-            <label class="contactData__label" for="email-input">Email</label>
+            <label class="contactData__label" for="email-input">*Email</label>
             <input name="email" type="email" class="contactData__input" aria-label="Email" id="email-input" placeholder="ex. jane.doe@example.com" required/>
             <br>
             <span id="email_error" class="error"></span>
           </div>
           <div id="contactDataMessage" class="contactData contactData__message">
-            <label class="contactData__label" for="message-input">Votre message</label>
+            <label class="contactData__label" for="message-input">*Votre message</label>
             <textarea name="message" cols="30" rows="10" class="text-area" aria-label="Your message" placeholder="Veuillez écrire votre message dans ce champs." id="message-input" required></textarea>
-            <br>
             <span id="message_error" class="error"></span>
           </div>
           <button type="submit" class="button contact-button" id="submit" aria-label="Send" formnovalidate>Envoyer</button>

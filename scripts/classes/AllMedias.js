@@ -1,6 +1,5 @@
 import MediaApi from "../Api/MediaApi.js";
 import MediaFactory from "../factory/mediaFactory.js";
-import totalLikes from "../utils/totalLikes.js";
 import MediaCards from "./MediaCards.js";
 
 // Create the Media Cards, pictures and videos
@@ -25,9 +24,10 @@ class AllMedias
                 const createMedias = new MediaCards(media)
                 this.mainContent.append(createMedias.renderMediaCards())  
             }
-                totalLikes.init();
+            
                 
-        }); 
+                
+        });
 
     }
 }

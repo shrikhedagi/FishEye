@@ -19,6 +19,7 @@
     &:focus { 
         color: $black;
         background-color: $orange-light;
+        border: 2px outset $orange-light;
     }
 }
 
