@@ -23,11 +23,6 @@ class PhotographerLikes
             `;
         return cardInsertInfos; 
     }
-
-    displayModalName()
-    {
-
-    }
 }
 
 export default PhotographerLikes;

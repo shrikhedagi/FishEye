@@ -41,13 +41,6 @@ class PhotographerCard
         // Launch
         return profilCard;
     }
-
-    renderFormName()
-    {
-        const displayName = `${this._name}`;
-    
-        return displayName;
-    }
 }
 
 export default PhotographerCard;

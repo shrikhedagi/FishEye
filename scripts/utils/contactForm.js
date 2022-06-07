@@ -71,7 +71,6 @@ export default class ContactForm
         this.openFormBtn.addEventListener('click', event =>
         {
             this.show();
-            this.displayFormName();
             this.listenForSubmission(); // Close by submitting the contact form by clickinh to "envoyer"
         }) 
 

@@ -30,16 +30,6 @@ class MediaCards
 
     return mediaCard;
     }
-
-    renderFormName()
-    {
-        const displayName = document.getElementById('form-photographer-name');
-        displayName.innerHTML = `
-        ${this._photographers.name}
-        `;
-    
-        return displayName;
-    }
 }
 
 export default MediaCards;
