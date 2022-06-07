@@ -1,8 +1,8 @@
 export default class ContactForm 
 {    
-    constructor(all) 
+    constructor(photographer) 
     {
-        this.all = all;
+        this.photographer = photographer;
         this.form = document.querySelector("form");
         this.dom = document.getElementById('contact-form');
         this.body = document.body;
@@ -34,11 +34,7 @@ export default class ContactForm
     displayFormName()
     {
         const displayName = document.getElementById('form-photographer-name');
-        displayName.innerHTML = `
-        ${this.all.name}
-        `;
-    
-        return displayName;
+        displayName.innerHTML = this.photographer.name;
     }
     show()
     {
@@ -56,12 +52,11 @@ export default class ContactForm
             event.preventDefault();
             if(!this.validate()) 
             {
-                return false;
-            } else {
-                this.hide();
+                return;
             }
-        })
-    }
+                this.hide();
+            })
+        }
 
     // Events
     start()
@@ -71,6 +66,7 @@ export default class ContactForm
         this.openFormBtn.addEventListener('click', event =>
         {
             this.show();
+            this.displayFormName();
             this.listenForSubmission(); // Close by submitting the contact form by clickinh to "envoyer"
         }) 
 
@@ -141,8 +137,8 @@ export default class ContactForm
         // LAST NAME VALIDATION CHECK: 
         if ((this.lastName.value === null) || (this.lastName.value === '')) {
             this.errorLast.innerHTML = 'Le nom est un champ obligatoire. Veuillez le renseigner.';
-            lastName.focus();
-            lastName.style.border = '2px solid #fe142f';
+            this.lastName.focus();
+            this.lastName.style.border = '2px solid #fe142f';
 
             errorCheck = true;
         } else if (!this.lastName.value.match(/^[a-zA-Z-\s]+$/)) { // Add a new condition to alert the users of the non-validation of special caracters in his/her last name
@@ -199,6 +195,11 @@ export default class ContactForm
         } else {
             return true;
         }
+    }
+
+    showError()
+    {
+        
     }
 
 }

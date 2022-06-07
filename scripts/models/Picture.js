@@ -42,12 +42,35 @@ class Picture
     {
         return this._likes
     }
-    get source()
+    like()
     {
-        return `<a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/photo/${this._image}" aria-label="${this.title}, lightbox closeup view">
+        this._likes++;
+    }
+    dislike()
+    {
+        this._likes--;
+    }
+    render()
+    {
+        return `
+            <article class="media-cards">
+                <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/photo/${this._image}" aria-label="${this.title}, lightbox closeup view">
                     <img src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}">
                 </a>
-                `
+                <footer class="media-cards__footer">
+                    <h3 class="media-cards__title" title="${this.title}">
+                        ${this.title}
+                    </h3>
+                    <div class="like-button">
+                        <p class="like-button__number-of-likes">${this.likes}</p>
+                        <button id="myLikeButton" class="like-button like-button__clicking sr-container" aria-label="${this.likes} likes">
+                            <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </footer>
+                <time datetime="${this.date}"></time>
+            </article>
+            `;
     }
 
 }

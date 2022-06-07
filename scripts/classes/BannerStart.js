@@ -30,7 +30,7 @@ export default class BannerStart
         // Get Banner Section
         const bannerSection = new PhotographerBanner(photographer)
         this.mainContent.prepend(bannerSection.renderBanner())
-        const form = new ContactForm();
+        const form = new ContactForm(photographer);
         form.start();
                     
         // Get number of Likes - loop

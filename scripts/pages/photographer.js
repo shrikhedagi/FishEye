@@ -1,6 +1,5 @@
 import BannerStart from '../classes/BannerStart.js';
-import AllMedias from '../classes/AllMedias.js';
-import Photographer from '../models/Photographer.js';
+import Portfolio from '../classes/Portfolio.js';
 
 // Fetch photographer ID from URL
 // Create URL object and get URL Parameters
@@ -13,8 +12,10 @@ const launchBanner = new BannerStart(id)
 launchBanner.getBannerInfos()
 
 // Launch the media cards
-const launchMedias = new AllMedias(id);
-launchMedias.createAllMedias();
+const portfolio = new Portfolio(id);
+
+
+
 
 
 
