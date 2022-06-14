@@ -82,7 +82,7 @@ class Portfolio
     // Display Drop Down Menu
     displaySort()
     {
-        document.querySelector('.dropdown-content').innerHTML = this.selectOptions("likes");
+        document.querySelector('').innerHTML = this.selectOptions("likes");
         this.listenSort();
         this.listenForOptions();
     }
@@ -90,14 +90,14 @@ class Portfolio
     // Hide options and show button alone
     hideOptions()
     {
-        document.querySelector('#myDropDown-list').getElementsByClassName.display = "none"; // Hide options
-        document.querySelector('#dropDownBtn').getElementsByClassName.display = "grid"; // Show button
+        document.querySelector('').getElementsByClassName.display = "none"; // Hide options
+        document.querySelector('').getElementsByClassName.display = "grid"; // Show button
     }
 
     // Listen when clicked on one option in the drop down menu
     listenforOptions()
     {
-        document.querySelectorAll('.sort-options').forEach((option) =>
+        document.querySelectorAll('').forEach((option) =>
         {
             option.addEventListener('click', () => // When clicked on an option
             {
@@ -114,8 +114,8 @@ class Portfolio
     // Show drop down menu options, while hide the button
     showOptions()
     {
-        document.querySelector('#dropDownBtn').getElementsByClassName.display = "grid"; // Show the options when clicked
-        document.querySelector('#myDropDown-list').getElementsByClassName.display = "none"; // Hide the button when clicked 
+        document.querySelector('').getElementsByClassName.display = "grid"; // Show the options when clicked
+        document.querySelector('').getElementsByClassName.display = "none"; // Hide the button when clicked 
 
     }
 
@@ -171,7 +171,7 @@ class Portfolio
     // Add event listener tro roll down the options when clicked on the button
     listenSort()
     {
-        document.querySelector('.dropDown__button').addEventListener('click', () => 
+        document.querySelector('').addEventListener('click', () => 
         {
             this.showOptions(); // Show drop down menu options (popularity, title, date)
         })
@@ -180,7 +180,7 @@ class Portfolio
     // Update order when activated
     updateOrder()
     {
-        document.querySelector('.dropDown .dropDown-content').innerHTML = this.selectOptions(order);
+        document.querySelector('').innerHTML = this.selectOptions(order);
     }
 
     // Async function to start the whole portfolio 

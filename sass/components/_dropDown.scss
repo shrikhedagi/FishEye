@@ -30,16 +30,14 @@
     width: 10.5rem;
     height: 4.3rem;
     position: relative;
-    line-height: 1.5;
+    display: flex;
 
     &__button {
-        display: flex;
         transition: color 0.6s;
         transition: background-color 0.6s;
         width: 100%;
         border: none;
         font-weight: bold;
-        border-radius: 5px;
         background-color: $primary-color;
         cursor: pointer;
         -webkit-user-select: none;
@@ -73,17 +71,14 @@
         }
     }
 }
-
-.dropdown-content {
+.dropDownList {
     display: none;
     transition: color 0.6s;
     transition: background-color 0.6s;
     position: absolute;
     background-color: $primary-color;
-    min-width: 10.5rem;
+    min-width: 19.5rem;
     min-height: 4.3rem;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     z-index: 1;
     align-items: center;
     justify-content: space-between; 
@@ -101,7 +96,6 @@
         font-weight: bold;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-        background-color: $primary-color;
         cursor: pointer;
         -webkit-user-select: none;
            -moz-user-select: none;
@@ -128,4 +122,3 @@
 .show {
     display: block;
 }
-
