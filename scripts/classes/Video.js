@@ -42,6 +42,14 @@ class Video
     {
         return this._likes
     }
+    like()
+    {
+        this._likes++;
+    }
+    dislike()
+    {
+        this._likes--;
+    }
     render()
     {
         return `
