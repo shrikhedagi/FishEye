@@ -8,6 +8,7 @@ class Picture extends Media
         super(data)
 
     }
+
     render()
     {
         return `
@@ -20,9 +21,9 @@ class Picture extends Media
                         ${this.title}
                     </h3>
                     <div class="like-button">
-                        <p class="like-button__number-of-likes">${this.likes}</p>
+                        <div class="like-button__number-of-likes">${this.likes}</div>
                         <button id="myLikeButton" class="like-button like-button__clicking sr-container toggleButton" aria-label="${this.likes} likes">
-                            <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
+                            <i class="like-button__icon ${this.heartIcon} fa-heart"></i>
                         </button>
                     </div>
                 </footer>

@@ -11,6 +11,8 @@ class Media {
         this._date = data.date;
         this._price = data.price;
         this._description = data.description;
+        this.hasBeenLiked = false;
+        this.heartIcon = "fas";
 
     }
   
@@ -42,15 +44,35 @@ class Media {
     {
         return this._likes
     }
-    like()
-    {
-        this._likes++;
-    }
     dislike()
     {
         this._likes--;
+        this.hasBeenLiked = false;
+        this.heartIcon = "far";
+        this.resetCount();
+        document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton i`).classList.replace('fas', 'far')
     }
-
+    like()
+    {
+        this._likes++;
+        this.hasBeenLiked = true;
+        this.heartIcon = "fas";
+        this.resetCount();
+        document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton i`).classList.replace('far', 'fas')
+    }
+    resetCount()
+    {
+        document.querySelector(`.media-cards[data-id="${this._id}"] .like-button__number-of-likes`).innerText = this._likes;
+    }
+    toggle() 
+    {
+        if(this.hasBeenLiked) // If the user already liked the picture
+        {
+            this.dislike(); // the media is disliked
+        } else {
+            this.like(); // otherwise, it is liked
+        }
+    }
 }
 
 export default Media;

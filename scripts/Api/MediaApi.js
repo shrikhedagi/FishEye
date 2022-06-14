@@ -1,4 +1,4 @@
-import Api from '../Api/Api.js';
+import Api from './Api.js';
 
 // Api to fetch medias
 class MediaApi {
