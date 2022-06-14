@@ -1,6 +1,8 @@
 import MediaApi from "../Api/MediaApi.js";
 import MediaFactory from "../factory/mediaFactory.js";
 
+import PhotographerLikes from '../templates/photographerLikes.js';
+
 // Create the Media Cards, pictures and videos
 class Portfolio 
 {
@@ -25,7 +27,6 @@ class Portfolio
                 this.all.push(media)
             });
     }
-
     display()
     {
         let html = ''
@@ -38,26 +39,39 @@ class Portfolio
     }
     displayTotal() 
     {
-        document.querySelector('.card-insert__total-likes').innerHTML = this.countTotalLikes();
+        const numberLikes = new PhotographerLikes(photographer, this.totalLikes);
+        this.mainContent.prepend(numberLikes.renderInsertInfosCard())
 
     }
     countTotalLikes()
     {
-        let total = 0;
-        this.all.forEach(media =>
-        {
-            total += media.likes;
-        })
+        this.totalLikes = 0;
+        this.all.forEach( (media) => 
+            {
+            this.totalLikes += media.likes
+            });
 
-        return total;
+        return this.totalLikes;
     }
-
+    listenLike()
+    {
+        this.all.forEach( (media) => 
+        {
+            document.querySelector('.media-cards[data-id:"${media.id}" .toggleLike]').addEventListener('click', ()=> 
+            {
+                media.toggle();
+                this.countTotalLikes();
+                document.querySelector('')
+            });
+        });
+    }
     async start()
     {
         await this.hydrate();
         this.countTotalLikes();
         this.display();
         this.displayTotal();
+        
         
     }
      

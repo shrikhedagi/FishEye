@@ -197,11 +197,6 @@ export default class ContactForm
         }
     }
 
-    showError()
-    {
-        
-    }
-
 }
 
  
