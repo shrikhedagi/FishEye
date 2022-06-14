@@ -59,6 +59,7 @@ class Portfolio
             {
                 media.toggle();
                 this.countTotalLikes();
+                this.displayTotal();
                 document.querySelector('')
             });
         });
