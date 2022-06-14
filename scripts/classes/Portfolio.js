@@ -19,6 +19,12 @@ class Portfolio
         this.photographersApi = new PhotographerApi('data/profilData.json'); // Fetch data with API
         this.all = []; 
         this.totalLikes = 0;
+        this.selectOptions =
+        {
+            likes: 'Popularite',
+            date: 'Date',
+            title: 'Titre'
+        }
     }
 
     async hydrate() 
@@ -44,16 +50,19 @@ class Portfolio
         form.start();   
 
     }
+    // Display media gallery 
     displayGallery()
     {
         let html = ''
-        this.all.forEach(media => 
+        this.all.forEach(media => // Create a loop
         {
-            html += media.render();
+            html += media.render(); // render() is from Picture.js and Video.js
         })
 
         document.querySelector('#photographer-gallery').innerHTML = html
     }
+
+    // Display card info (total likes, price)
     displayInsertCard() 
     {  
         let cardInsertInfos = `
@@ -70,7 +79,69 @@ class Portfolio
         document.querySelector('.card-insert').innerHTML = cardInsertInfos;
 
     }
-    countTotalLikes() // Update total of likes
+    // Display Drop Down Menu
+    displaySort()
+    {
+        document.querySelector('.dropdown-content').innerHTML = this.selectOptions("likes");
+        this.listenSort();
+        this.listenForOptions();
+    }
+
+    // Hide options and show button alone
+    hideOptions()
+    {
+        document.querySelector('#myDropDown-list').getElementsByClassName.display = "none"; // Hide options
+        document.querySelector('#dropDownBtn').getElementsByClassName.display = "grid"; // Show button
+    }
+
+    // Listen when clicked on one option in the drop down menu
+    listenforOptions()
+    {
+        document.querySelectorAll('.sort-options').forEach((option) =>
+        {
+            option.addEventListener('click', () => // When clicked on an option
+            {
+                let order = option.dataset.id;
+                this.updateOrder(order); // Update the order
+                this.hideOptions(); // Hide options
+                this.sort(order); // Sort medias out
+                this.displayGallery(); // Display the media gallery of the given photographer
+                this.listenLikes(); // And listen again the likes (because they disappeared)
+            });
+        });
+    }
+
+    // Show drop down menu options, while hide the button
+    showOptions()
+    {
+        document.querySelector('#dropDownBtn').getElementsByClassName.display = "grid"; // Show the options when clicked
+        document.querySelector('#myDropDown-list').getElementsByClassName.display = "none"; // Hide the button when clicked 
+
+    }
+
+    // To sort out the different options in the drop down menu: title, date and popularite (sets as default)
+    sort(order)
+    {
+        switch (order)
+        {
+            // Case of sorting out medias by the 'title'
+            case 'title':
+                this.all = this.all.sort((a, b) => a.title.localeCompare(b.title));
+                break;
+
+            // Case of sorting out medias by the 'date'
+            case 'date':
+                this.all = this.all.sort((a, b) => new Date(a.date) - new Date(b.date));
+                break;
+            
+            // Case of sorting out medias by the most popular one (from the highest to the lowest number of likes)
+            default:
+                this.all = this.all.sort((a,b) => b.likes - a.likes);
+        }
+    }
+
+    // Update the total count of likes
+    countTotalLikes() 
     {
         this.totalLikes = 0;
         this.all.forEach( (media) => 
@@ -81,9 +152,11 @@ class Portfolio
             return this.totalLikes;
 
     }
-    listenLike()
+
+    // Add event listener for the number of likes
+    listenLikes()
     {
-        this.all.forEach( (media) => 
+        this.all.forEach( (media) => // Create a loop
         {
             document.querySelector(`.media-cards[data-id="${media.id}"] .toggleButton`).addEventListener('click', ()=> 
             {
@@ -94,13 +167,31 @@ class Portfolio
         });
       
     }
+
+    // Add event listener tro roll down the options when clicked on the button
+    listenSort()
+    {
+        document.querySelector('.dropDown__button').addEventListener('click', () => 
+        {
+            this.showOptions(); // Show drop down menu options (popularity, title, date)
+        })
+    }
+
+    // Update order when activated
+    updateOrder()
+    {
+        document.querySelector('.dropDown .dropDown-content').innerHTML = this.selectOptions(order);
+    }
+
+    // Async function to start the whole portfolio 
     async start()
     {
         await this.hydrate();
         this.countTotalLikes();
         this.displayGallery();
         this.displayInsertCard();  
-        this.listenLike();   
+        this.listenLikes(); 
+        this.listenSort();  
         
     }
      

@@ -49,18 +49,18 @@ class Media {
         this._likes--;
         this.hasBeenLiked = false;
         this.heartIcon = "far";
-        this.resetCount();
-        document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton i`).classList.replace('fas', 'far')
+        this.rebootLikes();
+        document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton span`).classList.replace('fas', 'far')
     }
     like()
     {
         this._likes++;
         this.hasBeenLiked = true;
         this.heartIcon = "fas";
-        this.resetCount();
-        document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton i`).classList.replace('far', 'fas')
+        this.rebootLikes();
+        document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton span`).classList.replace('far', 'fas')
     }
-    resetCount()
+    rebootLikes()
     {
         document.querySelector(`.media-cards[data-id="${this._id}"] .like-button__number-of-likes`).innerText = this._likes;
     }
@@ -70,7 +70,7 @@ class Media {
         {
             this.dislike(); // the media is disliked
         } else {
-            this.like(); // otherwise, it is liked
+            this.like() = !this.dislike(); // otherwise, it is liked
         }
     }
 }
