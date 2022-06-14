@@ -53,7 +53,7 @@ class Video
     render()
     {
         return `
-            <article class="media-cards">
+            <article class="media-cards" data-id="${this._id}">
                 <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, lightbox closeup view">
                     <video>
                         <source src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
@@ -65,7 +65,7 @@ class Video
                     </h3>
                     <div class="like-button">
                         <p class="like-button__number-of-likes">${this.likes}</p>
-                        <button id="myLikeButton" class="like-button like-button__clicking sr-container" aria-label="${this.likes} likes">
+                        <button id="myLikeButton" class="like-button like-button__clicking sr-container toggleButton" aria-label="${this.likes} likes">
                             <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
                         </button>
                     </div>

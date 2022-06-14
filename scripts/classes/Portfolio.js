@@ -1,7 +1,7 @@
 import MediaApi from "../Api/MediaApi.js";
 import MediaFactory from "../factory/mediaFactory.js";
 
-import PhotographerLikes from '../templates/photographerLikes.js';
+import PhotographerLikes from '../templates/PhotographerLikes.js';
 
 // Create the Media Cards, pictures and videos
 class Portfolio 
@@ -50,14 +50,12 @@ class Portfolio
             {
             this.totalLikes += media.likes
             });
-
-        return this.totalLikes;
     }
     listenLike()
     {
         this.all.forEach( (media) => 
         {
-            document.querySelector('.media-cards[data-id:"${media.id}" .toggleLike]').addEventListener('click', ()=> 
+            document.querySelector(`.media-cards[data-id="${media.id}"] .toggleButton]`).addEventListener('click', ()=> 
             {
                 media.toggle();
                 this.countTotalLikes();

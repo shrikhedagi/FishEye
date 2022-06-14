@@ -3,10 +3,10 @@ import MediaApi from '../Api/MediaApi.js';
 
 import Photographer from './Photographer.js';
 
-import PhotographerBanner from '../templates/photographerBanner.js'
-import PhotographerLikes from '../templates/photographerLikes.js';
+import PhotographerBanner from '../templates/PhotographerBanner.js'
+import PhotographerLikes from '../templates/PhotographerLikes.js';
 
-import ContactForm from '../utils/contactForm.js';
+import ContactForm from '../utils/ContactForm.js';
 
 /***** Create the banner with APIs in photographer page *****/
 export default class BannerStart 

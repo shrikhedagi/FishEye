@@ -1,8 +1,8 @@
 class PhotographerLikes 
 {
-    constructor (all, likes)
+    constructor (price, likes)
     {
-        this._all = all
+        this._price = price
         this._likes = likes
     }
 
@@ -18,7 +18,7 @@ class PhotographerLikes
             <span aria-hidden="true" class="card-insert__icon fas fa-heart"></span>
         </div>
         <div class="card-insert__price">
-            <p>${this._all.price}€ / jour</p>
+            <p>${this._price}€ / jour</p>
         </div>
             `;
         return cardInsertInfos; 
