@@ -1,4 +1,6 @@
 import MediaApi from "../Api/MediaApi.js";
+import PhotographerApi from "../Api/PhotographerApi.js";
+
 import MediaFactory from "../factory/mediaFactory.js";
 
 import PhotographerLikes from '../templates/PhotographerLikes.js';
@@ -11,6 +13,7 @@ class Portfolio
         this.id = id;
         this.mainContent = document.getElementById('photographer-gallery');
         this.mediasApi = new MediaApi('../data/profilData.json');
+        this.photographersApi = new PhotographerApi('../../data/profilData.json'); // Fetch data with API
         this.all = []; 
         this.start();
         this.totalLikes = 0;
@@ -45,11 +48,14 @@ class Portfolio
     }
     countTotalLikes()
     {
-        this.totalLikes = 0;
+        let total = 0;
         this.all.forEach( (media) => 
             {
             this.totalLikes += media.likes
             });
+
+            return total;
+
     }
     listenLike()
     {
