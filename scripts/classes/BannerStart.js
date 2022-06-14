@@ -33,21 +33,6 @@ export default class BannerStart
         this.mainContent.prepend(bannerSection.renderBanner())
         const form = new ContactForm(photographer);
         form.start();
-                    
-        // Get number of Likes - loop
-        mediasData.forEach(media => 
-        {
-
-            if(this.id === media.photographerId)
-            {
-                this.totalLikes += media.likes
-            }
-
-        });
-
-
-        const numberLikes = new PhotographerLikes(photographer, this.totalLikes);
-        this.mainContent.prepend(numberLikes.renderInsertInfosCard())
     }
 
 };
