@@ -19,12 +19,18 @@ class Portfolio
         this.photographersApi = new PhotographerApi('data/profilData.json'); // Fetch data with API
         this.all = []; 
         this.totalLikes = 0;
+
+        // Drop down elements
+        this.button = document.getElementById("dropDownBtn");
+        this.dropDownList = document.getElementById("myDropDownList");
+        this.arrow = document.getElementById("chevron-down-icon");
         this.selectOptions =
         {
-            likes: 'Popularite',
+            likes: 'Popularité',
             date: 'Date',
             title: 'Titre'
         }
+        this.nameOption = this.button.innerText.toLowerCase();
     }
 
     async hydrate() 
@@ -41,12 +47,12 @@ class Portfolio
 
         const photographersData = await this.photographersApi.getPhotographersItems();
         const photographerItems = photographersData.find(photographer => photographer.id == this.id);
-        const photographer = new Photographer(photographerItems)
+        this.photographer = new Photographer(photographerItems)
 
         // Get the whole banner (photographer info + contact form)
-        const bannerSection = new PhotographerBanner(photographer)
+        const bannerSection = new PhotographerBanner(this.photographer)
         this.main.prepend(bannerSection.renderBanner())
-        const form = new ContactForm(photographer);
+        const form = new ContactForm(this.photographer);
         form.start();   
 
     }
@@ -66,79 +72,20 @@ class Portfolio
     displayInsertCard() 
     {  
         let cardInsertInfos = `
-        
             <div class="card-insert__counter sr-container">
                 <span class="card-insert__total-likes">${this.totalLikes}</span>
                 <span aria-hidden="true" class="card-insert__icon fas fa-heart"></span>
             </div>
             <div class="card-insert__price">
-                <p>${this.price}€ / jour</p>
+                <p>${this.photographer.price}€ / jour</p>
             </div>
         </aside>
             `;
         document.querySelector('.card-insert').innerHTML = cardInsertInfos;
 
     }
-    // Display Drop Down Menu
-    displaySort()
-    {
-        document.querySelector('').innerHTML = this.selectOptions("likes");
-        this.listenSort();
-        this.listenForOptions();
-    }
 
-    // Hide options and show button alone
-    hideOptions()
-    {
-        document.querySelector('').getElementsByClassName.display = "none"; // Hide options
-        document.querySelector('').getElementsByClassName.display = "grid"; // Show button
-    }
-
-    // Listen when clicked on one option in the drop down menu
-    listenforOptions()
-    {
-        document.querySelectorAll('').forEach((option) =>
-        {
-            option.addEventListener('click', () => // When clicked on an option
-            {
-                let order = option.dataset.id;
-                this.updateOrder(order); // Update the order
-                this.hideOptions(); // Hide options
-                this.sort(order); // Sort medias out
-                this.displayGallery(); // Display the media gallery of the given photographer
-                this.listenLikes(); // And listen again the likes (because they disappeared)
-            });
-        });
-    }
-
-    // Show drop down menu options, while hide the button
-    showOptions()
-    {
-        document.querySelector('').getElementsByClassName.display = "grid"; // Show the options when clicked
-        document.querySelector('').getElementsByClassName.display = "none"; // Hide the button when clicked 
-
-    }
-
-    // To sort out the different options in the drop down menu: title, date and popularite (sets as default)
-    sort(order)
-    {
-        switch (order)
-        {
-            // Case of sorting out medias by the 'title'
-            case 'title':
-                this.all = this.all.sort((a, b) => a.title.localeCompare(b.title));
-                break;
-
-            // Case of sorting out medias by the 'date'
-            case 'date':
-                this.all = this.all.sort((a, b) => new Date(a.date) - new Date(b.date));
-                break;
-            
-            // Case of sorting out medias by the most popular one (from the highest to the lowest number of likes)
-            default:
-                this.all = this.all.sort((a,b) => b.likes - a.likes);
-        }
-    }
+    // -------------------- LIKE BUTTON --------------------- //
 
     // Update the total count of likes
     countTotalLikes() 
@@ -168,19 +115,205 @@ class Portfolio
       
     }
 
-    // Add event listener tro roll down the options when clicked on the button
-    listenSort()
+    // -------------------- DROP DOWN MENU --------------------- //
+
+    // Show drop down menu options, while hide the button, when user clicks
+    show()
     {
-        document.querySelector('').addEventListener('click', () => 
+        this.arrow.style.WebkitTransform = "rotate(-180deg)"; // Rotate the chevron when click on the button
+        this.button.setAttribute("aria-expanded", "true"); // Set aria-expanded for accessibility purpose
+        this.dropDownList.style.display = "block"; // Show the options when clicked
+        this.dropDownList.setAttribute("aria-activedescendant", this.nameOption);
+        this.dropDownList.focus();
+        
+    }
+
+    // Hide options and show button alone
+    hide()
+    {
+        this.arrow.style.WebkitTransform = "rotate(0deg)"; // Chevron down when option list are hidden
+        this.button.setAttribute("aria-expanded", "false");
+        this.dropDownList.removeAttribute("aria-activedescendant");
+        this.dropDownList.style.display = "none"; // Hide options
+        this.button.focus();
+    }
+
+    // Event listener when clicked on one option in the drop down menu
+    listenforOptions()
+    {
+        this.selectAllOptions.forEach((option) =>
         {
-            this.showOptions(); // Show drop down menu options (popularity, title, date)
+            option.addEventListener('click', () => // When clicked on an option
+            {
+                var order = option.dataset.this.id; // Set the order with dataset
+                this.rebootOrder(order); // Reboot the order
+                this.hide(); // Hide options
+                this.sort(order); // Sort medias out
+                this.displayGallery(); // Display the media gallery of the given photographer
+                this.listenLikes(); // And listen again the likes (because listeners disappeared)
+            });
+        });
+    }
+
+    // Close drop down menu by clicking on main
+    closeSort() {
+    this.main.addEventListener("click", () =>
+    {
+        this.hide();
+    });   
+    }
+
+    sortByTitle(a,b) 
+    {
+        const valueA = a.title;
+        const valueB = b.title;
+        if (valueA < valueB) {
+            return -1;
+          } else if (valueA === valueB) {
+            return 0;
+          } else {
+            return 1;
+          }
+    }
+
+    sortByDate(a,b) 
+    {
+        const valueA = new Date(a.date);
+        const valueB = new Date(b.date);
+        return valueB - valueA;
+    }
+
+    sortByPopularity(a,b) 
+    {
+        const valueA = parseInt(a.likes);
+        const valueB = parseInt(b.likes);
+        return valueB - valueA;
+    }
+
+    // To sort out the different options in the drop down menu: title, date and popularite (sets as default)
+    sort(order)
+    {
+        switch (order)
+        {
+            // Case of sorting out medias by the most popular one (from the highest to the lowest number of likes)
+            case 'Popularité':
+                this.all = this.all.sort(this.sortByPopularity);
+
+            // Case of sorting out medias by the 'date'
+            case 'Date':
+                this.all = this.all.sort(this.sortByDate);
+                break;
+
+            // Case of sorting out medias by the 'title'
+            case 'Titre':
+                this.all = this.all.sort(this.sortByTitle);
+                break;
+        
+        }
+    }
+
+    // Keydown on event listener (Aceessibility)
+    /* sortOnKeydown()
+    {
+        this.dropDownList.addEventListener("keydown", (event)=>
+        {
+            const currentOption = document.querySelector(".activeOption");
+            let selectedOption;
+            if(document.activeElement === this.dropDownList)
+            {
+                switch(event.key)
+                {
+                    case "Home":
+                        selectedOption = this.dropDownList.firstElementChild;
+                        break;
+
+                    case "End":
+                        selectedOption = this.dropDownList.lastElementChild;
+                        break;
+                    
+                    case "ChevronDown":
+                        selectedOption = currentOption.nextElementSibling;
+                        if(selectedOption === null)
+                        {
+                            selectedOption = this.dropDownList.firstElementChild;
+                        }
+                        break;
+
+                    case "ChevronUp":
+                        selectedOption = currentOption.previousElementSibling;
+                        if(selectedOption === null)
+                        {
+                            selectedOption = this.dropDownList.lastElementChild;
+                        }
+                        break;
+
+                    case "Enter":
+                        selectedOption = document.querySelector(".activeOption");
+                        this.button.textContent = selectedOption.innerText;
+                        this.hide();
+                        this.displayGallery(selectedOption.innerText.toLowerCase());
+                        break;
+                    
+                    case "Escape":
+                        for (let i = 0; i < this.dropDownList.children.length; i++)
+                            {
+                                this.dropDownList.children[i].classList.remove("activeOption");
+                            }
+                            this.hide();
+                            return;
+
+                }
+            }
+            currentOption.classList.remove("activeOption");
+            selectedOption.classList.add("activeOption");
+            currentOption.setAttribute("aria-selected", "false");
+            selectedOption.setAttribute("aria-selected", "true");
+            this.dropDownList.setAttribute("aria-activedescendant", this,nameOption); 
+
+        });
+    } */
+
+    /*
+    keydownSort()
+    {
+        // Keydown event (Accessibility) 
+        this.button.addEventListener("keydown", (event) => 
+        {
+            if (document.activeElement === this.button)
+            {
+                if(event.key === "ChevronDown" || event.key === "ChevronUp" || event.key === "Enter")
+                {
+                    event.preventDefault();
+                    this.show();
+                }
+            }
+        })
+    } */
+    
+    listenSort()
+    {   
+        // Add event listener to roll down the options when clicked on the button
+        this.button.addEventListener('click', (event) => // listen sort on click
+        {
+            event.stopPropagation();
+            this.show(); // Show drop down menu options (popularity, title, date)
         })
     }
 
-    // Update order when activated
-    updateOrder()
+    // Display Drop Down Menu
+    displaySort()
     {
-        document.querySelector('').innerHTML = this.selectOptions(order);
+        this.sortOptions.innerHTML = this.selectOptions("likes");
+        this.listenSort();
+        this.keydownSort();
+        this.listenForOptions();
+        this.closeSort();
+    }
+
+    // Update order when the option is clicked and activated
+    rebootOrder(order)
+    {
+        document.querySelector(".wrapper .select").innerHTML = this.selectOptions(order);
     }
 
     // Async function to start the whole portfolio 
@@ -191,8 +324,7 @@ class Portfolio
         this.displayGallery();
         this.displayInsertCard();  
         this.listenLikes(); 
-        this.listenSort();  
-        
+        this.listenSort();   
     }
      
 }

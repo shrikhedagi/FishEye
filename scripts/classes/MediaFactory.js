@@ -1,5 +1,5 @@
-import Video from "../classes/Video.js";
-import Picture from "../classes/Picture.js";
+import Video from "./Video.js";
+import Picture from "./Picture.js";
 
 class MediaFactory {
 

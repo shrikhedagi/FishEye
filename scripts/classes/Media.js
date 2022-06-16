@@ -11,8 +11,8 @@ class Media {
         this._date = data.date;
         this._price = data.price;
         this._description = data.description;
-        this.hasBeenLiked = false;
-        this.heartIcon = "fas";
+        this.hasBeenLiked = false; // Medias are not liked by default
+        this.heartIcon = "fas"; // Heart icon set to "fas" full heart
 
     }
   
@@ -44,11 +44,15 @@ class Media {
     {
         return this._likes
     }
+    rebootLikes()
+    {
+        document.querySelector(`.media-cards[data-id="${this._id}"] .like-button__number-of-likes`).innerText = this._likes;
+    }
     dislike()
     {
         this._likes--;
-        this.hasBeenLiked = false;
-        this.heartIcon = "far";
+        this.hasBeenLiked = false; 
+        this.heartIcon = "far"; // Thin heart for dislike
         this.rebootLikes();
         document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton span`).classList.replace('fas', 'far')
     }
@@ -56,13 +60,9 @@ class Media {
     {
         this._likes++;
         this.hasBeenLiked = true;
-        this.heartIcon = "fas";
+        this.heartIcon = "fas"; // Solid heart for like
         this.rebootLikes();
         document.querySelector(`.media-cards[data-id="${this._id}"] .toggleButton span`).classList.replace('far', 'fas')
-    }
-    rebootLikes()
-    {
-        document.querySelector(`.media-cards[data-id="${this._id}"] .like-button__number-of-likes`).innerText = this._likes;
     }
     toggle() 
     {
@@ -70,7 +70,7 @@ class Media {
         {
             this.dislike(); // the media is disliked
         } else {
-            this.like() = !this.dislike(); // otherwise, it is liked
+            this.like(); // otherwise, it is liked
         }
     }
 }

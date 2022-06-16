@@ -25,26 +25,51 @@
     <main id="main" aria-hidden="false">
 
       <!-- Drop down Menu -->
-      <form class="select-menu" name="select-menu-form" method="get" action="#" novalidate>
-				<label id="select-menu-label" class="select-menu__label">Trier par</label>
-
-				<div class="dropDown">
-          <div class="dropDown__btn-wrapper">
-            <button type="button" role="button" id="dropDownBtn" class="sort-options dropDown__button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-option-label select-option-trigger">
+      <section class="dropDownMenu">
+        <div class="menu">
+          <span id="dropDownMenu-title">
+            Trier par
+          </span>
+				  <div class="wrapper" id="dropDownMenu__wrapper">
+            <button
+            role="button" 
+            id="dropDownBtn" 
+            class="select"
+            aria-haspopup="listbox" 
+            aria-labelledby="select-option-label drop-down-button">
               Popularité
-            <span class="fas fa-chevron-down arrow-icon"></span>
             </button>
-          </div>
-          <div id="myDropDownList" role="listbox" class="dropDownList" aria-activedescendant="likes">
-            <button class="sort-options dropDown__button" data-id="likes" aria-label="likes" href="#">
+          <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-down-icon"></img>
+          <div 
+          id="myDropDownList" 
+          role="listbox" 
+          aria-labelledby="menu-list-area"
+          tab-index="-1">
+            <a 
+            id="selectPopularity" 
+            role="option" 
+            class="activeOption select"
+            aria-selected="true"
+            >
               Popularité
-            <span class="fas fa-chevron-up arrow-icon"></span>
-            </button> 
-            <button class="sort-options dropDown__button" data-id="date" aria-label="date" href="#">Date</button>
-            <button class="sort-options dropDown__button" data-id="title" aria-label="title" href="#">Titre</button>
+            </a> 
+            <a 
+            id="selectDate" 
+            role="option" 
+            class="select"
+            aria-selected="false">
+              Date
+            </a>
+            <a 
+            id="selectTitle" 
+            role="option"  
+            class="select"
+            aria-selected="false">
+              Titre
+            </a>
           </div>
 				</div>
-			</form>
+			</section>
       
       <!-- Portfolio Gallery -->
       <section id="photographer-gallery" class="photographer-gallery sr-container" aria-labelledby="header for photographer's photos and videos gallery">
@@ -62,10 +87,10 @@
     </aside>
 
     <!-- Contact Form -->
-		<section id="contact-form" role="dialog" class="modal modal--close contact-modal" aria-hidden="true">
+		<section id="contact-form" role="dialog" class="modal modal--close contact-modal overlay" aria-hidden="true">
       <div id="form-content" role="group" class="form-content" aria-labelledby="dialog-headline" tabindex="-1">
         <header id="form-title" aria-hidden="false" class="form-header">
-          <h2 id="modal-title" class="form-header__heading">
+          <h2 id="modal-title" class="form-header__heading"> 
           Contactez-moi
           <div id="form-photographer-name"></div>
           </h2>

@@ -32,6 +32,23 @@ class Picture extends Media
             `;
     }
 
+    renderLightBox()
+    {
+        return `
+            <div class="lightBox__arrow lightBox__previous-arrow" data-id=${this._id}>
+                <button class="fas fa-angle-left"></button>
+            </div>
+            <div class="lightBox__media-link">
+                <img class="lightBox__img" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}"> 
+                <span class="lightBox__title>${this.title}</span>
+            </div>
+            <div class="lightBox__arrow lightBox__next-arrow" data-id=${this._id}>
+                <button class="fas fa-angle-right"></button>
+            </div>
+            <button class="lightBox__close fas fa-times"></button>
+                `;
+    }
+
 }
 
 export default Picture;

@@ -406,9 +406,6 @@ a {
   display: block;
   text-decoration: none;
 }
-a:visited {
-  color: #db8876;
-}
 a:hover h2, a:focus h2 {
   color: #db8876;
 }
@@ -646,127 +643,144 @@ span {
   cursor: pointer;
 }
 
-.select-menu {
+.dropDownMenu {
   display: flex;
-  width: auto;
   margin: 50px 100px;
   font-size: 1.125rem;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
+  align-items: baseline;
 }
 @media screen and (max-width: 992px) {
-  .select-menu {
+  .dropDownMenu {
     margin: 1.2rem 4.375rem 0;
     font-size: 0.895rem;
   }
 }
 @media screen and (max-width: 599px) {
-  .select-menu {
+  .dropDownMenu {
     margin: 1.25rem 1rem 0;
     justify-content: center;
   }
 }
-.select-menu__label {
+@media screen and (max-width: 480px) {
+  .dropDownMenu {
+    display: none;
+  }
+}
+.dropDownMenu span {
+  display: flex;
   margin-right: 1rem;
   font-weight: bold;
   font-size: 20px;
-  text-align: center;
   color: #000;
 }
 
-.dropDown {
+.menu {
+  display: flex;
+  align-items: baseline;
+}
+
+#dropDownMenu__wrapper {
+  position: relative;
+}
+
+#dropDownBtn {
   width: 10.5rem;
   height: 4.3rem;
   position: relative;
-  line-height: 1.5;
-}
-.dropDown__button {
-  display: flex;
   transition: color 0.6s;
   transition: background-color 0.6s;
-  width: 100%;
   border: none;
-  font-weight: bold;
   border-radius: 5px;
+  font-weight: bold;
   background-color: #901c1c;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #901c1c;
   font-size: 1.175rem;
   color: #FFF;
-  padding: 1.4375rem 1.125rem 1.4375rem 1.25rem;
+  padding: 1.4375rem 2.125rem 1.4375rem 0rem;
 }
-.dropDown__button:focus {
+#dropDownBtn:focus {
   outline: #db8876 thin dashed;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-.dropDown__button:focus-visible {
+#dropDownBtn:focus-visible {
   outline: thin dotted;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-.dropDown__button:hover,
-.dropDown__button :focus {
+#dropDownBtn:hover,
+#dropDownBtn :focus {
   color: #000;
   background-color: #db8876;
 }
 
-.dropdown-content {
+#chevron-down-icon {
+  height: 16px;
+  width: 20px;
+  position: absolute;
+  pointer-events: none;
+  right: 18px;
+  top: 28px;
+  z-index: 2;
+  transition-duration: 0.5s;
+}
+
+#myDropDownList {
   display: none;
   transition: color 0.6s;
+  z-index: 1;
   transition: background-color 0.6s;
   position: absolute;
+  top: -5px;
   background-color: #901c1c;
-  min-width: 10.5rem;
-  min-height: 4.3rem;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  z-index: 1;
-  align-items: center;
-  justify-content: space-between;
+  width: 10.5rem;
+  border-radius: 5px;
+  border: 5px solid #901c1c;
 }
-.dropdown-content a {
-  border-top: 2px solid;
-  border-color: #FFF;
+
+[role=option] {
   display: block;
-  text-decoration: none;
+  border: none;
   background-color: #901c1c;
   font-size: 1.175rem;
   color: #FFF;
   padding: 1.5rem 1.25rem 1.5rem 1.25rem;
   width: 100%;
   font-weight: bold;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background-color: #901c1c;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
-.dropdown-content a:hover,
-.dropdown-content a :focus {
+[role=option]:hover,
+[role=option] :focus {
   color: #000;
   background-color: #db8876;
+  border: none;
+}
+[role=option]:hover:focus,
+[role=option] :focus:focus {
+  outline: #db8876 thin dashed;
+  border-radius: 5px;
+}
+[role=option]:hover:focus-visible,
+[role=option] :focus:focus-visible {
+  outline: thin dotted;
+  border-radius: 5px;
 }
 
-#date {
-  align-items: center;
-}
-#date:hover {
-  border-radius: 0px;
+[role=option] + [role=option] {
+  border-top: 2px solid #FFF;
 }
 
-.show {
-  display: block;
+.activeOption {
+  background-color: #db8876;
+  color: #000;
+}
+
+#selectPopularity {
+  border-radius: 5px 5px 0 0;
+}
+
+#selectTitle {
+  border-radius: 0 0 5px 5px;
 }
 
 .card-insert {
@@ -872,6 +886,7 @@ span {
   left: 0;
   overflow: auto;
   flex-direction: column;
+  z-index: 1000;
   display: none;
 }
 

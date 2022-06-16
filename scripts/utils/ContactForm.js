@@ -21,6 +21,7 @@ export default class ContactForm
         this.errorEmail = document.getElementById("email_error");
         this.errorMessage = document.getElementById("message_error");
         
+        this.modalOverlay = document.querySelector(".overlay");
         this.submitForm = document.getElementById('submit');
     } 
     hide() 
@@ -80,7 +81,7 @@ export default class ContactForm
             this.hide();
         })
 
-        // Close Contact From with "Escape" - Keydown (Accessibility)
+        // Close Contact Form with "Escape" - Keydown (Accessibility)
         this.body.addEventListener('keydown', event => 
         {
         if(event.key === 'Escape')
@@ -91,16 +92,16 @@ export default class ContactForm
         }
         })
 
-        // When the user clicks anywhere outside of the form
-        this.body.addEventListener('click', event => 
+        // close Contact Form by clicking on 'main'
+        this.modalOverlay.addEventListener("click", event => 
         {
-        if (event.target == this.dom) 
+        if (event.target === this.modalOverlay) 
         {
             event.stopPropagation();
             event.preventDefault();
             this.hide();
         }
-        }) 
+        })
     }
 
     // Fields Validations

@@ -1,11 +1,8 @@
-.select-menu {
+.dropDownMenu {
     display: flex;
-    width: auto;
     margin: 50px 100px;
     font-size: 1.125rem;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row; 
+    align-items: baseline;
 
     @include tablette {
         margin: 1.2rem 4.375rem 0;
@@ -17,108 +14,132 @@
         justify-content: center;
     }
 
-    &__label {
+    @include largeMobile {
+        display: none;
+    }
+
+    & span {
+        display: flex;
         margin-right: 1rem;
         font-weight: bold;
         font-size: 20px;
-        text-align: center;
         color: $black;
     }
 }
 
-.dropDown {
+.menu {
+    display: flex;
+    align-items: baseline;
+}
+
+#dropDownMenu__wrapper {
+    position: relative;
+}
+
+#dropDownBtn {
     width: 10.5rem;
     height: 4.3rem;
     position: relative;
-    display: flex;
-
-    &__button {
-        transition: color 0.6s;
-        transition: background-color 0.6s;
-        width: 100%;
-        border: none;
-        font-weight: bold;
-        background-color: $primary-color;
-        cursor: pointer;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-        align-items: center;
-        justify-content: space-between;
-        background-color: $primary-color;
-        font-size: 1.175rem;
-        color: $white;
-        padding: 1.4375rem 1.125rem 1.4375rem 1.25rem;
-
-        &:focus {
-            outline: $orange-light thin dashed;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-
-        }
-
-        &:focus-visible {
-            outline: thin dotted;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-        }
-
-        &:hover, 
-        :focus {
-            color: $black;
-            background-color: $orange-light;
-        }
-    }
-}
-.dropDownList {
-    display: none;
     transition: color 0.6s;
     transition: background-color 0.6s;
-    position: absolute;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
     background-color: $primary-color;
-    min-width: 19.5rem;
-    min-height: 4.3rem;
-    z-index: 1;
-    align-items: center;
-    justify-content: space-between; 
-    
-    & a {
-        border-top: 2px solid;
-        border-color: $white;
-        display: block;
-        text-decoration: none;
-        background-color: $primary-color;
-        font-size: 1.175rem;
-        color: $white;
-        padding: 1.5rem 1.25rem 1.5rem 1.25rem;
-        width: 100%;
-        font-weight: bold;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        cursor: pointer;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-        &:hover, 
-        :focus {
+    cursor: pointer;
+    font-size: 1.175rem;
+    color: $white;
+    padding: 1.4375rem 2.125rem 1.4375rem 0rem;
+
+    &:focus {
+        outline: $orange-light thin dashed;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+
+    }
+
+    &:focus-visible {
+        outline: thin dotted;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    &:hover, 
+    :focus {
         color: $black;
         background-color: $orange-light;
-
-
-        }
-        
     }
 }
 
-#date {
-    align-items: center;
-    &:hover {
-       border-radius: 0px;
-   }
+#chevron-down-icon {
+    height: 16px;
+    width: 20px;
+    position: absolute;
+    pointer-events: none;
+    right: 18px;
+    top: 28px;
+    z-index: 2;
+    transition-duration: 0.5s;
 }
 
-.show {
+#myDropDownList {
+    display: none;
+    transition: color 0.6s;
+    z-index: 1;
+    transition: background-color 0.6s;
+    position: absolute;
+    top: -5px;
+    background-color: $primary-color;
+    width: 10.5rem;
+    border-radius: 5px;
+    border: 5px solid $primary-color;
+}
+
+[role="option"] {
     display: block;
+    border: none;
+    background-color: $primary-color;
+    font-size: 1.175rem;
+    color: $white;
+    padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    
+    &:hover, 
+    :focus {
+    color: $black;
+    background-color: $orange-light;
+    border: none;
+
+    &:focus {
+        outline: $orange-light thin dashed;
+        border-radius: 5px;
+
+    }
+
+    &:focus-visible {
+        outline: thin dotted;
+        border-radius: 5px;
+    }
+    }
+}
+
+
+[role="option"] + [role="option"] {
+    border-top: 2px solid $white;
+}
+
+.activeOption {
+    background-color: $orange-light;
+    color: $black;
+}
+
+#selectPopularity {
+    border-radius: 5px 5px 0 0;
+}
+
+
+#selectTitle {
+    border-radius: 0 0 5px 5px;
 }
