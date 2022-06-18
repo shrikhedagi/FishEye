@@ -20,10 +20,14 @@ class Portfolio
         this.all = []; 
         this.totalLikes = 0;
 
+        this.filterButton = document.getElementById("filter-button");
+        this.listbox = document.getElementById("listbox");
+        this.buttonArrow = document.getElementById("filter-button-arrow");
+
         // Drop down elements
-        this.button = document.getElementById("dropDownBtn");
-        this.dropDownList = document.getElementById("myDropDownList");
-        this.arrow = document.getElementById("chevron-down-icon");
+        this.button = document.querySelector(".dropDownBtn");
+        this.dropDownList = document.querySelector(".dropDownList");
+        this.arrow = document.getElementById("chevron-icon");
         this.selectOptions =
         {
             likes: 'Popularité',
@@ -118,49 +122,43 @@ class Portfolio
     // -------------------- DROP DOWN MENU --------------------- //
 
     // Show drop down menu options, while hide the button, when user clicks
-    show()
+    showOptions()
     {
         this.arrow.style.WebkitTransform = "rotate(-180deg)"; // Rotate the chevron when click on the button
         this.button.setAttribute("aria-expanded", "true"); // Set aria-expanded for accessibility purpose
         this.dropDownList.style.display = "block"; // Show the options when clicked
         this.dropDownList.setAttribute("aria-activedescendant", this.nameOption);
+        this.button.style.display = "none";
         this.dropDownList.focus();
         
     }
 
     // Hide options and show button alone
-    hide()
+    hideOptions()
     {
         this.arrow.style.WebkitTransform = "rotate(0deg)"; // Chevron down when option list are hidden
         this.button.setAttribute("aria-expanded", "false");
         this.dropDownList.removeAttribute("aria-activedescendant");
         this.dropDownList.style.display = "none"; // Hide options
+        this.button.style.display = "block";
         this.button.focus();
     }
 
     // Event listener when clicked on one option in the drop down menu
-    listenforOptions()
+    listenForOptions()
     {
-        this.selectAllOptions.forEach((option) =>
+        document.querySelectorAll(".sort-list").forEach((option) =>
         {
             option.addEventListener('click', () => // When clicked on an option
             {
-                var order = option.dataset.this.id; // Set the order with dataset
-                this.rebootOrder(order); // Reboot the order
-                this.hide(); // Hide options
+                const order = option.dataset.id; // Set the order with dataset
+                this.showCurrentOrder(order); // Reboot the order
+                this.hideOptions(); // Hide options
                 this.sort(order); // Sort medias out
                 this.displayGallery(); // Display the media gallery of the given photographer
                 this.listenLikes(); // And listen again the likes (because listeners disappeared)
-            });
+            }); 
         });
-    }
-
-    // Close drop down menu by clicking on main
-    closeSort() {
-    this.main.addEventListener("click", () =>
-    {
-        this.hide();
-    });   
     }
 
     sortByTitle(a,b) 
@@ -190,25 +188,25 @@ class Portfolio
         return valueB - valueA;
     }
 
-    // To sort out the different options in the drop down menu: title, date and popularite (sets as default)
-    sort(order)
+         // To sort out the different options in the drop down menu: title, date and popularite (sets as default)
+sort(order)
     {
         switch (order)
         {
             // Case of sorting out medias by the most popular one (from the highest to the lowest number of likes)
             case 'Popularité':
-                this.all = this.all.sort(this.sortByPopularity);
+            this.all = this.all.sort(this.sortByPopularity);
+            break;
 
             // Case of sorting out medias by the 'date'
             case 'Date':
-                this.all = this.all.sort(this.sortByDate);
-                break;
-
+            this.all = this.all.sort(this.sortByDate);
+            break;
+     
             // Case of sorting out medias by the 'title'
             case 'Titre':
-                this.all = this.all.sort(this.sortByTitle);
-                break;
-        
+            this.all = this.all.sort(this.sortByTitle);
+            break;
         }
     }
 
@@ -273,8 +271,7 @@ class Portfolio
         });
     } */
 
-    /*
-    keydownSort()
+    /*keydownSort()
     {
         // Keydown event (Accessibility) 
         this.button.addEventListener("keydown", (event) => 
@@ -284,36 +281,35 @@ class Portfolio
                 if(event.key === "ChevronDown" || event.key === "ChevronUp" || event.key === "Enter")
                 {
                     event.preventDefault();
-                    this.show();
+                    this.showOptions();
                 }
             }
-        })
-    } */
+        });
+    }*/
     
-    listenSort()
+    listenDropDown()
     {   
         // Add event listener to roll down the options when clicked on the button
-        this.button.addEventListener('click', (event) => // listen sort on click
+        document.querySelector('.dropDownMenu__button-wrapper').addEventListener('click', () => // listen sort on click
         {
-            event.stopPropagation();
-            this.show(); // Show drop down menu options (popularity, title, date)
+            this.showOptions(); // Show drop down menu options (popularity, title, date)
         })
     }
 
+
     // Display Drop Down Menu
-    displaySort()
+    displayDropDown()
     {
-        this.sortOptions.innerHTML = this.selectOptions("likes");
-        this.listenSort();
-        this.keydownSort();
+        document.querySelector('.sort-option').innerHTML = this.selectOptions["likes"];
+        this.listenDropDown();
         this.listenForOptions();
-        this.closeSort();
     }
 
-    // Update order when the option is clicked and activated
-    rebootOrder(order)
+    display()
     {
-        document.querySelector(".wrapper .select").innerHTML = this.selectOptions(order);
+        this.displayDropDown();
+        this.displayGallery();
+        this.displayInsertCard();
     }
 
     // Async function to start the whole portfolio 
@@ -321,10 +317,15 @@ class Portfolio
     {
         await this.hydrate();
         this.countTotalLikes();
-        this.displayGallery();
-        this.displayInsertCard();  
+        this.display();
         this.listenLikes(); 
-        this.listenSort();   
+        this.listenDropDown();   
+    }
+
+    // Update order when the option is clicked and activated
+    showCurrentOrder(order)
+    {
+        document.querySelector('.dropDownMenu__button-wrapper .sort-option').innerHTML = this.selectOptions[order];
     }
      
 }

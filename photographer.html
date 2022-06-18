@@ -30,43 +30,50 @@
           <span id="dropDownMenu-title">
             Trier par
           </span>
-				  <div class="wrapper" id="dropDownMenu__wrapper">
-            <button
-            role="button" 
-            id="dropDownBtn" 
-            class="select"
-            aria-haspopup="listbox" 
-            aria-labelledby="select-option-label drop-down-button">
-              Popularité
-            </button>
-          <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-down-icon"></img>
-          <div 
-          id="myDropDownList" 
-          role="listbox" 
-          aria-labelledby="menu-list-area"
-          tab-index="-1">
-            <a 
-            id="selectPopularity" 
-            role="option" 
-            class="activeOption select"
-            aria-selected="true"
-            >
-              Popularité
-            </a> 
-            <a 
-            id="selectDate" 
-            role="option" 
-            class="select"
-            aria-selected="false">
-              Date
-            </a>
-            <a 
-            id="selectTitle" 
-            role="option"  
-            class="select"
-            aria-selected="false">
-              Titre
-            </a>
+          <div class="menu-wrapper"></div>
+            <div class="dropDownMenu__button-wrapper">
+              <button
+                role="button"  
+                class="dropDownBtn sort-option"
+                aria-haspopup="listbox" 
+                aria-label="sort"
+                aria-labelledby="sort-option-label drop-down-button">
+                Popularité
+              </button>
+              <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"></img>
+            </div>
+            <div 
+              id="myDropDownList" 
+              class="dropDownList"
+              role="listbox" 
+              aria-labelledby="menu-list-area"
+              tabindex="-1"
+              aria-activedescendant="likes">
+              <button 
+                data-id="likes"
+                role="option" 
+                aria-label="likes"
+                class="activeOption sort-option sort-list"
+                aria-selected="true">
+                Popularité
+              </button> 
+              <button 
+                role="option" 
+                data-id="date"
+                class="sort-option sort-list"
+                aria-label="date"
+                aria-selected="false">
+                Date
+              </button>
+              <button 
+                role="option"  
+                data-id="title"
+                class="sort-option sort-list"
+                aria-label="title"
+                aria-selected="false">
+                Titre
+              </button>
+            </div>
           </div>
 				</div>
 			</section>
