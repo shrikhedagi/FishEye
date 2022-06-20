@@ -1,0 +1,102 @@
+// Lightbox
+.lightBox__media-link img,
+.lightBox__media-link video{
+    border-radius: 8px;
+    color: #901C1C;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer; 
+    box-shadow: 5px 5px 5px 0px #9f9f9f, inset 4px 4px 15px 0px #000000, 5px 5px 0px 29px rgba(0,0,0,0);
+}
+
+.lightBox__media-link {
+    display: inline-block;
+    align-items: center;
+    background-color: $white;
+    max-height: 98%;
+}
+
+.lightBox__img {
+    max-width: 80vw;
+    height: 85vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.lightBox__video {
+    width: auto;
+    height: 30rem;
+}
+
+#lightbox {
+    background-color: white;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightBox__closeBtn {
+    margin-left: -0.5rem;
+    height: 4rem;
+
+    & button {
+        width: 2rem;
+    }
+}
+
+#lightBox__close {
+    display: flex;
+    flex-direction: row;
+}
+
+.lightBox__close {
+    background-color: transparent;
+    color: $primary-color;
+    border: none;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.lightBox__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $primary-color;
+}
+
+.lightBox__content {
+    padding: 0 30px;
+    border-radius: 8px;
+    color: #901C1C;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.close-slider {
+    display: flex;
+    flex-direction: row;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+    background-color: transparent;
+    border: none;
+    font-size: 60px;
+    z-index: 11;
+    color: $primary-color;
+    cursor: pointer;
+}
+
+.lightBox__next-arrow {
+    margin-left: -1.6rem;
+}
+
+
+
+
+

@@ -31,6 +31,8 @@
         align-items: center;
         border-radius: 0.32rem;
         background-color: #c4c4c4;
+        border: none;
+        cursor: pointer;
     }
 
     &__footer {
@@ -44,7 +46,7 @@
     }
 
     &__title {
-        max-width: 16rem;
+        max-width: 12rem;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;

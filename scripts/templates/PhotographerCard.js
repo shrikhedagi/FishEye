@@ -26,15 +26,15 @@ class PhotographerCard
                 </h2>
             </a>
             <div class="thumbnail">
-                <p class="thumbnail__location" lang="en">
+                <div class="thumbnail__location" lang="en">
                     ${this._location}
-                </p>
-                <p class="thumbnail__tagline">
+                </div>
+                <div class="thumbnail__tagline">
                     ${this._tagline}
-                </p>
-                <p class="thumbnail__price">
+                </div>
+                <div class="thumbnail__price">
                     ${this._price}€/jour
-                </p>
+                </div>
             </div>
         </article>`;
 

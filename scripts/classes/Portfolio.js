@@ -6,6 +6,7 @@ import MediaFactory from "./MediaFactory.js";
 import PhotographerBanner from '../templates/PhotographerBanner.js'
 
 import Photographer from './Photographer.js';
+import LightBox from './LightBox.js';
 
 import ContactForm from "../utils/ContactForm.js";
 class Portfolio 
@@ -144,24 +145,39 @@ class Portfolio
         this.button.focus();
     }
 
-    // Event listener when clicked on one option in the drop down menu
-    listenForOptions()
-    {
-        document.querySelectorAll(".sort-list").forEach((option) =>
+    listenForReordering()
+    {   
+        // Add event listener to roll down the options when clicked on the button
+        document.querySelector('.dropDownMenu__button-wrapper').addEventListener('click', () => // listen sort on click
         {
-            option.addEventListener('click', () => // When clicked on an option
-            {
-                const order = option.dataset.id; // Set the order with dataset
-                this.showCurrentOrder(order); // Reboot the order
-                this.hideOptions(); // Hide options
-                this.sort(order); // Sort medias out
-                this.displayGallery(); // Display the media gallery of the given photographer
-                this.listenLikes(); // And listen again the likes (because listeners disappeared)
-            }); 
-        });
+            this.showOptions(); // Show drop down menu options (popularity, title, date)
+        })
     }
 
-    sortByTitle(a,b) 
+    display()
+    {
+        this.displayReorderList();
+        this.displayGallery();
+        this.displayInsertCard();
+    }
+
+    
+     // Display Drop Down Menu
+    displayReorderList()
+    {   // .sort-option (class for all the buttons)
+        document.querySelector('.sort-option').innerHTML = this.selectOptions["likes"];
+        this.listenForReordering();
+        this.listenForOptions();
+    }
+
+    reorderByDate(a,b)
+    {
+        const valueA = new Date(a.date);
+        const valueB = new Date(b.date);
+        return valueB - valueA;
+    }
+
+    reorderByTitle(a,b)
     {
         const valueA = a.title;
         const valueB = b.title;
@@ -174,143 +190,66 @@ class Portfolio
           }
     }
 
-    sortByDate(a,b) 
-    {
-        const valueA = new Date(a.date);
-        const valueB = new Date(b.date);
-        return valueB - valueA;
-    }
-
-    sortByPopularity(a,b) 
+    reorderByPopularity(a,b)
     {
         const valueA = parseInt(a.likes);
         const valueB = parseInt(b.likes);
         return valueB - valueA;
     }
 
-         // To sort out the different options in the drop down menu: title, date and popularite (sets as default)
-sort(order)
+    // To sort out the different options in the drop down menu: title, date and popularite (sets as default)
+    reorder(order)
     {
-        switch (order)
-        {
-            // Case of sorting out medias by the most popular one (from the highest to the lowest number of likes)
-            case 'Popularité':
-            this.all = this.all.sort(this.sortByPopularity);
-            break;
+            switch (order)
+            {
 
-            // Case of sorting out medias by the 'date'
-            case 'Date':
-            this.all = this.all.sort(this.sortByDate);
-            break;
-     
-            // Case of sorting out medias by the 'title'
-            case 'Titre':
-            this.all = this.all.sort(this.sortByTitle);
-            break;
-        }
+                // Case of sorting out medias by the 'date'
+                case 'date':
+                this.all = this.all.sort(this.reorderByDate);
+                break;
+        
+                // Case of sorting out medias by the 'title'
+                case 'title':
+                this.all = this.all.sort(this.reorderByTitle);
+                break;
+
+                // Case of sorting out medias by the most popular one (from the highest to the lowest number of likes)
+                default:
+                this.all = this.all.sort(this.reorderByPopularity);
+                
+            }
     }
 
-    // Keydown on event listener (Aceessibility)
-    /* sortOnKeydown()
-    {
-        this.dropDownList.addEventListener("keydown", (event)=>
-        {
-            const currentOption = document.querySelector(".activeOption");
-            let selectedOption;
-            if(document.activeElement === this.dropDownList)
-            {
-                switch(event.key)
-                {
-                    case "Home":
-                        selectedOption = this.dropDownList.firstElementChild;
-                        break;
-
-                    case "End":
-                        selectedOption = this.dropDownList.lastElementChild;
-                        break;
-                    
-                    case "ChevronDown":
-                        selectedOption = currentOption.nextElementSibling;
-                        if(selectedOption === null)
-                        {
-                            selectedOption = this.dropDownList.firstElementChild;
-                        }
-                        break;
-
-                    case "ChevronUp":
-                        selectedOption = currentOption.previousElementSibling;
-                        if(selectedOption === null)
-                        {
-                            selectedOption = this.dropDownList.lastElementChild;
-                        }
-                        break;
-
-                    case "Enter":
-                        selectedOption = document.querySelector(".activeOption");
-                        this.button.textContent = selectedOption.innerText;
-                        this.hide();
-                        this.displayGallery(selectedOption.innerText.toLowerCase());
-                        break;
-                    
-                    case "Escape":
-                        for (let i = 0; i < this.dropDownList.children.length; i++)
-                            {
-                                this.dropDownList.children[i].classList.remove("activeOption");
-                            }
-                            this.hide();
-                            return;
-
-                }
-            }
-            currentOption.classList.remove("activeOption");
-            selectedOption.classList.add("activeOption");
-            currentOption.setAttribute("aria-selected", "false");
-            selectedOption.setAttribute("aria-selected", "true");
-            this.dropDownList.setAttribute("aria-activedescendant", this,nameOption); 
-
-        });
-    } */
-
-    /*keydownSort()
-    {
-        // Keydown event (Accessibility) 
-        this.button.addEventListener("keydown", (event) => 
-        {
-            if (document.activeElement === this.button)
-            {
-                if(event.key === "ChevronDown" || event.key === "ChevronUp" || event.key === "Enter")
-                {
-                    event.preventDefault();
-                    this.showOptions();
-                }
-            }
-        });
-    }*/
+     // Lightbox function
+     listenLightBox()
+     {
+         this.all.forEach((media, index) =>  
+         {
+             document.querySelector(`.media-cards[data-id="${media.id}"] .media-cards__lightbox-link`).addEventListener('click', () =>
+             {
+             new LightBox(this.all, index);
+             });
+         });
+     }
     
-    listenDropDown()
-    {   
-        // Add event listener to roll down the options when clicked on the button
-        document.querySelector('.dropDownMenu__button-wrapper').addEventListener('click', () => // listen sort on click
+    // Event listener when clicked on one option in the drop down menu
+    listenForOptions()
+    {
+        document.querySelectorAll(".sort-list").forEach((option) =>
         {
-            this.showOptions(); // Show drop down menu options (popularity, title, date)
-        })
+            option.addEventListener('click', () => // When clicked on an option
+            {
+                const order = option.dataset.sort; // Set the order with dataset
+                this.showCurrentOrder(order); // Reboot the order
+                this.hideOptions(); // Hide options
+                this.reorder(order); // Sort medias out
+                this.displayGallery(); // Display the media gallery of the given photographer
+                this.listenLikes(); // And listen again the likes (because listeners disappeared)
+                this.listenLightBox(); 
+            }); 
+        });
     }
 
-
-    // Display Drop Down Menu
-    displayDropDown()
-    {
-        document.querySelector('.sort-option').innerHTML = this.selectOptions["likes"];
-        this.listenDropDown();
-        this.listenForOptions();
-    }
-
-    display()
-    {
-        this.displayDropDown();
-        this.displayGallery();
-        this.displayInsertCard();
-    }
 
     // Async function to start the whole portfolio 
     async start()
@@ -319,7 +258,8 @@ sort(order)
         this.countTotalLikes();
         this.display();
         this.listenLikes(); 
-        this.listenDropDown();   
+        this.listenForReordering(); 
+        this.listenLightBox();  
     }
 
     // Update order when the option is clicked and activated
@@ -331,4 +271,3 @@ sort(order)
 }
 
 export default Portfolio;
-

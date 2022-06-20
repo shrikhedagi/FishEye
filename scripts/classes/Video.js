@@ -12,11 +12,11 @@ class Video extends Media
     {
         return `
             <article class="media-cards" data-id=${this._id}>
-                <a class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, lightbox closeup view">
+                <button class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, lightbox closeup view">
                     <video alt="video: ${this._title}">
                         <source src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
                     </video>
-                </a>
+                </button>
                 <footer class="media-cards__footer">
                     <h3 class="media-cards__title" title="${this.title}">
                         ${this.title}
@@ -39,16 +39,22 @@ class Video extends Media
             <div class="lightBox__arrow lightBox__previous-arrow" data-id=${this._id}>
                 <button class="fas fa-angle-left"></button>
             </div>
-            <div class="lightBox__media-link">
-                <video alt="video: ${this._title}>
-                    <source" src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
-                </video>
-                <span class="lightBox__title>${this.title}</span>
+            <div class="close-slider">
+                <div class="lightBox__content">
+                    <figure class="lightBox__media-link">
+                        <video class="lightBox__video" alt="video: ${this._title}">
+                            <source" src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
+                        </video>
+                        <figcaption class="lightBox__title">${this.title}</figcaption>
+                    </figure>
+                </div>
+                <div class="lightBox__closeBtn">
+                    <button class="lightBox__close fas fa-times"></button>
+                </div>
             </div>
             <div class="lightBox__arrow lightBox__next-arrow" data-id=${this._id}>
                 <button class="fas fa-angle-right"></button>
             </div>
-            <button class="lightBox__close fas fa-times"></button>
                 `;
     }
 

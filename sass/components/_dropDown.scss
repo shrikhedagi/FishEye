@@ -1,7 +1,9 @@
 .dropDownMenu {
+    position: absolute;
     margin: 0 100px;
-    display: block;
+    display: flex;
     font-size: 1.125rem;
+    z-index: 1;
 
     @include tablette {
         font-size: 0.895rem;
@@ -23,19 +25,24 @@
     align-items: baseline;
 }
 
+.menu-wrapper {
+    display: inline-block;
+    justify-content: space-between;
+
+}
+
 .dropDownMenu__button-wrapper {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .dropDownBtn {
     width: 170px;
     border-radius: 5px;
-    line-height: 1.4375rem;
-    border: none;
+    border: 5px solid $primary-color;
     margin-left: 22px;
-    height: 70px;
     text-align: left;
-    padding: 0 20px;
     cursor: pointer;
     transition: color 0.6s;
     transition: background-color 0.6s;
@@ -57,6 +64,8 @@
 
     &:hover, 
     :focus {
+        transition: background-color 0.4s;
+        border: 5px solid $orange-light;
         color: $black;
         background-color: $orange-light;
     }
@@ -65,12 +74,10 @@
 #chevron-icon {
     height: 17px;
     width: 20px;
-    position: absolute;
     pointer-events: none;
-    right: 18px;
-    top: 28px;
-    z-index: 300;
-    transition-duration: 0.5s;
+    z-index: 4;
+    transition-duration: 1s;
+    display: inline-block;
 }
 
 .dropDownList {
@@ -81,14 +88,15 @@
     width: 170px;
     border-radius: 5px;
     border: 5px solid $primary-color;
-    position: relative;
-    left: 15px;
-    top: 0px;
+    margin-left: 22px;
 }
-
 
 .sort-list {
     display: block;
+}
+
+[role="button"] {
+    padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 }
 
 [role="option"] {
@@ -105,37 +113,42 @@
     &:hover, 
     :focus {
     color: $black;
+    transition: background-color 0.6s;
     background-color: $orange-light;
-    border: none;
+    
 
     &:focus {
         outline: $orange-light thin dashed;
-        border-radius: 5px;
 
     }
 
     &:focus-visible {
         outline: thin dotted;
-        border-radius: 5px;
     }
     }
 }
-
 
 [role="option"] + [role="option"] {
     border-top: 2px solid $white;
 }
 
-.activeOption {
-    background-color: $orange-light;
-    color: $black;
-}
-
-[data-id="popularity"] {
+[data-sort="likes"] {
     border-radius: 5px 5px 0 0;
+    &:hover, :focus {
+        border-radius: 5px 5px 0 0;
+    }
 }
 
+[data-sort="date"] {
+    border-radius: 0;
+    &:hover, :focus {
+        border-radius: 0;
+    }
+}
 
-[data-id="title"] {
+[data-sort="title"] {
     border-radius: 0 0 5px 5px;
+    &:hover, :focus {
+        border-radius: 0 0 5px 5px;
+    }
 }

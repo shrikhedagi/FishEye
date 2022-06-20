@@ -30,7 +30,7 @@
           <span id="dropDownMenu-title">
             Trier par
           </span>
-          <div class="menu-wrapper"></div>
+          <div class="menu-wrapper">
             <div class="dropDownMenu__button-wrapper">
               <button
                 role="button"  
@@ -39,9 +39,12 @@
                 aria-label="sort"
                 aria-labelledby="sort-option-label drop-down-button">
                 Popularité
+                <span>
+                  <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"></img>
+                </span>
               </button>
-              <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"></img>
             </div>
+          </div>
             <div 
               id="myDropDownList" 
               class="dropDownList"
@@ -50,27 +53,24 @@
               tabindex="-1"
               aria-activedescendant="likes">
               <button 
-                data-id="likes"
+                data-sort="likes"
                 role="option" 
                 aria-label="likes"
-                class="activeOption sort-option sort-list"
-                aria-selected="true">
+                class="activeOption sort-option sort-list">
                 Popularité
               </button> 
               <button 
                 role="option" 
-                data-id="date"
+                data-sort="date"
                 class="sort-option sort-list"
-                aria-label="date"
-                aria-selected="false">
+                aria-label="date">
                 Date
               </button>
               <button 
                 role="option"  
-                data-id="title"
+                data-sort="title"
                 class="sort-option sort-list"
-                aria-label="title"
-                aria-selected="false">
+                aria-label="title">
                 Titre
               </button>
             </div>
@@ -86,7 +86,7 @@
     </main>
 
     <!-- Lightbox -->
-    <div id="lightbox" class="modal modal--close" role="dialog" aria-label="lightbox closeup for images and videos portfolio" aria-hidden="true">
+    <div id="lightbox" aria-label="lightbox closeup for images and videos portfolio">
 		</div>
 
     <!-- Card Info Insert with total likes and Price -->
