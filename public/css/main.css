@@ -937,6 +937,25 @@ video {
   margin-left: -1.6rem;
 }
 
+#message-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+#message-text {
+  position: absolute;
+  left: 37%;
+  top: 1.5%;
+  width: 28rem;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  display: none;
+}
+
 .media-cards {
   width: 100%;
   flex-direction: column;

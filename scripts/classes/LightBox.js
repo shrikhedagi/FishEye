@@ -1,14 +1,58 @@
 class LightBox 
 {
-    slides = [];
-    currentIndex = 0;
-
-    constructor(slides, index) 
+    constructor(slides, medias) 
     {
         this.slides = slides;
-        this.currentIndex = index;
+        this.currentIndex = 0;
         this.lightBox = document.querySelector('#lightbox');
-        this.loadLightBox();      
+        this.loadLightBox();  
+        this.medias = medias;    
+    }
+
+    startLightBox()
+    {
+        let mediaSlide = this.slides[this.currentIndex];
+        this.lightBox.innerHTML = mediaSlide.renderLightBox();
+        document.querySelector('.fa-times').classList.add('closeBtn');
+        this.lightBox.style.display ="flex";
+    }
+
+     // Lightbox carousel next and previous controls event handling
+    listenForMoves()
+    {
+
+        let next = document.querySelector('.lightBox__next-arrow .fa-angle-right');
+        let previous = document.querySelector('.lightBox__previous-arrow .fa-angle-left');
+  
+        document.addEventListener("keydown", (event) => 
+        {
+            if(event.keyCode == 39) 
+            {
+                this.nextMedia();
+                this.startLightBox();
+            }
+        });
+  
+        document.addEventListener("keydown", (event) => 
+        {
+            if(event.keyCode == 37) {
+                this.previousMedia();
+                this.startLightBox();
+            }
+        });
+
+        next.addEventListener('click', () =>
+        {
+            this.nextMedia();
+            this.startLightBox();
+        });
+
+        previous.addEventListener('click', () =>
+        {
+            this.previousMedia();
+            this.startLightBox();
+      });
+  
     }
 
     listenForClose()
@@ -19,35 +63,9 @@ class LightBox
         });
     }
 
-    listenForNext()
-    {
-        document.querySelector('.lightBox__next-arrow .fa-angle-right').addEventListener('click', () =>
-        {
-            this.nextMedia();
-        });
-    }
-
-    listenForPrevious()
-    {
-        document.querySelector('.lightBox__previous-arrow .fa-angle-left').addEventListener('click', () =>
-        {
-            this.previousMedia();
-      });
-    }
-
-    // Launch lightbox
-    loadLightBox()
-    {
-        this.showLightBox();
-        this.listenForPrevious();
-        this.listenForNext();
-        this.listenForClose();
-        this.escapeLightBox();
-    }
-
     nextMedia()
     {
-        if (this.currentIndex === this.slides.length -1)
+        if (this.currentIndex >= this.slides.length -1)
         {
             this.currentIndex = 0;
         }else{
@@ -58,7 +76,7 @@ class LightBox
 
     previousMedia()
     {
-        if (this.currentIndex === 0)
+        if (this.currentIndex <= 0)
         {
             this.currentIndex = this.slides.length -1;
         }else{
@@ -67,23 +85,22 @@ class LightBox
         this.loadLightBox();
     }
 
-    showLightBox()
+    // Launch lightbox
+    loadLightBox()
     {
-        let media = this.slides[this.currentIndex];
-        this.lightBox.innerHTML = media.renderLightBox();
-        document.querySelector('.fa-times').classList.add('.closeBtn');
-        this.lightBox.style.display ="flex";
-        document.querySelector('.lightBox__next-arrow .fa-angle-right').focus();
+        this.startLightBox();
+        this.listenForMoves();
+        this.listenForClose();
+        this.escapeLightBox();
     }
 
-    // Close on Keydown "escape"
     escapeLightBox()
     {
         document.addEventListener('keydown', (event) =>
         {
             if (event.key === "Escape")
             {
-                this.lightBox.style.display = "none";
+                document.querySelector('#lightbox').style.display = "none";
             }
         })
     }

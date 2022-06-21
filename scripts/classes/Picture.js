@@ -39,11 +39,16 @@ class Picture extends Media
                 <button class="fas fa-angle-left"></button>
             </div>
             <div class="close-slider">
-                <div class="lightBox__content">
-                    <figure class="lightBox__media-link">
-                        <img class="lightBox__img" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}"> 
-                        <figcaption class="lightBox__title">${this.title}</figcaption>
-                    </figure>
+                <div id="message-nav">
+                    <div id="message-text">
+                    Utilisez les flèches "droite" et "gauche" pour naviguer entre les médias
+                    </div>
+                    <div class="lightBox__content">
+                        <figure class="lightBox__media-link">
+                            <img class="lightBox__img" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}"> 
+                            <figcaption class="lightBox__title">${this.title}</figcaption>
+                        </figure>
+                    </div>
                 </div>
                 <div class="lightBox__closeBtn">
                     <button class="lightBox__close fas fa-times"></button>
