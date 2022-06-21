@@ -14,19 +14,16 @@ class Portfolio
     constructor (id) 
     {
         this.id = id;
-        this.main = document.querySelector('main');
+        this.main = document.querySelector('#main');
         this.mainContent = document.getElementById('photographer-gallery');
         this.mediasApi = new MediaApi('data/profilData.json');
         this.photographersApi = new PhotographerApi('data/profilData.json'); // Fetch data with API
         this.all = []; 
         this.totalLikes = 0;
 
-        this.filterButton = document.getElementById("filter-button");
-        this.listbox = document.getElementById("listbox");
-        this.buttonArrow = document.getElementById("filter-button-arrow");
-
         // Drop down elements
         this.button = document.querySelector(".dropDownBtn");
+        this.buttonWrap = document.querySelector('.dropDownMenu__button-wrapper');
         this.dropDownList = document.querySelector(".dropDownList");
         this.arrow = document.getElementById("chevron-icon");
         this.selectOptions =
@@ -36,6 +33,7 @@ class Portfolio
             title: 'Titre'
         }
         this.nameOption = this.button.innerText.toLowerCase();
+        this.dropDownOverlay = document.querySelector('.menu-overlay');
     }
 
     async hydrate() 
@@ -148,10 +146,103 @@ class Portfolio
     listenForReordering()
     {   
         // Add event listener to roll down the options when clicked on the button
-        document.querySelector('.dropDownMenu__button-wrapper').addEventListener('click', () => // listen sort on click
+        this.buttonWrap.addEventListener('click', (event) => // listen sort on click
         {
+            event.stopPropagation();
             this.showOptions(); // Show drop down menu options (popularity, title, date)
         })
+    }
+
+    // Close drop down with click on main
+    closeClickOnMain()
+    {
+        this.dropDownOverlay.addEventListener("click", (event) => 
+        {
+            if (event.target === this.dropDownOverlay) 
+            {
+                event.stopPropagation();
+                event.preventDefault();
+                this.hideOptions();
+            }
+            
+        });
+    }
+
+    // Button with Keydown Event (accessibility)
+    focusOnKeydown()
+    {
+        this.buttonWrap.addEventListener("click", (event) =>
+        {
+            if (document.activeElement === this.buttonWrap) {
+                if (event.key === "ChevronDown" || event.key === "ChevronUp" || event.key === "Enter") {
+            event.preventDefault();
+            this.showOptions();
+                }
+            }
+        });
+    }
+
+    // Keydown event on Drop down Menu
+    keydownOnEvent()
+    {
+        this.dropDownList.addEventListener("keydown", (event) => 
+        {
+            event.preventDefault();
+            const currentOption = document.querySelector(".activeOption");
+            let selectedOption;
+            if (document.activeElement === this.dropDownList) 
+            {
+              switch (event.key) 
+              {
+
+                case "Home":
+                  selectedOption = this.dropDownList.firstElementChild;
+                  break;
+                  
+                case "End":
+                  selectedOption = this.dropDownList.lastElementChild;
+                  break;
+
+                case "ChevronDown":
+                  selectedOption = currentOption.nextElementSibling;
+
+                  if (selectedOption === null) 
+                  {
+                    selectedOption = this.dropDownList.firstElementChild;
+                  }
+                  break;
+
+                case "ChevronUp":
+                  selectedOption = currentOption.previousElementSibling;
+
+                  if (selectedOption === null) 
+                  {
+                    selectedOption = this.dropDownList.lastElementChild;
+                  }
+                  break;
+                case "Enter":
+                  selectedOption = document.querySelector(".activeOption");
+                  this.button.textContent = selectedOption.innerText;
+                  this.hideOptions();
+                  this.reorder(selectedOption.innerText.toLowerCase());
+                  break;
+
+                case "Escape":
+                  for (let i = 0; i < document.querySelector(".dropDownList").children.length; i++) 
+                    {
+                    this.dropDownList.children[i].classList.remove("activeOption");
+                    }
+          
+                  this.hideOptions();
+                  return;
+              }
+            }
+            currentOption.classList.remove("activeOption");
+            selectedOption.classList.add("activeOption");
+            currentOption.setAttribute("aria-selected", "false");
+            selectedOption.setAttribute("aria-selected", "true");
+            this.dropDownList.setAttribute("aria-activedescendant", this.nameOption);
+          });
     }
 
     display()
@@ -161,6 +252,12 @@ class Portfolio
         this.displayInsertCard();
     }
 
+    // Update order when the option is clicked and activated
+    showCurrentOrder(order)
+    {
+        document.querySelector('.dropDownMenu__button-wrapper .sort-option').innerHTML = this.selectOptions[order];
+    }
+
     
      // Display Drop Down Menu
     displayReorderList()
@@ -168,6 +265,9 @@ class Portfolio
         document.querySelector('.sort-option').innerHTML = this.selectOptions["likes"];
         this.listenForReordering();
         this.listenForOptions();
+        this.focusOnKeydown();
+        this.keydownOnEvent();
+        this.closeClickOnMain();
     }
 
     reorderByDate(a,b)
@@ -260,12 +360,6 @@ class Portfolio
         this.listenLikes(); 
         this.listenForReordering(); 
         this.listenLightBox();  
-    }
-
-    // Update order when the option is clicked and activated
-    showCurrentOrder(order)
-    {
-        document.querySelector('.dropDownMenu__button-wrapper .sort-option').innerHTML = this.selectOptions[order];
     }
      
 }

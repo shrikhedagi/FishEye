@@ -42,7 +42,7 @@ class Video extends Media
             <div class="close-slider">
                 <div class="lightBox__content">
                     <figure class="lightBox__media-link">
-                        <video class="lightBox__video" alt="video: ${this._title}">
+                        <video controls autoplay alt="video: ${this._title}">
                             <source" src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
                         </video>
                         <figcaption class="lightBox__title">${this.title}</figcaption>

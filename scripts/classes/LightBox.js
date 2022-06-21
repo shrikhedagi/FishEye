@@ -7,44 +7,45 @@ class LightBox
     {
         this.slides = slides;
         this.currentIndex = index;
-        this.load();      
+        this.lightBox = document.querySelector('#lightbox');
+        this.loadLightBox();      
     }
 
     listenForClose()
     {
         document.querySelector('.lightBox__close').addEventListener('click', () =>
         {
-            document.querySelector('#lightbox').style.display = "none";
+            this.lightBox.style.display = "none";
         });
     }
 
     listenForNext()
     {
-        document.querySelector('.lightBox__next-arrow').addEventListener('click', () =>
+        document.querySelector('.lightBox__next-arrow .fa-angle-right').addEventListener('click', () =>
         {
-            this.next;
+            this.nextMedia();
         });
     }
 
     listenForPrevious()
     {
-        document.querySelector('.lightBox__previous-arrow').addEventListener('click', () =>
+        document.querySelector('.lightBox__previous-arrow .fa-angle-left').addEventListener('click', () =>
         {
-            this.previous();
+            this.previousMedia();
       });
     }
 
     // Launch lightbox
-    load()
+    loadLightBox()
     {
         this.showLightBox();
-        //this.listenForPrevious();
-        //this.listenForNext();
-        //this.listenForClose();
-        //this.escape();
+        this.listenForPrevious();
+        this.listenForNext();
+        this.listenForClose();
+        this.escapeLightBox();
     }
 
-    next()
+    nextMedia()
     {
         if (this.currentIndex === this.slides.length -1)
         {
@@ -52,35 +53,37 @@ class LightBox
         }else{
             this.currentIndex++;
         }
-        this.load();
+        this.loadLightBox();
     }
 
-    previous()
+    previousMedia()
     {
-        if (this.currentIndex === this.slides.length -1)
+        if (this.currentIndex === 0)
         {
-            this.currentIndex = 0;
+            this.currentIndex = this.slides.length -1;
         }else{
             this.currentIndex--;
         }
-        this.load();
+        this.loadLightBox();
     }
 
     showLightBox()
     {
         let media = this.slides[this.currentIndex];
-        document.querySelector("#lightbox").innerHTML = media.renderLightBox();
-        document.querySelector('.fa-times').classList.add('.lightbox__close');
-        document.querySelector("#lightbox").style.display ="flex";
+        this.lightBox.innerHTML = media.renderLightBox();
+        document.querySelector('.fa-times').classList.add('.closeBtn');
+        this.lightBox.style.display ="flex";
+        document.querySelector('.lightBox__next-arrow .fa-angle-right').focus();
     }
 
-    escape()
+    // Close on Keydown "escape"
+    escapeLightBox()
     {
         document.addEventListener('keydown', (event) =>
         {
             if (event.key === "Escape")
             {
-                document.querySelector('#lightbox').style.display = "none";
+                this.lightBox.style.display = "none";
             }
         })
     }

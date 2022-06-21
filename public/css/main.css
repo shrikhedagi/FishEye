@@ -712,6 +712,9 @@ span {
 }
 
 #chevron-icon {
+  position: absolute;
+  top: 32px;
+  left: 231px;
   height: 17px;
   width: 20px;
   pointer-events: none;
@@ -790,6 +793,11 @@ span {
   border-radius: 0 0 5px 5px;
 }
 
+.activeOption {
+  background-color: #db8876;
+  color: #000;
+}
+
 .card-insert {
   display: flex;
   width: 24rem;
@@ -860,7 +868,7 @@ span {
   object-fit: cover;
 }
 
-.lightBox__video {
+video {
   width: auto;
   height: 30rem;
 }
@@ -878,14 +886,6 @@ span {
   align-items: center;
 }
 
-.lightBox__closeBtn {
-  margin-left: -0.5rem;
-  height: 4rem;
-}
-.lightBox__closeBtn button {
-  width: 2rem;
-}
-
 #lightBox__close {
   display: flex;
   flex-direction: row;
@@ -897,6 +897,11 @@ span {
   border: none;
   font-size: 60px;
   cursor: pointer;
+  margin-left: -0.5rem;
+  height: 4rem;
+}
+.lightBox__close:hover:focus {
+  transform: scale(1.2);
 }
 
 .lightBox__title {

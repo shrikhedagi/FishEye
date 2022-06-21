@@ -22,10 +22,10 @@
       </nav>
     </header>
 
-    <main id="main" aria-hidden="false">
+    <main id="main">
 
       <!-- Drop down Menu -->
-      <section class="dropDownMenu">
+      <section class="dropDownMenu menu-overlay">
         <div class="menu">
           <span id="dropDownMenu-title">
             Trier par
@@ -39,10 +39,8 @@
                 aria-label="sort"
                 aria-labelledby="sort-option-label drop-down-button">
                 Popularité
-                <span>
-                  <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"></img>
-                </span>
               </button>
+              <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"></img>
             </div>
           </div>
             <div 
@@ -56,6 +54,7 @@
                 data-sort="likes"
                 role="option" 
                 aria-label="likes"
+                aria-selected="true"
                 class="activeOption sort-option sort-list">
                 Popularité
               </button> 
@@ -63,12 +62,14 @@
                 role="option" 
                 data-sort="date"
                 class="sort-option sort-list"
+                aria-selected="false"
                 aria-label="date">
                 Date
               </button>
               <button 
                 role="option"  
                 data-sort="title"
+                aria-selected="false"
                 class="sort-option sort-list"
                 aria-label="title">
                 Titre

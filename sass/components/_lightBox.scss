@@ -23,7 +23,7 @@
        object-fit: cover;
 }
 
-.lightBox__video {
+video {
     width: auto;
     height: 30rem;
 }
@@ -41,15 +41,6 @@
     align-items: center;
 }
 
-.lightBox__closeBtn {
-    margin-left: -0.5rem;
-    height: 4rem;
-
-    & button {
-        width: 2rem;
-    }
-}
-
 #lightBox__close {
     display: flex;
     flex-direction: row;
@@ -61,6 +52,12 @@
     border: none;
     font-size: 60px;
     cursor: pointer;
+    margin-left: -0.5rem;
+    height: 4rem;
+
+    &:hover:focus {
+        transform: scale(1.2);
+    }
 }
 
 .lightBox__title {
