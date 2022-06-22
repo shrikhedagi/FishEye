@@ -1,12 +1,11 @@
 class LightBox 
 {
-    constructor(slides, medias) 
+    constructor(slides) 
     {
         this.slides = slides;
         this.currentIndex = 0;
         this.lightBox = document.querySelector('#lightbox');
-        this.loadLightBox();  
-        this.medias = medias;    
+        this.loadLightBox();      
     }
 
     startLightBox()
