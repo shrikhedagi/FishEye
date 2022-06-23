@@ -5,10 +5,10 @@ class LightBox
         this.slides = slides;
         this.currentIndex = 0;
         this.lightBox = document.querySelector('#lightbox');
-        this.loadLightBox();      
+        this.load();      
     }
 
-    startLightBox()
+    show()
     {
         let mediaSlide = this.slides[this.currentIndex];
         this.lightBox.innerHTML = mediaSlide.renderLightBox();
@@ -28,7 +28,7 @@ class LightBox
             if(event.keyCode == 39) 
             {
                 this.nextMedia();
-                this.startLightBox();
+                this.show();
             }
         });
   
@@ -36,20 +36,20 @@ class LightBox
         {
             if(event.keyCode == 37) {
                 this.previousMedia();
-                this.startLightBox();
+                this.show();
             }
         });
 
         next.addEventListener('click', () =>
         {
             this.nextMedia();
-            this.startLightBox();
+            this.show();
         });
 
         previous.addEventListener('click', () =>
         {
             this.previousMedia();
-            this.startLightBox();
+            this.show();
       });
   
     }
@@ -70,7 +70,7 @@ class LightBox
         }else{
             this.currentIndex++;
         }
-        this.loadLightBox();
+        this.load();
     }
 
     previousMedia()
@@ -81,19 +81,19 @@ class LightBox
         }else{
             this.currentIndex--;
         }
-        this.loadLightBox();
+        this.load();
     }
 
     // Launch lightbox
-    loadLightBox()
+    load()
     {
-        this.startLightBox();
+        this.show();
         this.listenForMoves();
         this.listenForClose();
-        this.escapeLightBox();
+        this.escape();
     }
 
-    escapeLightBox()
+    escape()
     {
         document.addEventListener('keydown', (event) =>
         {
