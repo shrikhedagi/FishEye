@@ -14,7 +14,7 @@ class Picture extends Media
         return `
             <article class="media-cards" data-id="${this._id}">
                 <button class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/photo/${this._image}" aria-label="${this.title}, lightbox closeup view">
-                    <img src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}">
+                    <img class="lightbox-link" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}">
                 </button>
                 <footer class="media-cards__footer">
                     <h3 class="media-cards__title" title="${this.title}">
@@ -36,7 +36,7 @@ class Picture extends Media
     {
         return `
             <figure class="lightBox__media-link">
-                <img class="lightBox__img" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}"> 
+                <img class="lightBox__img lightbox-link" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}"> 
                 <figcaption class="lightBox__title">${this.title}</figcaption>
             </figure>
                 `;
