@@ -436,86 +436,6 @@ span {
   transform: scale(1.1);
 }
 
-@-webkit-keyframes show-up {
-  from {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-@keyframes show-up {
-  from {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-@-webkit-keyframes show {
-  from {
-    opacity: 0;
-    transform: translateX(-3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
-@keyframes show {
-  from {
-    opacity: 0;
-    transform: translateX(-3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
-@-webkit-keyframes show-right {
-  from {
-    opacity: 0;
-    transform: translateX(-3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
-@keyframes show-right {
-  from {
-    opacity: 0;
-    transform: translateX(-3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0rem);
-  }
-}
-@-webkit-keyframes show-down {
-  from {
-    opacity: 0;
-    transform: translateY(-10rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-@keyframes show-down {
-  from {
-    opacity: 0;
-    transform: translateY(-10rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
 @-webkit-keyframes modalopen {
   from {
     opacity: 0;
@@ -625,8 +545,6 @@ span {
   justify-content: space-between;
   align-items: center;
   border-radius: 0.3125rem;
-  -webkit-animation: show 0.8s ease-in-out;
-  animation: show 0.8s ease-in-out;
 }
 @media screen and (max-width: 1160px) {
   .photographer-banner {
@@ -770,8 +688,8 @@ span {
   color: #901c1c;
   transform: scale(1);
   transition: transform 0.3s;
-  -webkit-animation: pulse 10.3s infinite;
-  animation: pulse 10.3s infinite;
+  -webkit-animation: pulse 1.3s linear;
+  animation: pulse 1.3s linear;
 }
 .like-button__icon:hover {
   transform: scale(1.5);
@@ -1020,8 +938,6 @@ video {
   display: none;
   justify-content: center;
   align-items: center;
-  -webkit-animation: show-down 0.8s ease-in-out;
-  animation: show-down 0.6s ease-in-out;
 }
 
 #lightBox__close {
@@ -1099,8 +1015,6 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  -webkit-animation: show-up 0.8s ease-in-out;
-  animation: show-up 0.8s ease-in-out;
 }
 .media-cards img {
   width: 100%;
@@ -1109,13 +1023,6 @@ video {
   object-fit: cover;
   border-radius: 0.32rem;
   background-color: #c4c4c4;
-  position: relative;
-  transition: transform 0.5s ease-in-out;
-}
-.media-cards img:hover {
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
-  transition-duration: 0.5s;
-  transform: scale(1.05);
 }
 .media-cards video {
   width: 100%;
@@ -1124,13 +1031,6 @@ video {
   object-fit: cover;
   border-radius: 0.32rem;
   background-color: #c4c4c4;
-  position: relative;
-  transition: transform 0.5s ease-in-out;
-}
-.media-cards video:hover {
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
-  transition-duration: 0.5s;
-  transform: scale(1.03);
 }
 .media-cards__lightbox-link {
   width: 100%;
@@ -1182,8 +1082,8 @@ video {
   max-height: 90rem;
   border-radius: 0.3125rem;
   background-color: #db8876;
-  -webkit-animation: modalopen 0.6s;
-  animation: modalopen 0.6s;
+  -webkit-animation: modalopen 1s;
+  animation: modalopen 1s;
 }
 
 .form-header {
@@ -1411,7 +1311,7 @@ form label {
 }
 
 #photographer-gallery {
-  margin: 200px 100px;
+  margin: 160px 100px;
 }
 
 .photographer-gallery {
@@ -1420,8 +1320,12 @@ form label {
   grid-template-columns: repeat(3, 1fr);
   gap: 4.44rem 5.94rem;
   overflow: hidden;
-  -webkit-animation: show 0.8s ease-in-out;
-  animation: show 0.8s ease-in-out;
+}
+@media screen and (max-width: 872px) {
+  .photographer-gallery {
+    -moz-column-gap: 3rem;
+    column-gap: 3rem;
+  }
 }
 @media screen and (max-width: 1160px) {
   .photographer-gallery {
@@ -1431,11 +1335,6 @@ form label {
 @media screen and (max-width: 992px) {
   .photographer-gallery {
     margin: 3.6rem 4.5rem 0;
-  }
-}
-@media screen and (max-width: 425px) {
-  .photographer-gallery {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media screen and (max-width: 872px) {

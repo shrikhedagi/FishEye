@@ -1,10 +1,12 @@
 class LightBox 
-{
+{   
+    slides = [];
+    currentIndex = 0;
 
-    constructor(slides) 
+    constructor(slides, index) 
     {
         this.slides = slides;
-        this.currentIndex = 0;
+        this.currentIndex = index;
         this.lightBox = document.getElementById('lightbox');
         this.container = document.getElementsByClassName('lightBox__content')[0];
         this.start();      

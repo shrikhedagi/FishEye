@@ -21,6 +21,7 @@
     height: 85vh;
     -o-object-fit: cover;
        object-fit: cover;
+
 }
 
 video {
@@ -39,6 +40,8 @@ video {
     display: none;
     justify-content: center;
     align-items: center;
+    -webkit-animation: show-down 0.8s ease-in-out;
+    animation: show-down 0.6s ease-in-out;
 }
 
 #lightBox__close {

@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    -webkit-animation: show-up 0.8s ease-in-out;
+            animation: show-up 0.8s ease-in-out;
 
     img {
         width: 100%;
@@ -13,6 +15,15 @@
            object-fit: cover;
         border-radius: 0.32rem;
         background-color: #c4c4c4;
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+        
+        &:hover {
+            box-shadow: 0 0 0.5rem rgba(0,0,0,0.7);
+            transition-duration: 0.5s;
+            transform: scale(1.05);
+        }
+        
     }
 
     video {
@@ -22,6 +33,15 @@
            object-fit: cover;
         border-radius: 0.32rem;
         background-color: #c4c4c4;
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 0 0.5rem rgba(0,0,0,0.7);
+            transition-duration: 0.5s;
+            transform: scale(1.03)
+        }
+        
     }
 
     &__lightbox-link {

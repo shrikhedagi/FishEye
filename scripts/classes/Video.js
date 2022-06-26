@@ -13,7 +13,7 @@ class Video extends Media
         return `
             <article class="media-cards" data-id=${this._id}>
                 <button class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, lightbox closeup view">
-                    <video controls autoplay alt="video: ${this._title}">
+                    <video controls autoplay loop alt="video: ${this._title}">
                         <source src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
                     </video>
                 </button>
@@ -37,7 +37,7 @@ class Video extends Media
     {
         return `
         <figure class="lightBox__media-link">
-            <video controls autoplay alt="video: ${this._title}">
+            <video controls autoplay loop alt="video: ${this._title}">
                 <source src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
             </video>
             <figcaption class="lightBox__title">${this.title}</figcaption>

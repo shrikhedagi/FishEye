@@ -1,5 +1,5 @@
 #photographer-gallery {
-    margin: 160px 100px;
+    margin: 200px 100px;
 }
 
 .photographer-gallery {
@@ -8,11 +8,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 4.44rem 5.94rem;
     overflow: hidden;
-
-    @include xlargeMobileLandscape {
-        -moz-column-gap: 3rem;
-             column-gap: 3rem;
-    }
+    -webkit-animation: show 0.8s ease-in-out;
+            animation: show 0.8s ease-in-out;
 
     @include mediumDesktop {
         grid-template-columns: repeat(2, 1fr);
@@ -20,6 +17,10 @@
 
     @include tablette {
         margin: 3.6rem 4.5rem 0;
+    }
+
+    @media screen and (max-width: 425px){
+        grid-template-columns: repeat(1, 1fr);
     }
 
     @include xlargeMobileLandscape {
@@ -31,5 +32,6 @@
         grid-template-columns: 1fr;
         colum-gap: 0;
     }
+
 }
 

@@ -12,7 +12,7 @@ class Media {
         this._price = data.price;
         this._description = data.description;
         this.hasBeenLiked = false; // Medias are not liked by default
-        this.heartIcon = "fas"; // Heart icon set to "fas" full heart
+        this.heartIcon = "far"; // Heart icon set to "fas" full heart
 
     }
   
