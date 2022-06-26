@@ -1,17 +1,19 @@
 class LightBox 
 {
+
     constructor(slides) 
     {
         this.slides = slides;
         this.currentIndex = 0;
-        this.lightBox = document.querySelector('#lightbox');
+        this.lightBox = document.getElementById('lightbox');
+        this.container = this.lightBox.getElementsByClassName('lightBox__content')[0];
         this.load();      
     }
 
     show()
     {
         let mediaSlide = this.slides[this.currentIndex];
-        this.lightBox.innerHTML = mediaSlide.renderLightBox();
+        this.container.innerHTML = mediaSlide.renderLightBox();
         document.querySelector('.fa-times').classList.add('closeBtn');
         this.lightBox.style.display ="flex";
     }
@@ -99,7 +101,7 @@ class LightBox
         {
             if (event.key === "Escape")
             {
-                document.querySelector('#lightbox').style.display = "none";
+                this.lightBox.style.display = "none";
             }
         })
     }

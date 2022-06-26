@@ -36,30 +36,12 @@ class Video extends Media
     renderLightBox()
     {
         return `
-            <div class="lightBox__arrow lightBox__previous-arrow" data-id=${this._id}>
-                <button class="fas fa-angle-left"></button>
-            </div>
-            <div class="close-slider">
-                <div id="message-nav">
-                    <div id="message-text">
-                    Utilisez les flèches "droite" et "gauche" pour naviguer entre les médias
-                    </div>
-                    <div class="lightBox__content">
-                        <figure class="lightBox__media-link">
-                            <video controls autoplay alt="video: ${this._title}">
-                                <source" src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
-                            </video>
-                            <figcaption class="lightBox__title">${this.title}</figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="lightBox__closeBtn">
-                    <button class="lightBox__close fas fa-times"></button>
-                </div>
-            </div>
-            <div class="lightBox__arrow lightBox__next-arrow" data-id=${this._id}>
-                <button class="fas fa-angle-right"></button>
-            </div>
+        <figure class="lightBox__media-link">
+            <video alt="video: ${this._title}">
+                <source" src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
+            </video>
+            <figcaption class="lightBox__title">${this.title}</figcaption>
+        </figure>
                 `;
     }
 
