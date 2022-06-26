@@ -516,22 +516,58 @@ span {
     transform: translateY(0rem);
   }
 }
-@-webkit-keyframes modalopen {
+@-webkit-keyframes modal-fade-in {
   from {
     opacity: 0;
-    transform: translateY(-150px);
   }
   to {
     opacity: 1;
   }
 }
-@keyframes modalopen {
+@keyframes modal-fade-in {
   from {
     opacity: 0;
-    transform: translateY(-150px);
   }
   to {
     opacity: 1;
+  }
+}
+@-webkit-keyframes appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes disappear {
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes modal-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes modal-fade-out {
+  to {
+    opacity: 0;
   }
 }
 @-webkit-keyframes pulse {
@@ -973,6 +1009,9 @@ span {
 }
 .card-insert__icon {
   margin-left: 0.5rem;
+  margin-right: 0.15rem;
+  -webkit-animation: pulse 10.3s infinite;
+  animation: pulse 10.3s infinite;
 }
 @media screen and (max-width: 1160px) {
   .card-insert {
@@ -987,7 +1026,7 @@ span {
   font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 5px 5px 5px 0px #9f9f9f, inset 4px 4px 15px 0px #000000, 5px 5px 0px 29px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 5px 0px #9f9f9f;
 }
 
 .lightBox__media-link {
@@ -1020,8 +1059,8 @@ video {
   display: none;
   justify-content: center;
   align-items: center;
-  -webkit-animation: show-down 0.8s ease-in-out;
-  animation: show-down 0.6s ease-in-out;
+  -webkit-animation: appear 0.5s forwards;
+  animation: appear 0.5s forwards;
 }
 
 #lightBox__close {
@@ -1096,6 +1135,7 @@ video {
 
 .media-cards {
   width: 100%;
+  margin-top: 15px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -1115,7 +1155,7 @@ video {
 .media-cards img:hover {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.7);
   transition-duration: 0.5s;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .media-cards video {
   width: 100%;
@@ -1171,6 +1211,8 @@ video {
   flex-direction: column;
   z-index: 1000;
   display: none;
+  -webkit-animation: modal-fade-in 0.3s forwards;
+  animation: modal-fade-in 0.3s forwards;
 }
 
 .form-content {
@@ -1182,8 +1224,8 @@ video {
   max-height: 90rem;
   border-radius: 0.3125rem;
   background-color: #db8876;
-  -webkit-animation: modalopen 0.6s;
-  animation: modalopen 0.6s;
+  -webkit-animation: appear 0.3s forwards;
+  animation: appear 0.3s forwards;
 }
 
 .form-header {
@@ -1416,9 +1458,8 @@ form label {
 
 .photographer-gallery {
   display: grid;
-  margin: 3.6rem 4.5rem 0;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4.44rem 5.94rem;
+  gap: 3.5rem 5rem;
   overflow: hidden;
   -webkit-animation: show 0.8s ease-in-out;
   animation: show 0.8s ease-in-out;

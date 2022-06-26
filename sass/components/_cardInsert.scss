@@ -39,6 +39,9 @@
 
     &__icon {
         margin-left: 0.5rem;
+        margin-right: 0.15rem;
+        -webkit-animation: pulse 10.3s infinite;
+                animation: pulse 10.3s infinite;
     }
 
     @include mediumDesktop {

@@ -4,9 +4,8 @@
 
 .photographer-gallery {
     display: grid;
-    margin: 3.6rem 4.5rem 0;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4.44rem 5.94rem;
+    gap: 3.5rem 5rem;
     overflow: hidden;
     -webkit-animation: show 0.8s ease-in-out;
             animation: show 0.8s ease-in-out;

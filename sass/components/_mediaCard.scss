@@ -2,6 +2,7 @@
 
 .media-cards {
     width: 100%;
+    margin-top: 15px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -21,7 +22,7 @@
         &:hover {
             box-shadow: 0 0 0.5rem rgba(0,0,0,0.7);
             transition-duration: 0.5s;
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
     }

@@ -7,6 +7,8 @@ class LightBox
     {
         this.slides = slides;
         this.currentIndex = index;
+        this.body = document.body;
+        this.closeBtn = document.querySelector('.lightBox__close');
         this.lightBox = document.getElementById('lightbox');
         this.container = document.getElementsByClassName('lightBox__content')[0];
         this.start();      
@@ -61,7 +63,7 @@ class LightBox
 
     listenForClose()
     {
-        document.querySelector('.lightBox__close').addEventListener('click', () =>
+        this.closeBtn.addEventListener('click', () =>
         {
             this.lightBox.style.display = "none";
         });
@@ -93,6 +95,21 @@ class LightBox
         this.show();
         this.listenForMoves();
         this.listenForClose();
+        this.escape();
+    }
+
+    escape()
+    {
+        this.body.addEventListener('keydown', event => 
+        {
+        if(event.key === 'Escape')
+        {
+            event.stopPropagation();
+            event.preventDefault();
+            this.lightBox.style.display = "none";
+            this.closeBtn.focus();
+        }
+        })
     }
 
 }

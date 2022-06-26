@@ -30,7 +30,7 @@ export default class ContactForm
         this.dom.setAttribute('aria-hidden', 'true')
         this.body.classList.remove('no-scroll')
         this.dom.style.display = 'none';
-        this.openFormBtn.focus()
+        this.openFormBtn.focus();
     }
     displayFormName()
     {
