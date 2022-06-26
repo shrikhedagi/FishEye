@@ -66,6 +66,8 @@
        object-fit: cover;
     background-color: #C4C4C4;
     border-radius: 50%;
+    -webkit-animation: show-down 0.8s ease-in-out;
+            animation: show-down 0.8s ease-in-out;
 
     @include tablette {
         width: 11.75rem;
@@ -91,6 +93,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    -webkit-animation: show-up 0.8s ease-in-out;
+            animation: show-up 0.8s ease-in-out;
 
     @include smallMobile {
         margin: initial;
