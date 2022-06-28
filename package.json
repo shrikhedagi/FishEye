@@ -4,7 +4,12 @@
     "description": "Case Study 6 - OpenClassrooms",
     "main": "index.js",
     "type": "module",
+    "devDependencies": {
+      "eslint": "^8.18.0",
+      "serve": "^13.0.2"
+    },
     "scripts": {
+      "dev": "serve -l 5000",
       "sass": "sass --watch ./sass/main.scss:./public/css/main.css",
       "prefix": "postcss ./public/css/main.css --use autoprefixer -d ./css/prefixed/"
     },
