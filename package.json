@@ -1,5 +1,5 @@
 {
-    "name": "FilizHakan_6_FishEye_02052022",
+    "name": "fisheye",
     "version": "1.0.0",
     "description": "Case Study 6 - OpenClassrooms",
     "main": "index.js",
@@ -17,6 +17,6 @@
     "bugs": {
       "url": "https://github.com/FilizHakan/FilizHakan_6_FishEye_02052022/issues"
     },
-    "homepage": "https://github.com/FilizHakan/FilizHakan_6_Fisheye_02052022#readme",
+    "homepage": "https://github.com/FilizHakan/FilizHakan_6_Fisheye_02052022#readme"
 
   }
