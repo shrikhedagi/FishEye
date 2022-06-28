@@ -17,9 +17,8 @@ FishEye is a project that delves into Javascript to build a freelance photograph
 
 ### 3.1 The project dependencies:
 
-- node.js
-- serve
-- npm or yarn
+- NodeJs
+- npm
 
 ### 3.2 Launch the project
 
@@ -30,13 +29,3 @@ FishEye is a project that delves into Javascript to build a freelance photograph
    FilizHakan_6_FishEye_02052022.
 
 3. Install the required packages by typing the npm install command.
-
-#### Install with npm:
-
-npm i
-
-#### Launch the server with npm
-
-npm run dev
-
-A local server will be launched in 5000 port: http://localhost:5000
