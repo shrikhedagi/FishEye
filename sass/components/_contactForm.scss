@@ -64,14 +64,11 @@ form {
     width: 100%;
 
     label {
-        font-size: 1.75rem;
+        font-size: 1.70rem;
         color: $formColor;
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
         
-        @include LargeDesktop {
-            font-size: 1.65rem;
-        }
         @include mediumDesktop {
            font-size: 1.5rem;
         } 
@@ -129,9 +126,6 @@ form {
     line-height: 1.5;
     margin-bottom: .8rem;
     
-    @include LargeDesktop {
-        max-height: 8.5rem;
-    }
     @include mediumDesktop {
         max-height: 8rem;
     }

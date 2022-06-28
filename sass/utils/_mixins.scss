@@ -89,7 +89,7 @@
 }
 
 /* From 1369px */
-@mixin LargeDesktop {
+@mixin largeDesktop {
 	@media screen and (max-width: map-get($breakpoints, large-desktop)) {
 		@content;
 	}

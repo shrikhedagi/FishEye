@@ -1273,15 +1273,10 @@ form {
   width: 100%;
 }
 form label {
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   color: #312E2E;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-}
-@media screen and (max-width: ) {
-  form label {
-    font-size: 1.65rem;
-  }
 }
 @media screen and (max-width: 1160px) {
   form label {
@@ -1340,11 +1335,6 @@ form label {
   font-size: 1.3rem;
   line-height: 1.5;
   margin-bottom: 0.8rem;
-}
-@media screen and (max-width: ) {
-  .text-area {
-    max-height: 8.5rem;
-  }
 }
 @media screen and (max-width: 1160px) {
   .text-area {
@@ -1505,7 +1495,8 @@ form label {
 @media screen and (max-width: 699px) {
   .photographer-gallery {
     grid-template-columns: 1fr;
-    colum-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
   }
 }
 
@@ -1629,5 +1620,3 @@ form label {
   font-weight: normal;
   color: #757575;
 }
-
-/*# sourceMappingURL=main.css.map */
