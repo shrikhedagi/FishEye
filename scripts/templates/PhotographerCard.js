@@ -18,7 +18,7 @@ class PhotographerCard
         <article class="profil-card">
             <a class="profil-link" href="photographer.html?id=${this._id}" aria-label="${this._name} - Fisheye">
                 <img 
-                alt="${this._name}" 
+                alt="${this._name} profil picture" 
                 class="user-picture" 
                 src="${this._portrait}" />
                 <h2 tabindex="0" class="profil-card__name">
