@@ -8,6 +8,7 @@ class LightBox
         this.slides = slides;
         this.currentIndex = index;
         this.body = document.body;
+        this.mediaSlide = document.querySelectorAll('.lightbox-link');
         this.closeBtn = document.querySelector('.lightBox__close');
         this.lightBox = document.getElementById('lightbox');
         this.container = document.getElementsByClassName('lightBox__content')[0];

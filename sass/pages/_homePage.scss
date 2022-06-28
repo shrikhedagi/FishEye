@@ -66,8 +66,8 @@
        object-fit: cover;
     background-color: #C4C4C4;
     border-radius: 50%;
-    -webkit-animation: show-down 0.8s ease-in-out;
-            animation: show-down 0.8s ease-in-out;
+    -webkit-animation: show 0.8s ease-in-out;
+            animation: show 0.8s ease-in-out;
 
     @include tablette {
         width: 11.75rem;

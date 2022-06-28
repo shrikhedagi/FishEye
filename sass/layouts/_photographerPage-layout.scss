@@ -1,5 +1,5 @@
 #photographer-gallery {
-    margin: 200px 100px;
+    margin: 200px 88px;
 }
 
 .photographer-gallery {
@@ -7,6 +7,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 3.5rem 5rem;
     overflow: hidden;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-left: 12px;
     -webkit-animation: show 0.8s ease-in-out;
             animation: show 0.8s ease-in-out;
 

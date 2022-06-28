@@ -30,7 +30,7 @@ export default class ContactForm
         this.dom.setAttribute('aria-hidden', 'true')
         this.body.classList.remove('no-scroll')
         this.dom.style.display = 'none';
-        this.openFormBtn.focus();
+        this.openFormBtn.focus()
     }
     displayFormName()
     {
@@ -55,6 +55,14 @@ export default class ContactForm
             {
                 return;
             }
+                const payload = 
+                {
+                    prenom: this.firstName.value,
+                    nom: this.lastName.value,
+                    email: this.email.value,
+                    message: this.message.value
+                }
+                console.log(payload)
                 this.hide();
             })
         }
@@ -191,11 +199,7 @@ export default class ContactForm
         }
 
         // VALIDATION CHECK : BLOCK SUBMIT & SHOW ERROR MESSAGES
-        if (errorCheck === true) {
-            return false;
-        } else {
-            return true;
-        }
+        return !errorCheck;
     }
 
 }
