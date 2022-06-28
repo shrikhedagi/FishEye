@@ -92,12 +92,26 @@ export default class ContactForm
         // Close Contact Form with "Escape" - Keydown (Accessibility)
         this.body.addEventListener('keydown', event => 
         {
-        if(event.key === 'Escape')
+        if (event.key === 'Escape')
         {
             event.stopPropagation();
             event.preventDefault();
             this.hide();
         }
+        });
+
+        // Focus on accessibility
+        this.form.addEventListener("keyup", event =>
+        {
+            switch (event.key) 
+            {
+                case "Tab":
+                    document.querySelector("#form-photographer-name").focus();
+                    break;
+                case "Escape":
+                    this.hide();
+                    break;
+            }
         });
 
         // close Contact Form by clicking on 'main'

@@ -196,7 +196,7 @@ class Portfolio
     }
 
     
-     // Display Drop Down Menu
+    // Display Drop Down Menu
     displayReorderList()
     {   // .sort-option (class for all the buttons)
         document.querySelector('.sort-option').innerHTML = this.selectOptions["likes"];

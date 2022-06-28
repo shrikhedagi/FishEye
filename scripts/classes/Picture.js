@@ -14,10 +14,10 @@ class Picture extends Media
         return `
             <article class="media-cards" data-id="${this._id}">
                 <button class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/photo/${this._image}" aria-label="${this.title}, lightbox closeup view">
-                    <img class="lightbox-link" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}">
+                    <img class="lightbox-link" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title} - ${this._description}">
                 </button>
                 <footer class="media-cards__footer">
-                    <h3 class="media-cards__title" title="${this.title}">
+                    <h3 tabindex="0" class="media-cards__title" title="${this.title}">
                         ${this.title}
                     </h3>
                     <div class="like-button">
@@ -36,8 +36,8 @@ class Picture extends Media
     {
         return `
             <figure class="lightBox__media-link">
-                <img class="lightBox__img lightbox-link" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title}"> 
-                <figcaption class="lightBox__title">${this.title}</figcaption>
+                <img tabindex="0" class="lightBox__img lightbox-link" src="./assets/photographers/${this._photographerId}/photo/${this._image}" alt="Photographie - ${this._title} - ${this._description}"> 
+                <figcaption tabindex="0" class="lightBox__title">${this.title}</figcaption>
             </figure>
                 `;
     }

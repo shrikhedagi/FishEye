@@ -12,13 +12,13 @@ class Video extends Media
     {
         return `
             <article class="media-cards" data-id=${this._id}>
-                <button class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, lightbox closeup view">
+                <button class="media-cards__lightbox-link" href="assets/photographers/${this._photographerId}/video/${this._video}" aria-label="${this.title}, ${this._description}, lightbox closeup view">
                     <video class="lightbox-link" controls autoplay loop alt="video: ${this._title}">
                         <source src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
                     </video>
                 </button>
                 <footer class="media-cards__footer">
-                    <h3 class="media-cards__title" title="${this.title}">
+                    <h3 tabindex="0" class="media-cards__title" title="${this.title}">
                         ${this.title}
                     </h3>
                     <div class="like-button">
@@ -37,10 +37,10 @@ class Video extends Media
     {
         return `
         <figure class="lightBox__media-link">
-            <video controls autoplay loop alt="video: ${this._title}">
+            <video controls autoplay loop tabindex="0" alt="video: ${this._title}, ${this._description}">
                 <source src="./assets/photographers/${this._photographerId}/video/${this._video}" type="video/mp4">
             </video>
-            <figcaption class="lightBox__title">${this.title}</figcaption>
+            <figcaption tabindex="0" class="lightBox__title">${this.title}</figcaption>
         </figure>
                 `;
     }

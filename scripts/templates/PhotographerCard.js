@@ -21,11 +21,11 @@ class PhotographerCard
                 alt="${this._name}" 
                 class="user-picture" 
                 src="${this._portrait}" />
-                <h2 class="profil-card__name">
+                <h2 tabindex="0" class="profil-card__name">
                     ${this._name}
                 </h2>
             </a>
-            <div class="thumbnail">
+            <div role="paragraph" tabindex="0" class="thumbnail">
                 <div class="thumbnail__location" lang="en">
                     ${this._location}
                 </div>

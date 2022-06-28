@@ -25,7 +25,7 @@
     <!--Lightbox-->
     <div id="lightbox" role="dialog" aria-label="lightbox closeup for images and videos portfolio">
       <div class="lightBox__arrow lightBox__previous-arrow">
-        <button class="fas fa-angle-left"></button>
+        <button aria-label="previous image" class="fas fa-angle-left"></button>
       </div>
       <div class="close-slider">
         <div id="message-nav">
@@ -36,11 +36,11 @@
           </div>
         </div>
         <div class="lightBox__closeBtn">
-          <button class="lightBox__close fas fa-times"></button>
+          <button aria-label="close dialog" class="lightBox__close fas fa-times"></button>
         </div>
       </div>
       <div class="lightBox__arrow lightBox__next-arrow">
-          <button class="fas fa-angle-right"></button>
+          <button aria-label="next image" class="fas fa-angle-right"></button>
       </div>
     </div>
 
@@ -49,12 +49,13 @@
       <!-- Drop down Menu -->
       <section class="dropDownMenu menu-overlay">
         <div class="menu">
-          <span id="dropDownMenu-title">
+          <span tabindex="0" id="dropDownMenu-title">
             Trier par
           </span>
           <div class="menu-wrapper">
             <div class="dropDownMenu__button-wrapper">
               <button 
+                tabindex="0"
                 class="dropDownBtn sort-option"
                 aria-haspopup="listbox" 
                 aria-label="drop-down-button">
@@ -112,7 +113,7 @@
     <!-- Contact Form -->
 		<section id="contact-form" role="dialog" class="modal modal--close contact-modal overlay" aria-hidden="true">
       <div id="form-content" role="group" class="form-content" aria-label="dialog-headline" tabindex="-1">
-        <header id="form-title" aria-hidden="false" class="form-header">
+        <header tabindex="0" id="form-title" aria-hidden="false" class="form-header">
           <h2 id="modal-title" class="form-header__heading"> 
           Contactez-moi
           <br>
@@ -131,25 +132,25 @@
         novalidate>
           <!-- First, Last name, email, message labels and inputs -->
           <div id="contactDataFirstName" class="contactData">
-            <label class="contactData__label" for="firstName-input">*Prénom</label>
+            <label aria-label="first-name-label" class="contactData__label" tabindex="0" for="firstName-input">*Prénom</label>
             <input name="firstName" type="text" class="contactData__input" placeholder="ex. Jane" aria-label="First name" id="firstName-input" required/>
             <br>
             <span id="first_error" class="error"></span>
           </div>
           <div id="contactDataLastName" class="contactData">
-            <label class="contactData__label" for="lastName-input">*Nom</label>
+            <label aria-label="last-name-label" class="contactData__label" tabindex="0"for="lastName-input">*Nom</label>
             <input name="lastName" type="text" class="contactData__input" placeholder="ex. Doe" aria-label="Last name" id="lastName-input" required/>
             <br>
             <span id="last_error" class="error"></span>
           </div>
           <div id="contactDataEmail" class="contactData contactData__email">
-            <label class="contactData__label" for="email-input">*Email</label>
+            <label aria-label="email-label" class="contactData__label" tabindex="0" for="email-input">*Email</label>
             <input name="email" type="email" class="contactData__input" aria-label="Email" id="email-input" placeholder="ex. jane.doe@example.com" required/>
             <br>
             <span id="email_error" class="error"></span>
           </div>
           <div id="contactDataMessage" class="contactData contactData__message">
-            <label class="contactData__label" for="message-input">*Votre message</label>
+            <label aria-label="message-label" class="contactData__label" tabindex="0" for="message-input">*Votre message</label>
             <textarea name="message" cols="30" rows="10" class="text-area" aria-label="Your message" placeholder="Veuillez écrire votre message dans ce champs." id="message-input" required></textarea>
             <span id="message_error" class="error"></span>
           </div>
