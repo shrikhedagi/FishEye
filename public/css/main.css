@@ -868,6 +868,7 @@ span {
   cursor: pointer;
   font-size: 1.175rem;
   color: #FFF;
+  padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 }
 .dropDownBtn:focus {
   outline: #db8876 thin dashed;
@@ -908,10 +909,6 @@ span {
 
 .sort-list {
   display: block;
-}
-
-[role=button] {
-  padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 }
 
 [role=option] {

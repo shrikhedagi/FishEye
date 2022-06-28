@@ -180,70 +180,7 @@ class Portfolio
                 }
             }
         });
-    }
-
-    // Keydown event on Drop down Menu
-    keydownOnEvent()
-    {
-        this.dropDownList.addEventListener("keydown", (event) => 
-        {
-            event.preventDefault();
-            const currentOption = document.querySelector(".activeOption");
-            let selectedOption;
-            if (document.activeElement === this.dropDownList) 
-            {
-              switch (event.key) 
-              {
-
-                case "Home":
-                  selectedOption = this.dropDownList.firstElementChild;
-                  break;
-                  
-                case "End":
-                  selectedOption = this.dropDownList.lastElementChild;
-                  break;
-
-                case "ChevronDown":
-                  selectedOption = currentOption.nextElementSibling;
-
-                  if (selectedOption === null) 
-                  {
-                    selectedOption = this.dropDownList.firstElementChild;
-                  }
-                  break;
-
-                case "ChevronUp":
-                  selectedOption = currentOption.previousElementSibling;
-
-                  if (selectedOption === null) 
-                  {
-                    selectedOption = this.dropDownList.lastElementChild;
-                  }
-                  break;
-                case "Enter":
-                  selectedOption = document.querySelector(".activeOption");
-                  this.button.textContent = selectedOption.innerText;
-                  this.hideOptions();
-                  this.reorder(selectedOption.innerText.toLowerCase());
-                  break;
-
-                case "Escape":
-                  for (let i = 0; i < document.querySelector(".dropDownList").children.length; i++) 
-                    {
-                    this.dropDownList.children[i].classList.remove("activeOption");
-                    }
-          
-                  this.hideOptions();
-                  return;
-              }
-            }
-            currentOption.classList.remove("activeOption");
-            selectedOption.classList.add("activeOption");
-            currentOption.setAttribute("aria-selected", "false");
-            selectedOption.setAttribute("aria-selected", "true");
-            this.dropDownList.setAttribute("aria-activedescendant", this.nameOption);
-          });
-    }
+    }   
 
     display()
     {
@@ -266,8 +203,6 @@ class Portfolio
         this.listenForReordering();
         this.listenForOptions();
         this.focusOnKeydown();
-        this.keydownOnEvent();
-        this.closeClickOnMain();
     }
 
     reorderByDate(a,b)

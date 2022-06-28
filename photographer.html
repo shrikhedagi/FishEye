@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <link href="./public/css/main.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -54,55 +54,52 @@
           </span>
           <div class="menu-wrapper">
             <div class="dropDownMenu__button-wrapper">
-              <button
-                role="button"  
+              <button 
                 class="dropDownBtn sort-option"
                 aria-haspopup="listbox" 
-                aria-label="sort"
-                aria-labelledby="sort-option-label drop-down-button">
+                aria-label="drop-down-button">
                 Popularité
               </button>
-              <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"></img>
+              <img src="./assets/icons/arrow.svg" alt="arrow button icon" id="chevron-icon"/>
             </div>
           </div>
-            <div 
-              id="myDropDownList" 
-              class="dropDownList"
-              role="listbox" 
-              aria-labelledby="menu-list-area"
-              tabindex="-1"
-              aria-activedescendant="likes">
-              <button 
-                data-sort="likes"
-                role="option" 
-                aria-label="likes"
-                aria-selected="true"
-                class="activeOption sort-option sort-list">
-                Popularité
-              </button> 
-              <button 
-                role="option" 
-                data-sort="date"
-                class="sort-option sort-list"
-                aria-selected="false"
-                aria-label="date">
-                Date
-              </button>
-              <button 
-                role="option"  
-                data-sort="title"
-                aria-selected="false"
-                class="sort-option sort-list"
-                aria-label="title">
-                Titre
-              </button>
-            </div>
+          <div 
+            id="myDropDownList" 
+            class="dropDownList"
+            role="listbox" 
+            aria-label="menu-list-area"
+            tabindex="-1"
+            aria-activedescendant="likes">
+            <button 
+              data-sort="likes"
+              role="option" 
+              aria-label="likes"
+              aria-selected="true"
+              class="activeOption sort-option sort-list">
+              Popularité
+            </button> 
+            <button 
+              role="option" 
+              data-sort="date"
+              class="sort-option sort-list"
+              aria-selected="false"
+              aria-label="date">
+              Date
+            </button>
+            <button 
+              role="option"  
+              data-sort="title"
+              aria-selected="false"
+              class="sort-option sort-list"
+              aria-label="title">
+              Titre
+            </button>
           </div>
-				</div>
+        </div>
 			</section>
       
       <!-- Portfolio Gallery -->
-      <section id="photographer-gallery" class="photographer-gallery sr-container" aria-labelledby="header for photographer's photos and videos gallery">
+      <section id="photographer-gallery" class="photographer-gallery sr-container" aria-label="header for photographer's photos and videos gallery">
         <h2 class="sr-container__gallery" id="photographer-gallery__header">Gallerie photos et videos des travaux du photographe</h2>
       </section>
 
@@ -114,11 +111,12 @@
 
     <!-- Contact Form -->
 		<section id="contact-form" role="dialog" class="modal modal--close contact-modal overlay" aria-hidden="true">
-      <div id="form-content" role="group" class="form-content" aria-labelledby="dialog-headline" tabindex="-1">
+      <div id="form-content" role="group" class="form-content" aria-label="dialog-headline" tabindex="-1">
         <header id="form-title" aria-hidden="false" class="form-header">
           <h2 id="modal-title" class="form-header__heading"> 
           Contactez-moi
-          <div id="form-photographer-name"></div>
+          <br>
+          <span id="form-photographer-name"></span>
           </h2>
           <button class="form-header__close" aria-label="Close Contact form" id="close-cross-btn">
               <img aria-hidden="true" class="contact-button" src="./assets/icons/close.svg" alt="Fermeture de la modale"/>

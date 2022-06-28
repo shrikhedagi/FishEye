@@ -26,9 +26,9 @@ export default class ContactForm
     } 
     hide() 
     {
-        this.mainWrapper.setAttribute('aria-hidden', 'false')
-        this.dom.setAttribute('aria-hidden', 'true')
-        this.body.classList.remove('no-scroll')
+        this.mainWrapper.setAttribute('aria-hidden', 'false');
+        this.dom.setAttribute('aria-hidden', 'true');
+        this.body.classList.remove('no-scroll');
         this.dom.style.display = 'none';
         this.openFormBtn.focus()
     }
@@ -39,9 +39,9 @@ export default class ContactForm
     }
     show()
     {
-        this.mainWrapper.setAttribute('aria-hidden', 'true')
-        this.dom.setAttribute('aria-hidden', 'false')
-        this.body.classList.add('no-scroll')
+        this.mainWrapper.setAttribute('aria-hidden', 'true');
+        this.dom.setAttribute('aria-hidden', 'false');
+        this.body.classList.add('no-scroll');
         this.dom.style.display = 'block';
         this.formCloseBtn.focus()
     }
@@ -62,9 +62,9 @@ export default class ContactForm
                     email: this.email.value,
                     message: this.message.value
                 }
-                console.log(payload)
+                console.log(payload);
                 this.hide();
-            })
+            });
         }
 
     // Events
@@ -72,12 +72,12 @@ export default class ContactForm
     {   
 
         // Launch Contact Form - Event (by button click)
-        this.openFormBtn.addEventListener('click', event =>
+        this.openFormBtn.addEventListener('click', () =>
         {
             this.show();
             this.displayFormName();
             this.listenForSubmission(); // Close by submitting the contact form by clickinh to "envoyer"
-        }) 
+        });
 
         
         
@@ -87,7 +87,7 @@ export default class ContactForm
             event.stopPropagation();
             event.preventDefault();
             this.hide();
-        })
+        });
 
         // Close Contact Form with "Escape" - Keydown (Accessibility)
         this.body.addEventListener('keydown', event => 
@@ -98,7 +98,7 @@ export default class ContactForm
             event.preventDefault();
             this.hide();
         }
-        })
+        });
 
         // close Contact Form by clicking on 'main'
         this.modalOverlay.addEventListener("click", event => 
@@ -109,7 +109,7 @@ export default class ContactForm
             event.preventDefault();
             this.hide();
         }
-        })
+        });
     }
 
     // Fields Validations
