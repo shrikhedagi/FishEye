@@ -1,5 +1,5 @@
 // Anonym class
-let data = null; // global class
+let data = null;
 
 export default 
 {

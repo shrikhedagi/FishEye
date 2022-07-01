@@ -55,7 +55,7 @@ class Portfolio
         // Get the whole banner (photographer info + contact form)
         const bannerSection = new PhotographerBanner(this.photographer)
         this.main.prepend(bannerSection.renderBanner())
-        const form = new ContactForm(this.photographer);
+        const form = new ContactForm(this.photographer); 
         form.start();   
 
     }

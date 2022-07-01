@@ -32,7 +32,7 @@ export default class ContactForm
         this.dom.style.display = 'none';
         this.openFormBtn.focus()
     }
-    displayFormName()
+    displayPhotographerName()
     {
         const displayName = document.getElementById('form-photographer-name');
         displayName.innerHTML = this.photographer.name;
@@ -49,34 +49,35 @@ export default class ContactForm
     {
         this.submitForm.addEventListener('click', (event) => 
         {   
+            
             event.stopPropagation();
             event.preventDefault();
             if(!this.validate()) 
             {
                 return;
             }
-                const payload = 
-                {
-                    prenom: this.firstName.value,
-                    nom: this.lastName.value,
-                    email: this.email.value,
-                    message: this.message.value
-                }
-                console.log(payload);
-                this.hide();
-            });
-        }
+            const payload = 
+            {
+                prenom: this.firstName.value,
+                nom: this.lastName.value,
+                email: this.email.value,
+                message: this.message.value
+            }
+            console.log(payload);
+            this.hide();
+        });
+    }
 
     // Events
     start()
     {   
+        this.listenForSubmission(); // Close by submitting the contact form by clickinh to "envoyer"
 
         // Launch Contact Form - Event (by button click)
         this.openFormBtn.addEventListener('click', () =>
         {
             this.show();
-            this.displayFormName();
-            this.listenForSubmission(); // Close by submitting the contact form by clickinh to "envoyer"
+            this.displayPhotographerName();
         });
 
         
