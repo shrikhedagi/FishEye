@@ -71,7 +71,7 @@ export default class ContactForm
     // Events
     start()
     {   
-        this.listenForSubmission(); // Close by submitting the contact form by clickinh to "envoyer"
+        this.listenForSubmission(); // Close by submitting the contact form by clicking to "envoyer"
 
         // Launch Contact Form - Event (by button click)
         this.openFormBtn.addEventListener('click', () =>
@@ -79,8 +79,6 @@ export default class ContactForm
             this.show();
             this.displayPhotographerName();
         });
-
-        
         
         // Close Contact Form - Event - Cross button in form
         this.formCloseBtn.addEventListener('click', event => 

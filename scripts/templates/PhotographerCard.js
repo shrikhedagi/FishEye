@@ -25,7 +25,7 @@ class PhotographerCard
                     ${this._name}
                 </h2>
             </a>
-            <div role="paragraph" tabindex="0" class="thumbnail">
+            <div role="paragraph" class="thumbnail">
                 <div class="thumbnail__location" lang="en">
                     ${this._location}
                 </div>
