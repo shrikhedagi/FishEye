@@ -1,4 +1,4 @@
-# FilizHakan_6_FishEye_02052022
+# FishEye_02052022
 
 ## Fisheye Project - Create an Accessible Website For a Freelancer Sourcing Platform
 
