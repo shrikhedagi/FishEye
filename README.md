@@ -1,4 +1,4 @@
-# FishEye_02052022
+# FishEye
 
 ## Fisheye Project - Create an Accessible Website For a Freelancer Sourcing Platform
 
@@ -23,7 +23,7 @@ FishEye is a project that delves into Javascript to build a freelance photograph
 ### 3.2 Launch the project
 
 1. First, you can clone this repository by typing the following command on your terminal (preferably VsCode):
-   git clone https://github.com/FilizHakan/FilizHakan_6_FishEye_02052022.
+   git clone [https://github.com/shrikhedagi/FishEye.git].
 
 2. Open the folder named after this project:
    FilizHakan_6_FishEye_02052022.
